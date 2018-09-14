@@ -26,7 +26,7 @@ store.dispatch(fetchTranslations());
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View>
         <Provider store={store}>
             <LearnVocabulary />
         </Provider>
@@ -34,11 +34,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-  },
-});

@@ -82,10 +82,9 @@ class TranslationRevisionRow extends React.Component {
 
         return (
             <View className="translation">
-                <View className={wordLeftClassName} /*onClick={this.handleClickLeftWord}*/>
+                <View style={{flexDirection: 'row'}} /*onClick={this.handleClickLeftWord}*/>
                     <Text>{this.props.translation.word1}</Text>
-                </View>
-                <View className={wordRightClassName} /*onClick={this.handleClickRightWord}*/>
+                    <Text>   ->    </Text>
                     <Text>{this.props.translation.word2}</Text>
                 </View>
             </View>

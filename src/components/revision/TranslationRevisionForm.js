@@ -42,14 +42,24 @@ class TranslationRevisionForm extends React.Component {
     render() {
         return (
             <View>
-                <View>
-                    <Button onPress={() => this.handleShuffle()} title="Shuffle"/>
-                    <Button onPress={() => this.handleUnshuffle()} title="Unshuffle"/>
+                <View style={{flexDirection: 'row'}}>
+                    <View style={{flex:1, margin:5}}>
+                        <Button onPress={() => this.handleShuffle()} title="Shuffle"/>
+                    </View>
+                    <View style={{flex:1, margin:5}}>
+                        <Button onPress={() => this.handleUnshuffle()} title="Unshuffle"/>
+                    </View>
                 </View>
-                <View>
+                <View style={{flexDirection: 'row'}}>
+                <View style={{flex:1, margin:5}}>
                     <Button onPress={() => this.handleHideLeft()} title="Hide left"/>
+                    </View>
+                    <View style={{flex:1, margin:5}}>
                     <Button onPress={() => this.handleHideRight()} title="Hide right"/>
-                    <Button onPress={() => this.handleDisplayEverything()} title="Display everything"/>
+                    </View>
+                    <View style={{flex:1, margin:5}}>
+                    <Button onPress={() => this.handleDisplayEverything()} title="Display all"/>
+                    </View>
                 </View>
             </View>
         );
