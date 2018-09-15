@@ -25,8 +25,13 @@ class TranslationList extends React.Component {
         });
 
         return (
-            <View className={'list ' + this.props.mode}>
-                <Text>List</Text>
+            <View>
+                <View style={{
+                    alignItems: 'center',
+                    margin: 20
+                }}>
+                    <Text style={{fontWeight: 'bold'}}>Translations</Text>
+                </View>
                 <View>
                     {translationItems}
                 </View>

@@ -81,7 +81,7 @@ class TranslationRevisionRow extends React.Component {
         const wordRightClassName = "word-right " + (!this.state.wordRightRevealed ? 'hidden' : '');
 
         return (
-            <View className="translation">
+            <View>
                 <View style={{flexDirection: 'row'}} /*onClick={this.handleClickLeftWord}*/>
                     <Text>{this.props.translation.word1}</Text>
                     <Text>   ->    </Text>

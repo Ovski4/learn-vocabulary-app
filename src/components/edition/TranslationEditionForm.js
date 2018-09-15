@@ -52,16 +52,53 @@ class TranslationEditionForm extends React.Component {
     render() {
         return (
             <View>
-                <Text>
-                    {this.props.labelWord1}
-                </Text>
-                <TextInput className="word1" value={this.state.word1} onChangeText={(text) => this.handleChange('word1', text)} />
-
-                <Text>
-                    {this.props.labelWord2}
-                </Text>
-                <TextInput className="word2" value={this.state.word2} onChangeText={(text) => this.handleChange('word2', text)} />
-                <Button title="Submit" className={this.props.className} onPress={this.handleSubmit}/>
+                <View style={{
+                    alignItems: 'center',
+                    margin: 20
+                }}>
+                    <Text style={{fontWeight: 'bold'}}>Add a new translation</Text>
+                </View>
+                <View style={{flexDirection: 'row', marginBottom: 5}}>
+                    <View style={{width: '15%', margin:5}}>
+                        <Text>{this.props.labelWord1}</Text>
+                    </View>
+                    <View style={{
+                        flex: 1,
+                        backgroundColor: '#eeeeee',
+                        borderRadius: 2,
+                        paddingLeft: 5,
+                        margin: 5
+                    }}>
+                        <TextInput
+                            underlineColorAndroid="transparent"
+                            value={this.state.word1}
+                            onChangeText={(text) => this.handleChange('word1', text)}
+                        />
+                    </View>
+                </View>
+                <View style={{flexDirection: 'row', marginBottom: 5}}>
+                    <View style={{width: '15%', margin:5}}>
+                        <Text>{this.props.labelWord2}</Text>
+                    </View>
+                    <View style={{
+                        flex: 1,
+                        backgroundColor: '#eeeeee',
+                        borderRadius: 2,
+                        paddingLeft: 5,
+                        margin: 5
+                    }}>
+                        <TextInput
+                            underlineColorAndroid="transparent"
+                            value={this.state.word2}
+                            onChangeText={(text) => this.handleChange('word2', text)}
+                        />
+                    </View>
+                </View>
+                <View style={{marginLeft: '15%'}}>
+                    <View style={{marginLeft:15, marginRight: 5, marginTop: 5}}>
+                        <Button title="Submit" onPress={this.handleSubmit}/>
+                    </View>
+                </View>
             </View>
         );
     }
