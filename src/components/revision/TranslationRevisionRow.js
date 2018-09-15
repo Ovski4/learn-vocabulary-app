@@ -4,9 +4,9 @@ import { translationRevealed } from '../../actions/ui';
 import { Text, View } from 'react-native';
 
 const mapStateToProps = (state) => ({
-    leftTranslationsEntirelyHidden: state.leftTranslationsEntirelyHidden,
-    rightTranslationsEntirelyHidden: state.rightTranslationsEntirelyHidden,
-    allTranslationsRevealed: state.allTranslationsRevealed
+    leftTranslationsEntirelyHidden: state.ui.leftTranslationsEntirelyHidden,
+    rightTranslationsEntirelyHidden: state.ui.rightTranslationsEntirelyHidden,
+    allTranslationsRevealed: state.ui.allTranslationsRevealed
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -18,7 +18,6 @@ class TranslationRevisionRow extends React.Component {
 
     constructor(props) {
         super(props);
-
         if (this.props.leftTranslationsEntirelyHidden) {
             this.state = this.wordRightRevealed();
         } else if (this.props.rightTranslationsEntirelyHidden) {
@@ -77,8 +76,29 @@ class TranslationRevisionRow extends React.Component {
     }
 
     render () {
-        const wordLeftClassName = "word-left " + (!this.state.wordLeftRevealed ? 'hidden' : '');
-        const wordRightClassName = "word-right " + (!this.state.wordRightRevealed ? 'hidden' : '');
+        const getWordViewStyle = (isHidden) => {
+            const baseWordStyle = {
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
+            };
+
+            if (isHidden) {
+                return Object.assign({
+                    backgroundColor: '#ccc',
+                }, baseWordStyle);
+            }
+
+            return baseWordStyle;
+        }
+
+        const getWordTextStyle = (isHidden) => {
+            if (isHidden) {
+                return { color: '#ccc'};
+            }
+
+            return {color: '#000'};
+        }
 
         return (
             <View>
@@ -89,20 +109,20 @@ class TranslationRevisionRow extends React.Component {
                     height: 30}}
                 >
                     <View
-                        style={{
-                            flex: 1,
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
+                        onStartShouldSetResponder={this.handleClickLeftWord}
+                        style={getWordViewStyle(!this.state.wordLeftRevealed)}
                     >
-                        <Text>{this.props.translation.word1}</Text>
+                        <Text style={getWordTextStyle(!this.state.wordLeftRevealed)}>
+                            {this.props.translation.word1}
+                        </Text>
                     </View>
-                    <View style={{
-                        flex: 1,
-                        justifyContent: 'center',
-                        alignItems: 'center'
-                    }}>
-                        <Text>{this.props.translation.word2}</Text>
+                    <View
+                        onStartShouldSetResponder={this.handleClickRightWord}
+                        style={getWordViewStyle(!this.state.wordRightRevealed)}
+                    >
+                        <Text style={getWordTextStyle(!this.state.wordRightRevealed)}>
+                            {this.props.translation.word2}
+                        </Text>
                     </View>
                 </View>
             </View>

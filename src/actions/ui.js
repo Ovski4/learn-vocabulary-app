@@ -1,3 +1,11 @@
+export const shuffledPressed = () => ({
+    type: 'SHUFFLED_PRESSED'
+});
+
+export const unshuffledPressed = () => ({
+    type: 'UNSHUFFLED_PRESSED'
+});
+
 export const translationEditable = createdAt => ({
     type: 'TRANSLATION_EDITABLE',
     createdAt

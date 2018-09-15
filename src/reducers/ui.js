@@ -16,8 +16,32 @@ const uiReducer = (ui = initialState, action) => {
             return onAllTranslationsRevealed(ui);
         case 'TRANSLATION_REVEALED':
             return onTranslationRevealed(ui);
+        case 'SHUFFLED_PRESSED':
+            return shuffledPressed(ui);
+        case 'UNSHUFFLED_PRESSED':
+            return unshufflePressed(ui);
         default:
             return ui
+    }
+}
+
+const shuffledPressed = (ui) => {
+    return {
+        mode: ui.mode,
+        shuffled: true,
+        leftTranslationsEntirelyHidden: ui.leftTranslationsEntirelyHidden,
+        rightTranslationsEntirelyHidden: ui.rightTranslationsEntirelyHidden,
+        allTranslationsRevealed: ui.allTranslationsRevealed
+    }
+}
+
+const unshufflePressed = (ui) => {
+    return {
+        mode: ui.mode,
+        shuffled: false,
+        leftTranslationsEntirelyHidden: ui.leftTranslationsEntirelyHidden,
+        rightTranslationsEntirelyHidden: ui.rightTranslationsEntirelyHidden,
+        allTranslationsRevealed: ui.allTranslationsRevealed
     }
 }
 

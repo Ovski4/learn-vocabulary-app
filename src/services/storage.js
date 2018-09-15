@@ -14,6 +14,8 @@ const get = async (key) => {
 
 const set = async (key, element) => {
     await AsyncStorage.setItem(key, JSON.stringify(element));
+
+    await get(key);
 };
 
 export default {
