@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import TranslationEditionForm from './edition/TranslationEditionForm';
+import NewTranslationForm from './edition/NewTranslationForm';
 import TranslationRevisionForm from './revision/TranslationRevisionForm';
 import TranslationModeChooser from './TranslationModeChooser';
 import TranslationList from './TranslationList';
@@ -21,12 +21,12 @@ class LearnVocabulary extends React.Component {
 
     render() {
         const FormComponents = {
-            'edition': TranslationEditionForm,
+            'edition': NewTranslationForm,
             'revision': TranslationRevisionForm
         }
-    
+
         return (
-            <View className="main">
+            <View>
                 <TranslationModeChooser/>
                 {React.createElement(FormComponents[this.props.mode])}
                 <TranslationList

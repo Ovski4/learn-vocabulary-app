@@ -82,10 +82,28 @@ class TranslationRevisionRow extends React.Component {
 
         return (
             <View>
-                <View style={{flexDirection: 'row'}} /*onClick={this.handleClickLeftWord}*/>
-                    <Text>{this.props.translation.word1}</Text>
-                    <Text>   ->    </Text>
-                    <Text>{this.props.translation.word2}</Text>
+                <View style={{
+                    flexDirection: 'row',
+                    borderTopWidth: 0.4,
+                    borderColor: '#d6d7da',
+                    height: 30}}
+                >
+                    <View
+                        style={{
+                            flex: 1,
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
+                        <Text>{this.props.translation.word1}</Text>
+                    </View>
+                    <View style={{
+                        flex: 1,
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <Text>{this.props.translation.word2}</Text>
+                    </View>
                 </View>
             </View>
         );

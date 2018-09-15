@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import TranslationEditionForm from './TranslationEditionForm';
+import EditTranslationForm from './EditTranslationForm';
 import { translationDeleted } from '../../actions/translations';
 import { Button, Text, View } from 'react-native';
 import styles from '../styles/styles';
@@ -60,10 +60,8 @@ class TranslationEditionRow extends React.Component {
         } else {
             return (
                 <View className="translation">
-                    <TranslationEditionForm
+                    <EditTranslationForm
                         className="edit-translation"
-                        labelWord1={null}
-                        labelWord2={null}
                         translation={this.props.translation}
                         onUpdate={this.toggleEditable}
                     />

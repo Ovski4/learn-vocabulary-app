@@ -1,14 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { translationAdded, translationUpdated } from '../../actions/translations';
+import { translationUpdated } from '../../actions/translations';
 import { TextInput, Button, Text, View } from 'react-native';
 
 const mapDispatchToProps = (dispatch) => ({
-    handleTranslationAdded: (translation) => dispatch(translationAdded(translation)),
     handleTranslationUpdated: (translation) => dispatch(translationUpdated(translation))
 });
 
-class TranslationEditionForm extends React.Component {
+class EditTranslationForm extends React.Component {
 
     constructor(props) {
         super(props);
@@ -20,25 +19,12 @@ class TranslationEditionForm extends React.Component {
     }
 
     handleSubmit = () => {
-        if (this.state.createdAt === null) {
-            this.props.handleTranslationAdded({
-                word1: this.state.word1,
-                word2: this.state.word2,
-                createdAt: Date.now()
-            });
-            this.setState({
-                word1: '',
-                word2: '',
-                createdAt: null
-            });
-        } else {
-            this.props.handleTranslationUpdated({
-                word1: this.state.word1,
-                word2: this.state.word2,
-                createdAt: this.state.createdAt
-            });
-            this.props.onUpdate();
-        }
+        this.props.handleTranslationUpdated({
+            word1: this.state.word1,
+            word2: this.state.word2,
+            createdAt: this.state.createdAt
+        });
+        this.props.onUpdate();
     }
 
     handleChange = (word, text) => {
@@ -53,12 +39,12 @@ class TranslationEditionForm extends React.Component {
         return (
             <View>
                 <View style={{
-                    alignItems: 'center',
-                    margin: 20
+                    flexDirection: 'row',
+                    marginBottom: 5,
+                    marginTop: 5,
+                    borderTopWidth: 0.4,
+                    borderColor: '#d6d7da'
                 }}>
-                    <Text style={{fontWeight: 'bold'}}>Add a new translation</Text>
-                </View>
-                <View style={{flexDirection: 'row', marginBottom: 5}}>
                     <View style={{width: '15%', margin:5}}>
                         <Text>{this.props.labelWord1}</Text>
                     </View>
@@ -95,7 +81,7 @@ class TranslationEditionForm extends React.Component {
                     </View>
                 </View>
                 <View style={{marginLeft: '15%'}}>
-                    <View style={{marginLeft:15, marginRight: 5, marginTop: 5}}>
+                    <View style={{marginLeft:15, marginRight: 5, marginTop: 5, marginBottom: 10}}>
                         <Button title="Submit" onPress={this.handleSubmit}/>
                     </View>
                 </View>
@@ -104,10 +90,9 @@ class TranslationEditionForm extends React.Component {
     }
 }
 
-TranslationEditionForm.defaultProps = {
+EditTranslationForm.defaultProps = {
     labelWord1: 'Word 1:',
     labelWord2: 'Word 2:',
-    className: 'new-translation',
     translation: {
         word1: '',
         word2: '',
@@ -118,4 +103,4 @@ TranslationEditionForm.defaultProps = {
 export default connect(
     null,
     mapDispatchToProps
-)(TranslationEditionForm);
+)(EditTranslationForm);
