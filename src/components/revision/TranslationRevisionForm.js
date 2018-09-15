@@ -44,7 +44,8 @@ class TranslationRevisionForm extends React.Component {
             <View>
                 <View style={{
                     alignItems: 'center',
-                    margin: 20
+                    margin: 5,
+                    marginBottom: 0
                 }}>
                     <Text style={{fontWeight: 'bold'}}>Revise</Text>
                 </View>

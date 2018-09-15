@@ -19,7 +19,7 @@ class TranslationRevisionRow extends React.Component {
     constructor(props) {
         super(props);
         if (this.props.leftTranslationsEntirelyHidden) {
-            this.state = this.wordRightRevealed();
+            this.state = this.revealRightWord();
         } else if (this.props.rightTranslationsEntirelyHidden) {
             this.state = this.revealLeftWord();
         } else {
@@ -37,7 +37,7 @@ class TranslationRevisionRow extends React.Component {
         wordRightRevealed: false
     });
 
-    revealRigthWord = () => ({
+    revealRightWord = () => ({
         wordLeftRevealed: false,
         wordRightRevealed: true
     });
@@ -67,7 +67,7 @@ class TranslationRevisionRow extends React.Component {
      */
     componentDidUpdate() {
         if (this.props.leftTranslationsEntirelyHidden && this.state.wordLeftRevealed) {
-            this.setState(this.revealRigthWord());
+            this.setState(this.revealRightWord());
         } else if (this.props.rightTranslationsEntirelyHidden && this.state.wordRightRevealed) {
             this.setState(this.revealLeftWord());
         } else if (this.props.allTranslationsRevealed && (!this.state.wordLeftRevealed || !this.state.wordRightRevealed)) {
@@ -85,7 +85,7 @@ class TranslationRevisionRow extends React.Component {
 
             if (isHidden) {
                 return Object.assign({
-                    backgroundColor: '#ccc',
+                    backgroundColor: '#eee',
                 }, baseWordStyle);
             }
 
@@ -94,7 +94,7 @@ class TranslationRevisionRow extends React.Component {
 
         const getWordTextStyle = (isHidden) => {
             if (isHidden) {
-                return { color: '#ccc'};
+                return { color: '#eee'};
             }
 
             return {color: '#000'};
@@ -105,8 +105,8 @@ class TranslationRevisionRow extends React.Component {
                 <View style={{
                     flexDirection: 'row',
                     borderTopWidth: 0.4,
-                    borderColor: '#d6d7da',
-                    height: 30}}
+                    borderColor: '#bbb',
+                    height: 40}}
                 >
                     <View
                         onStartShouldSetResponder={this.handleClickLeftWord}
