@@ -56,7 +56,7 @@ class TranslationRevisionForm extends React.Component {
     render() {
         return (
             <View>
-                <Header>Revise</Header>
+                <Header>Actions</Header>
                 <View style={styles.row}>
                     <View style={styles.button}>
                         <Button

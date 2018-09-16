@@ -81,7 +81,7 @@ class NewTranslationForm extends React.Component {
 
         return (
             <View>
-                <Header>Add a new translation</Header>
+                <Header>Add a translation</Header>
                 <View style={styles.row}>
                     <View style={{flex: 4}}>
                         <View style={styles.word1}>
@@ -121,7 +121,6 @@ class NewTranslationForm extends React.Component {
 NewTranslationForm.defaultProps = {
     labelWord1: 'Word 1:',
     labelWord2: 'Word 2:',
-    className: 'new-translation',
     translation: {
         word1: '',
         word2: '',

@@ -23,17 +23,21 @@ const styles = StyleSheet.create({
 
 class TranslationModeChooser extends React.Component {
 
+    ucfirst = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     render() {
         const newMode = this.props.mode === 'revision' ? 'edition' : 'revision';
 
         return (
             <View>
-                <Header style={{marginTop: 30}}>Mode {this.props.mode}</Header>
+                <Header style={{marginTop: 30}}>{this.ucfirst(this.props.mode)} mode</Header>
                 <View style={styles.row}>
                     <View style={styles.button}>
                         <Button
                             onPress={() => this.props.dispatch(modeChanged(newMode))}
-                            title={'Switch to mode ' + newMode}
+                            title={'Switch to ' + newMode + ' mode'}
                         />
                     </View>
                 </View>
