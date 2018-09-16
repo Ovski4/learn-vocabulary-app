@@ -34,7 +34,8 @@ class TranslationEditionRow extends React.Component {
                         <View style={{
                             flex: 1,
                             justifyContent: 'center',
-                            alignItems: 'center'
+                            alignItems: 'center',
+                            padding: 10
                         }}>
                             <Text>{this.props.translation.word1}</Text>
                         </View>
@@ -42,7 +43,8 @@ class TranslationEditionRow extends React.Component {
                         <View style={{
                             flex: 1,
                             justifyContent: 'center',
-                            alignItems: 'center'
+                            alignItems: 'center',
+                            padding: 10
                         }}>
                             <Text>{this.props.translation.word2}</Text>
                         </View>

@@ -80,8 +80,10 @@ class TranslationRevisionRow extends React.Component {
             const baseWordStyle = {
                 flex: 1,
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                padding: 12
             };
+
 
             if (isHidden) {
                 return Object.assign({
@@ -105,8 +107,8 @@ class TranslationRevisionRow extends React.Component {
                 <View style={{
                     flexDirection: 'row',
                     borderTopWidth: 0.4,
-                    borderColor: '#bbb',
-                    height: 40}}
+                    borderColor: '#bbb'
+                }}
                 >
                     <View
                         onStartShouldSetResponder={this.handleClickLeftWord}

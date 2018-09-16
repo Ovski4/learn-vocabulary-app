@@ -11,27 +11,22 @@ const mapStateToProps = (state) => {
 
 class TranslationModeChooser extends React.Component {
     render() {
+
+        const newMode = this.props.mode === 'revision' ? 'edition' : 'revision';
+
         return (
             <View>
                 <View style={{
                         alignItems: 'center',
                         marginTop:30
                     }}>
-                        <Text style={{fontWeight: 'bold'}}>Switch mode</Text>
+                        <Text style={{fontWeight: 'bold'}}>Mode {this.props.mode}</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                     <View style={{flex:1, margin:5, marginBottom: 0}}>
                         <Button
-                            disabled={this.props.mode === 'edition'}
-                            onPress={() => this.props.dispatch(modeChanged('edition'))}
-                            title="Mode edition"
-                        />
-                    </View>
-                    <View style={{flex:1, margin:5, marginBottom: 0}}>
-                        <Button
-                            disabled={this.props.mode === 'revision'}
-                            onPress={() => this.props.dispatch(modeChanged('revision'))}
-                            title="Mode revision"
+                            onPress={() => this.props.dispatch(modeChanged(newMode))}
+                            title={'Switch to mode ' + newMode}
                         />
                     </View>
                 </View>
