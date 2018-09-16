@@ -50,6 +50,7 @@ class NewTranslationForm extends React.Component {
     }
 
     render() {
+
         return (
             <View>
                 <View style={{
@@ -58,50 +59,50 @@ class NewTranslationForm extends React.Component {
                 }}>
                     <Text style={{fontWeight: 'bold'}}>Add a new translation</Text>
                 </View>
-                <View style={{flexDirection: 'row', marginBottom: 5}}>
-                    <View style={{width: '15%', margin:5}}>
-                        <Text>{this.props.labelWord1}</Text>
+                <View style={{flexDirection: 'row', margin: 5}}>
+                    <View style={{flex: 4}}>
+                        <View style={{flexDirection: 'row', marginBottom: 5}}>
+                            <View>
+                                <Text>{this.props.labelWord1}</Text>
+                            </View>
+                            <View style={{
+                                flex: 1,
+                                backgroundColor: '#eeeeee',
+                                borderRadius: 2,
+                                paddingLeft: 5,
+                                marginLeft: 5,
+                                marginRight: 5
+                            }}>
+                                <TextInput
+                                    underlineColorAndroid="transparent"
+                                    value={this.state.word1}
+                                    onChangeText={(text) => this.handleChange('word1', text)}
+                                />
+                            </View>
+                        </View>
+                        <View style={{flexDirection: 'row'}}>
+                            <View>
+                                <Text>{this.props.labelWord2}</Text>
+                            </View>
+                            <View style={{
+                                flex: 1,
+                                backgroundColor: '#eeeeee',
+                                borderRadius: 2,
+                                paddingLeft: 5,
+                                marginLeft: 5,
+                                marginRight: 5
+                            }}>
+                                <TextInput
+                                    underlineColorAndroid="transparent"
+                                    value={this.state.word2}
+                                    onChangeText={(text) => this.handleChange('word2', text)}
+                                />
+                            </View>
+                        </View>
                     </View>
-                    <View style={{
-                        flex: 1,
-                        backgroundColor: '#eeeeee',
-                        borderRadius: 2,
-                        paddingLeft: 5,
-                        marginLeft: 5,
-                        marginRight: 5
-
-                    }}>
-                        <TextInput
-                            underlineColorAndroid="transparent"
-                            value={this.state.word1}
-                            onChangeText={(text) => this.handleChange('word1', text)}
-                        />
-                    </View>
-                </View>
-                <View style={{flexDirection: 'row', marginBottom: 5}}>
-                    <View style={{width: '15%', margin:5}}>
-                        <Text>{this.props.labelWord2}</Text>
-                    </View>
-                    <View style={{
-                        flex: 1,
-                        backgroundColor: '#eeeeee',
-                        borderRadius: 2,
-                        paddingLeft: 5,
-                        marginLeft: 5,
-                        marginRight: 5
-                    }}>
-                        <TextInput
-                            underlineColorAndroid="transparent"
-                            value={this.state.word2}
-                            onChangeText={(text) => this.handleChange('word2', text)}
-                        />
-                    </View>
-                </View>
-                <View style={{marginLeft: '15%'}}>
-                    <View style={{marginLeft:15, marginRight: 5}}>
+                    <View style={{flex: 1, justifyContent: 'center'}}>
                         <Button disabled={this.cannotBeCreated()} title="Submit" onPress={this.handleSubmit}/>
                     </View>
-
                 </View>
             </View>
         );

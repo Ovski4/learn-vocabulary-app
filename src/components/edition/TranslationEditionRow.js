@@ -49,7 +49,7 @@ class TranslationEditionRow extends React.Component {
                             <Text>{this.props.translation.word2}</Text>
                         </View>
                     </View>
-                    <View style={{flexDirection: 'row', flex:1}}>
+                    <View style={{flexDirection: 'row', flex:1, alignItems: 'center'}}>
                         <View style={{margin:5}}>
                             <Button title="Edit" onPress={this.toggleEditable}/>
                         </View>
