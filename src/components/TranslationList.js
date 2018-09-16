@@ -2,6 +2,7 @@ import React from 'react';
 import TranslationEditionRow from './edition/TranslationEditionRow';
 import TranslationRevisionRow from './revision/TranslationRevisionRow';
 import { Text, TextInput, View, FlatList, Dimensions } from 'react-native';
+import Header from './ui/Header';
 
 class TranslationList extends React.PureComponent {
 
@@ -25,13 +26,7 @@ class TranslationList extends React.PureComponent {
 
         return (
             <View>
-                <View style={{
-                    alignItems: 'center',
-                    margin: 5
-
-                }}>
-                    <Text style={{fontWeight: 'bold'}}>Translations</Text>
-                </View>
+                <Header>Translations</Header>
                 {/* <View style={{
                         backgroundColor: '#eeeeee',
                         borderRadius: 2,

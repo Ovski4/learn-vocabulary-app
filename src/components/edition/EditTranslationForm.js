@@ -1,10 +1,40 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { translationUpdated } from '../../actions/translations';
-import { TextInput, Button, Text, View } from 'react-native';
+import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
 
 const mapDispatchToProps = (dispatch) => ({
     handleTranslationUpdated: (translation) => dispatch(translationUpdated(translation))
+});
+
+const styles = StyleSheet.create({
+    view: {
+        borderTopWidth: 0.4,
+        borderColor: '#d6d7da',
+    },
+    row: {
+        flexDirection: 'row'
+    },
+    label: {
+        width: '15%',
+        margin: 5
+    },
+    input: {
+        flex: 1,
+        backgroundColor: '#eeeeee',
+        borderRadius: 2,
+        paddingLeft: 5,
+        margin: 5
+    },
+    submitButtonWrapper: {
+        marginLeft: '15%'
+    },
+    submitButton: {
+        marginLeft: 15,
+        marginRight: 5,
+        marginTop: 5,
+        marginBottom: 10
+    }
 });
 
 class EditTranslationForm extends React.Component {
@@ -37,24 +67,12 @@ class EditTranslationForm extends React.Component {
 
     render() {
         return (
-            <View>
-                <View style={{
-                    flexDirection: 'row',
-                    marginBottom: 5,
-                    marginTop: 5,
-                    borderTopWidth: 0.4,
-                    borderColor: '#d6d7da'
-                }}>
-                    <View style={{width: '15%', margin:5}}>
+            <View style={styles.view}>
+                <View style={styles.row}>
+                    <View style={styles.label}>
                         <Text>{this.props.labelWord1}</Text>
                     </View>
-                    <View style={{
-                        flex: 1,
-                        backgroundColor: '#eeeeee',
-                        borderRadius: 2,
-                        paddingLeft: 5,
-                        margin: 5
-                    }}>
+                    <View style={styles.input}>
                         <TextInput
                             underlineColorAndroid="transparent"
                             value={this.state.word1}
@@ -62,17 +80,11 @@ class EditTranslationForm extends React.Component {
                         />
                     </View>
                 </View>
-                <View style={{flexDirection: 'row', marginBottom: 5}}>
-                    <View style={{width: '15%', margin:5}}>
+                <View style={styles.row}>
+                    <View style={styles.label}>
                         <Text>{this.props.labelWord2}</Text>
                     </View>
-                    <View style={{
-                        flex: 1,
-                        backgroundColor: '#eeeeee',
-                        borderRadius: 2,
-                        paddingLeft: 5,
-                        margin: 5
-                    }}>
+                    <View style={styles.input}>
                         <TextInput
                             underlineColorAndroid="transparent"
                             value={this.state.word2}
@@ -80,8 +92,8 @@ class EditTranslationForm extends React.Component {
                         />
                     </View>
                 </View>
-                <View style={{marginLeft: '15%'}}>
-                    <View style={{marginLeft:15, marginRight: 5, marginTop: 5, marginBottom: 10}}>
+                <View style={styles.submitButtonWrapper}>
+                    <View style={styles.submitButton}>
                         <Button title="Submit" onPress={this.handleSubmit}/>
                     </View>
                 </View>

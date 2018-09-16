@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { modeChanged } from '../actions/ui';
 import { StyleSheet, View, Button, Text } from 'react-native';
+import Header from './ui/Header';
 
 const mapStateToProps = (state) => {
     return {
@@ -9,21 +10,27 @@ const mapStateToProps = (state) => {
     }
 };
 
-class TranslationModeChooser extends React.Component {
-    render() {
+const styles = StyleSheet.create({
+    row: {
+        flexDirection: 'row'
+    },
+    button: {
+        flex: 1,
+        margin: 5,
+        marginBottom: 0
+    }
+});
 
+class TranslationModeChooser extends React.Component {
+
+    render() {
         const newMode = this.props.mode === 'revision' ? 'edition' : 'revision';
 
         return (
             <View>
-                <View style={{
-                        alignItems: 'center',
-                        marginTop:30
-                    }}>
-                        <Text style={{fontWeight: 'bold'}}>Mode {this.props.mode}</Text>
-                </View>
-                <View style={{flexDirection: 'row'}}>
-                    <View style={{flex:1, margin:5, marginBottom: 0}}>
+                <Header style={{marginTop: 30}}>Mode {this.props.mode}</Header>
+                <View style={styles.row}>
+                    <View style={styles.button}>
                         <Button
                             onPress={() => this.props.dispatch(modeChanged(newMode))}
                             title={'Switch to mode ' + newMode}

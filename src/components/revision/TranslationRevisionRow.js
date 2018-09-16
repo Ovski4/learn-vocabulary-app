@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { translationRevealed } from '../../actions/ui';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const mapStateToProps = (state) => ({
     leftTranslationsEntirelyHidden: state.ui.leftTranslationsEntirelyHidden,
@@ -12,6 +12,40 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
     handleClickLeftWord: () => dispatch(translationRevealed(ownProps.createdAt, 'left')),
     handleClickRightWord: () => dispatch(translationRevealed(ownProps.createdAt, 'right'))
+});
+
+const getWordViewStyle = (isHidden) => {
+    const baseWordStyle = {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 12
+    };
+
+
+    if (isHidden) {
+        return Object.assign({
+            backgroundColor: '#eee',
+        }, baseWordStyle);
+    }
+
+    return baseWordStyle;
+}
+
+const getWordTextStyle = (isHidden) => {
+    if (isHidden) {
+        return { color: '#eee'};
+    }
+
+    return {color: '#000'};
+}
+
+const styles = StyleSheet.create({
+    view: {
+        flexDirection: 'row',
+        borderTopWidth: 0.4,
+        borderColor: '#bbb'
+    }
 });
 
 class TranslationRevisionRow extends React.Component {
@@ -76,40 +110,9 @@ class TranslationRevisionRow extends React.Component {
     }
 
     render () {
-        const getWordViewStyle = (isHidden) => {
-            const baseWordStyle = {
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: 12
-            };
-
-
-            if (isHidden) {
-                return Object.assign({
-                    backgroundColor: '#eee',
-                }, baseWordStyle);
-            }
-
-            return baseWordStyle;
-        }
-
-        const getWordTextStyle = (isHidden) => {
-            if (isHidden) {
-                return { color: '#eee'};
-            }
-
-            return {color: '#000'};
-        }
-
         return (
             <View>
-                <View style={{
-                    flexDirection: 'row',
-                    borderTopWidth: 0.4,
-                    borderColor: '#bbb'
-                }}
-                >
+                <View style={styles.view}>
                     <View
                         onStartShouldSetResponder={this.handleClickLeftWord}
                         style={getWordViewStyle(!this.state.wordLeftRevealed)}

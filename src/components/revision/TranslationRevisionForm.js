@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, StyleSheet } from 'react-native';
 import { translationsShuffled, translationsUnshuffled } from '../../actions/translations';
 import { shuffledPressed, unshuffledPressed} from '../../actions/ui';
 import { translationsEntirelyHidden, allTranslationsRevealed } from '../../actions/ui';
-import styles from '../styles/styles';
+import Header from '../../components/ui/Header';
 
 const getRandomNumbers = (arrayLength) => {
     const numbers = [];
@@ -21,6 +21,20 @@ const mapStateToProps = (state) => ({
     rightTranslationsEntirelyHidden: state.ui.rightTranslationsEntirelyHidden,
     allTranslationsRevealed: state.ui.allTranslationsRevealed,
     shuffled: state.ui.shuffled
+});
+
+const styles = StyleSheet.create({
+    button: {
+        flex: 1,
+        margin: 5
+    },
+    revisionWords: {
+        flexDirection: 'row',
+        flex: 0.8
+    },
+    row: {
+        flexDirection: 'row'
+    }
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -42,14 +56,8 @@ class TranslationRevisionForm extends React.Component {
     render() {
         return (
             <View>
-                <View style={{
-                    alignItems: 'center',
-                    margin: 5,
-                    marginBottom: 0
-                }}>
-                    <Text style={{fontWeight: 'bold'}}>Revise</Text>
-                </View>
-                <View style={{flexDirection: 'row'}}>
+                <Header>Revise</Header>
+                <View style={styles.row}>
                     <View style={styles.button}>
                         <Button
                             onPress={() => this.props.handleShuffle(this.props.translationsLength)}
@@ -64,7 +72,7 @@ class TranslationRevisionForm extends React.Component {
                         />
                     </View>
                 </View>
-                <View style={{flexDirection: 'row'}}>
+                <View style={styles.row}>
                     <View style={styles.button}>
                         <Button
                             disabled={this.props.leftTranslationsEntirelyHidden}
