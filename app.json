@@ -1,7 +1,26 @@
 {
-  "expo": {
-    "name": "Learn Vocabulary",
-    "sdkVersion": "27.0.0",
-    "orientation": "portrait"
-  }
+    "expo": {
+        "version": "1.0.0",
+        "name": "Learn Vocabulary",
+        "slug": "learn-vocabulary",
+        "sdkVersion": "27.0.0",
+        "orientation": "portrait",
+        "android": {
+            "package": "net.ovski.learnvocabulary",
+            "icon": "./assets/icon.png",
+            "adaptiveIcon": {
+                "backgroundColor": "#03A9F4",
+                "foregroundImage": "./assets/icon.png"
+            },
+            "splash": {
+                "backgroundColor": "#FFFFFF",
+                "ldpi": "./assets/splashscreen.png",
+                "mdpi": "./assets/splashscreen.png",
+                "hdpi": "./assets/splashscreen.png",
+                "xhdpi": "./assets/splashscreen.png",
+                "xxhdpi": "./assets/splashscreen.png",
+                "xxxhdpi": "./assets/splashscreen.png"
+            }
+        }
+    }
 }

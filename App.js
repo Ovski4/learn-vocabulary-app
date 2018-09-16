@@ -16,21 +16,26 @@ const store = createStore(
 
 store.subscribe(async () => {
     const translations = translationsService.unshuffle(store.getState().translations);
-    if (translations.length > 0) {
-        await storageService.set('translations', translations);
-    }
+    await storageService.set('translations', translations);
 });
 
 store.dispatch(fetchTranslations());
 
+const styles = StyleSheet.create({
+    root: {
+        backgroundColor: '#FFFFFF',
+        flex: 1
+    }
+})
+
 export default class App extends React.Component {
-  render() {
-    return (
-      <View>
-        <Provider store={store}>
-            <LearnVocabulary />
-        </Provider>
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View style={styles.root}>
+                <Provider store={store}>
+                    <LearnVocabulary />
+                </Provider>
+            </View>
+        );
+    }
 }

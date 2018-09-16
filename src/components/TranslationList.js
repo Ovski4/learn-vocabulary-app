@@ -24,31 +24,29 @@ class TranslationList extends React.PureComponent {
 
         const listHeight = Dimensions.get('window').height *2 / 3 - 5;
 
-        return (
+        let content = this.props.translations.length === 0 ?
+            <View style={{flex: 1, alignItems: 'center'}}>
+                <Text style={{fontStyle: 'italic', lineHeight: 50}}>
+                    Add a translation to start learning!
+                </Text>
+            </View> :
+            <FlatList
+                data={this.props.translations}
+                extraData={this.props.mode}
+                renderItem={({item}) => getListItem(item)}
+                keyExtractor={(item, index) => index.toString()}
+            />
+        ;
+
+        return(
             <View>
                 <Header>Translations</Header>
-                {/* <View style={{
-                        backgroundColor: '#eeeeee',
-                        borderRadius: 2,
-                        paddingLeft: 5,
-                        marginLeft: 5,
-                        marginRight: 5,
-                        marginBottom: 5
-                    }}>
-                        <TextInput
-                            underlineColorAndroid="transparent"></TextInput>
-                </View> */}
                 <View style={{
                     height: listHeight,
                     borderTopWidth: 0.5,
                     borderColor: '#bbb'
                 }}>
-                    <FlatList
-                        data={this.props.translations}
-                        extraData={this.props.mode}
-                        renderItem={({item}) => getListItem(item)}
-                        keyExtractor={(item, index) => index.toString()}
-                    />
+                    {content}
                 </View>
             </View>
         );

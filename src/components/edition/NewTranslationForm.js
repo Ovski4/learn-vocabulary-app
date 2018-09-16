@@ -10,7 +10,9 @@ const mapDispatchToProps = (dispatch) => ({
 
 const styles = StyleSheet.create({
     row: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        margin: 5,
+        marginBottom: 0
     },
     word1: {
         flexDirection: 'row',
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
     button: {
         flex: 1,
         justifyContent: 'center',
-        margin: 5
+        marginLeft: 5
     }
 });
 
