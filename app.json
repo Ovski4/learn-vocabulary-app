@@ -21,6 +21,9 @@
                 "xxhdpi": "./assets/splashscreen.png",
                 "xxxhdpi": "./assets/splashscreen.png"
             }
-        }
+        },
+        "assetBundlePatterns": [
+            "./assets/*"
+        ]
     }
 }
