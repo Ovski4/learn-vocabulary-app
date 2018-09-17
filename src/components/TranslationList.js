@@ -1,7 +1,7 @@
 import React from 'react';
 import TranslationEditionRow from './edition/TranslationEditionRow';
 import TranslationRevisionRow from './revision/TranslationRevisionRow';
-import { Text, TextInput, View, FlatList, Dimensions } from 'react-native';
+import { Text, View, FlatList, ActivityIndicator } from 'react-native';
 import Header from './ui/Header';
 
 class TranslationList extends React.PureComponent {
@@ -22,19 +22,32 @@ class TranslationList extends React.PureComponent {
             )
         };
 
-        let content = this.props.translations.length === 0 ?
-            <View style={{flex: 1, alignItems: 'center'}}>
-                <Text style={{fontStyle: 'italic', lineHeight: 50}}>
-                    Add a translation to start learning!
-                </Text>
-            </View> :
-            <FlatList
-                data={this.props.translations}
-                extraData={this.props.mode}
-                renderItem={({item}) => getListItem(item)}
-                keyExtractor={(item, index) => index.toString()}
-            />
-        ;
+        let content;
+
+        if (this.props.translations === null) {
+            content =
+                <View style={{flex: 1, justifyContent: 'center'}}>
+                    <ActivityIndicator size={50} color="#03A9F4"/>
+                </View>
+            ;
+        } else if (this.props.translations.length === 0) {
+            content =
+                <View style={{flex: 1, alignItems: 'center'}}>
+                    <Text style={{fontStyle: 'italic', lineHeight: 50}}>
+                        Add a translation to start learning!
+                    </Text>
+                </View>
+            ;
+        } else {
+            content =
+                <FlatList
+                    data={this.props.translations}
+                    extraData={this.props.mode}
+                    renderItem={({item}) => getListItem(item)}
+                    keyExtractor={(item, index) => index.toString()}
+                />
+            ;
+        }
 
         return(
             <View style={{flex: 1}}>

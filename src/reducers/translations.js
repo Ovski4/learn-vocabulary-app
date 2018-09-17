@@ -1,6 +1,11 @@
 import translationsService from '../services/translations';
 
-const translationsReducer =  (translations = [], action) => {
+const translationsReducer =  (translations = null, action) => {
+
+    // Prevent any action before initialization
+    if (translations === null && action.type !== 'TRANSLATIONS_INITIALIZED') {
+        return null;
+    }
 
     switch (action.type) {
         case 'TRANSLATIONS_INITIALIZED':

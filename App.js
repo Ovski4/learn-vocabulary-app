@@ -15,8 +15,10 @@ const store = createStore(
 );
 
 store.subscribe(async () => {
-    const translations = translationsService.unshuffle(store.getState().translations);
-    await storageService.set('translations', translations);
+    const translations = store.getState().translations;
+    if (translations !== null) {
+        await storageService.set('translations', translationsService.unshuffle(translations));
+    }
 });
 
 store.dispatch(fetchTranslations());

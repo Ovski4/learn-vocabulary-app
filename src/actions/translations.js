@@ -36,6 +36,8 @@ export const fetchTranslations = () => {
             .then((translations) => {
                 if (translations !== null) {
                     dispatch(translationsInitialized(translations));
+                } else {
+                    dispatch(translationsInitialized([]));
                 }
             });
     };

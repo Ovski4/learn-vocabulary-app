@@ -16,7 +16,7 @@ const getRandomNumbers = (arrayLength) => {
 };
 
 const mapStateToProps = (state) => ({
-    translationsLength: state.translations.length,
+    translationsLength: state.translations ? state.translations.length : 0,
     leftTranslationsEntirelyHidden: state.ui.leftTranslationsEntirelyHidden,
     rightTranslationsEntirelyHidden: state.ui.rightTranslationsEntirelyHidden,
     allTranslationsRevealed: state.ui.allTranslationsRevealed,

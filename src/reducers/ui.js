@@ -1,5 +1,5 @@
 const initialState = {
-    mode: 'edition',
+    mode: 'revision',
     shuffled: false,
     leftTranslationsEntirelyHidden: false,
     rightTranslationsEntirelyHidden: false,
