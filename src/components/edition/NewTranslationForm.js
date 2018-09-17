@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { translationAdded } from '../../actions/translations';
 import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
 import Header from '../../components/ui/Header';
+import { waitForIt } from '../../services/helpers';
 
 const mapDispatchToProps = (dispatch) => ({
     handleTranslationAdded: (translation) => dispatch(translationAdded(translation)),
@@ -59,6 +60,8 @@ class NewTranslationForm extends React.Component {
     }
 
     handleSubmit = () => {
+        this.refs.input1.clear();
+        this.refs.input2.clear();
         this.props.handleTranslationAdded({
             word1: this.state.word1,
             word2: this.state.word2,
@@ -72,11 +75,13 @@ class NewTranslationForm extends React.Component {
     }
 
     handleChange = (word, text) => {
-        var newWord = {};
-        newWord[word] = text;
-        this.setState((previousState) => {
-            return Object.assign({}, previousState, newWord);
-        });
+        waitForIt(() => {
+            var newWord = {};
+            newWord[word] = text;
+            this.setState((previousState) => {
+                return Object.assign({}, previousState, newWord);
+            });
+        }, 300);
     }
 
     render() {
@@ -92,8 +97,8 @@ class NewTranslationForm extends React.Component {
                             </View>
                             <View style={styles.input}>
                                 <TextInput
+                                    ref="input1"
                                     underlineColorAndroid="transparent"
-                                    value={this.state.word1}
                                     onChangeText={(text) => this.handleChange('word1', text)}
                                 />
                             </View>
@@ -104,8 +109,8 @@ class NewTranslationForm extends React.Component {
                             </View>
                             <View style={styles.input}>
                                 <TextInput
+                                    ref="input2"
                                     underlineColorAndroid="transparent"
-                                    value={this.state.word2}
                                     onChangeText={(text) => this.handleChange('word2', text)}
                                 />
                             </View>

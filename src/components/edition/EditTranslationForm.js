@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { translationUpdated } from '../../actions/translations';
 import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
+import { waitForIt } from '../../services/helpers';
 
 const mapDispatchToProps = (dispatch) => ({
     handleTranslationUpdated: (translation) => dispatch(translationUpdated(translation))
@@ -58,11 +59,13 @@ class EditTranslationForm extends React.Component {
     }
 
     handleChange = (word, text) => {
-        var newWord = {};
-        newWord[word] = text;
-        this.setState((previousState) => {
-            return Object.assign({}, previousState, newWord);
-        });
+        waitForIt(() => {
+            var newWord = {};
+            newWord[word] = text;
+            this.setState((previousState) => {
+                return Object.assign({}, previousState, newWord);
+            });
+        }, 300);
     }
 
     render() {
@@ -75,7 +78,7 @@ class EditTranslationForm extends React.Component {
                     <View style={styles.input}>
                         <TextInput
                             underlineColorAndroid="transparent"
-                            value={this.state.word1}
+                            defaultValue={this.state.word1}
                             onChangeText={(text) => this.handleChange('word1', text)}
                         />
                     </View>
@@ -87,7 +90,7 @@ class EditTranslationForm extends React.Component {
                     <View style={styles.input}>
                         <TextInput
                             underlineColorAndroid="transparent"
-                            value={this.state.word2}
+                            defaultValue={this.state.word2}
                             onChangeText={(text) => this.handleChange('word2', text)}
                         />
                     </View>
