@@ -22,8 +22,6 @@ class TranslationList extends React.PureComponent {
             )
         };
 
-        const listHeight = Dimensions.get('window').height *2 / 3 - 5;
-
         let content = this.props.translations.length === 0 ?
             <View style={{flex: 1, alignItems: 'center'}}>
                 <Text style={{fontStyle: 'italic', lineHeight: 50}}>
@@ -39,10 +37,10 @@ class TranslationList extends React.PureComponent {
         ;
 
         return(
-            <View>
+            <View style={{flex: 1}}>
                 <Header>Translations</Header>
                 <View style={{
-                    height: listHeight,
+                    flex: 1,
                     borderTopWidth: 0.5,
                     borderColor: '#bbb'
                 }}>

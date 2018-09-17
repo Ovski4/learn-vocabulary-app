@@ -26,7 +26,7 @@ class LearnVocabulary extends React.Component {
         }
 
         return (
-            <View>
+            <View style={{flex:1}}>
                 <TranslationModeChooser/>
                 {React.createElement(FormComponents[this.props.mode])}
                 <TranslationList
