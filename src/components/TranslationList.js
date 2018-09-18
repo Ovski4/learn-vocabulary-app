@@ -49,7 +49,7 @@ class TranslationList extends React.Component {
                 extraData={this.props.mode}
                 index={({item}) => item.createdAt}
                 renderItem={({item}) => getListItem(item)}
-                keyExtractor={(item, index) => item.createdAt.toString()}
+                keyExtractor={(item, index) => item.id}
                 ListEmptyComponent={listEmptyComponent}
             />
         ;

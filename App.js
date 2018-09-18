@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux'
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import LearnVocabulary from './src/components/LearnVocabulary';
-import { persistStore, persistReducer } from 'redux-persist';
+import { createMigrate, persistStore, persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react'
 import storage from 'redux-persist/lib/storage';
 import reducer from './src/reducers/index';
@@ -13,7 +13,7 @@ import migrations from './src/migrations';
 const persistedReducer = persistReducer(
     {
         key: 'root',
-        version: 0,
+        version: 1,
         whitelist: ['translations'],
         migrate: createMigrate(migrations),
         storage: storage,

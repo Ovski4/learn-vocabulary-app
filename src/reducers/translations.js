@@ -1,4 +1,5 @@
 import translationsService from '../services/translations';
+import uuidv4 from 'uuid/v4';
 
 const translationsReducer =  (translations = [], action) => {
 
@@ -33,6 +34,9 @@ const onTranslationsUnshuffled = (translations) => {
 }
 
 const onTranslationAdded = (translations, action) => {
+
+    action.translation.id = uuidv4();
+
     return [
         ...translations,
         action.translation
