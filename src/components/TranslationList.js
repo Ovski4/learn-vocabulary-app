@@ -1,10 +1,23 @@
 import React from 'react';
 import TranslationEditionRow from './edition/TranslationEditionRow';
 import TranslationRevisionRow from './revision/TranslationRevisionRow';
-import { Text, View, FlatList, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, FlatList, ActivityIndicator } from 'react-native';
 import Header from './ui/Header';
 
-class TranslationList extends React.PureComponent {
+const styles = StyleSheet.create({
+    emptyListView: {
+        flexDirection: 'row',
+        borderTopWidth: 0.4,
+        borderColor: '#bbb',
+        justifyContent: 'center'
+    },
+    emptyListText: {
+        fontStyle: 'italic',
+        lineHeight: 50
+    }
+});
+
+class TranslationList extends React.Component {
 
     render() {
         const RowComponents = {
@@ -19,7 +32,7 @@ class TranslationList extends React.PureComponent {
                     key: translation.createdAt,
                     translation: translation
                 }
-            )
+            );
         };
 
         let content;
@@ -30,21 +43,22 @@ class TranslationList extends React.PureComponent {
                     <ActivityIndicator size={50} color="#03A9F4"/>
                 </View>
             ;
-        } else if (this.props.translations.length === 0) {
-            content =
-                <View style={{flex: 1, alignItems: 'center'}}>
-                    <Text style={{fontStyle: 'italic', lineHeight: 50}}>
+        } else {
+            const listEmptyComponent =
+                <View style={styles.emptyListView}>
+                    <Text style={styles.emptyListText}>
                         Add a translation to start learning!
                     </Text>
                 </View>
             ;
-        } else {
             content =
                 <FlatList
                     data={this.props.translations}
                     extraData={this.props.mode}
+                    index={({item}) => item.createdAt}
                     renderItem={({item}) => getListItem(item)}
-                    keyExtractor={(item, index) => index.toString()}
+                    keyExtractor={(item, index) => item.createdAt.toString()}
+                    ListEmptyComponent={listEmptyComponent}
                 />
             ;
         }
@@ -54,7 +68,6 @@ class TranslationList extends React.PureComponent {
                 <Header>Translations</Header>
                 <View style={{
                     flex: 1,
-                    borderTopWidth: 0.5,
                     borderColor: '#bbb'
                 }}>
                     {content}
