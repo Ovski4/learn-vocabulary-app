@@ -1,5 +1,3 @@
-import storageService from '../services/storage';
-
 export const translationsInitialized = translations => ({
     type: 'TRANSLATIONS_INITIALIZED',
     translations
@@ -28,17 +26,3 @@ export const translationsShuffled = randomNumbers => ({
 export const translationsUnshuffled = () => ({
     type: 'TRANSLATIONS_UNSHUFFLED'
 });
-
-export const fetchTranslations = () => {
-    return (dispatch) => {
-        storageService
-            .get('translations')
-            .then((translations) => {
-                if (translations !== null) {
-                    dispatch(translationsInitialized(translations));
-                } else {
-                    dispatch(translationsInitialized([]));
-                }
-            });
-    };
-};

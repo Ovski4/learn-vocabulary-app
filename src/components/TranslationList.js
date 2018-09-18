@@ -35,33 +35,24 @@ class TranslationList extends React.Component {
             );
         };
 
-        let content;
+        const listEmptyComponent =
+            <View style={styles.emptyListView}>
+                <Text style={styles.emptyListText}>
+                    Add a translation to start learning!
+                </Text>
+            </View>
+        ;
 
-        if (this.props.translations === null) {
-            content =
-                <View style={{flex: 1, justifyContent: 'center'}}>
-                    <ActivityIndicator size={50} color="#03A9F4"/>
-                </View>
-            ;
-        } else {
-            const listEmptyComponent =
-                <View style={styles.emptyListView}>
-                    <Text style={styles.emptyListText}>
-                        Add a translation to start learning!
-                    </Text>
-                </View>
-            ;
-            content =
-                <FlatList
-                    data={this.props.translations}
-                    extraData={this.props.mode}
-                    index={({item}) => item.createdAt}
-                    renderItem={({item}) => getListItem(item)}
-                    keyExtractor={(item, index) => item.createdAt.toString()}
-                    ListEmptyComponent={listEmptyComponent}
-                />
-            ;
-        }
+        const content =
+            <FlatList
+                data={this.props.translations}
+                extraData={this.props.mode}
+                index={({item}) => item.createdAt}
+                renderItem={({item}) => getListItem(item)}
+                keyExtractor={(item, index) => item.createdAt.toString()}
+                ListEmptyComponent={listEmptyComponent}
+            />
+        ;
 
         return(
             <View style={{flex: 1}}>
