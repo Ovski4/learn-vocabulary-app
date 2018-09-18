@@ -8,14 +8,18 @@ import storage from 'redux-persist/lib/storage';
 import reducer from './src/reducers/index';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import migrations from './src/migrations';
 
-const persistConfig = {
-    key: 'root',
-    whitelist: ['translations'],
-    storage
-};
-
-const persistedReducer = persistReducer(persistConfig, reducer);
+const persistedReducer = persistReducer(
+    {
+        key: 'root',
+        version: 0,
+        whitelist: ['translations'],
+        migrate: createMigrate(migrations),
+        storage: storage,
+    },
+    reducer
+);
 
 const store = createStore(
     persistedReducer,
