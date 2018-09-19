@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { modeChanged } from '../actions/ui';
+import { modeChanged } from '../actions/mode';
 import { StyleSheet, View, Button, Text } from 'react-native';
 import Header from './ui/Header';
 
 const mapStateToProps = (state) => {
     return {
-        mode: state.ui.mode
+        mode: state.mode
     }
 };
 

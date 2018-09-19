@@ -1,7 +1,7 @@
 import React from 'react';
 import TranslationEditionRow from './edition/TranslationEditionRow';
 import TranslationRevisionRow from './revision/TranslationRevisionRow';
-import { StyleSheet, Text, View, FlatList, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Header from './ui/Header';
 
 const styles = StyleSheet.create({
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     }
 });
 
-class TranslationList extends React.Component {
+class TranslationList extends React.PureComponent {
 
     render() {
         const RowComponents = {
@@ -29,8 +29,9 @@ class TranslationList extends React.Component {
             return React.createElement(
                 RowComponents[this.props.mode],
                 {
-                    key: translation.createdAt,
-                    translation: translation
+                    key: translation.id,
+                    id: translation.id,
+                    hidden: translation.hidden
                 }
             );
         };
@@ -47,7 +48,7 @@ class TranslationList extends React.Component {
             <FlatList
                 data={this.props.translations}
                 extraData={this.props.mode}
-                index={({item}) => item.createdAt}
+                index={({item}) => item.index}
                 renderItem={({item}) => getListItem(item)}
                 keyExtractor={(item, index) => item.id}
                 ListEmptyComponent={listEmptyComponent}

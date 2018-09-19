@@ -1,44 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { translationRevealed } from '../../actions/ui';
+import { translationRevealed } from '../../actions/translations';
 import { StyleSheet, Text, View } from 'react-native';
 
-const mapStateToProps = (state) => ({
-    leftTranslationsEntirelyHidden: state.ui.leftTranslationsEntirelyHidden,
-    rightTranslationsEntirelyHidden: state.ui.rightTranslationsEntirelyHidden,
-    allTranslationsRevealed: state.ui.allTranslationsRevealed
-});
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    handleClickLeftWord: () => dispatch(translationRevealed(ownProps.createdAt, 'left')),
-    handleClickRightWord: () => dispatch(translationRevealed(ownProps.createdAt, 'right'))
-});
-
-const getWordViewStyle = (isHidden) => {
-    const baseWordStyle = {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 12
+const mapStateToProps = (state, ownProps) => {
+    return {
+        translation: state.translations.find((translation) => {
+            return ownProps.id === translation.id;
+        })
     };
+};
 
-
-    if (isHidden) {
-        return Object.assign({
-            backgroundColor: '#eee',
-        }, baseWordStyle);
-    }
-
-    return baseWordStyle;
-}
-
-const getWordTextStyle = (isHidden) => {
-    if (isHidden) {
-        return { color: '#eee'};
-    }
-
-    return {color: '#000'};
-}
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        handleClickLeftWord: (hiddenSide) => {
+            if (hiddenSide === 'left') {
+                dispatch(translationRevealed(ownProps.id));
+            }
+        },
+        handleClickRightWord: (hiddenSide) => {
+            if (hiddenSide === 'right') {
+                dispatch(translationRevealed(ownProps.id));
+            }
+        },
+    };
+};
 
 const styles = StyleSheet.create({
     view: {
@@ -48,65 +34,39 @@ const styles = StyleSheet.create({
     }
 });
 
-class TranslationRevisionRow extends React.Component {
+class TranslationRevisionRow extends React.PureComponent {
 
-    constructor(props) {
-        super(props);
-        if (this.props.leftTranslationsEntirelyHidden) {
-            this.state = this.revealRightWord();
-        } else if (this.props.rightTranslationsEntirelyHidden) {
-            this.state = this.revealLeftWord();
-        } else {
-            this.state = this.revealBothWords();
+    getWordViewStyle = (side) => {
+        const baseWordStyle = {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: 12
+        };
+
+        if (this.props.translation.hidden === side) {
+            return Object.assign({
+                backgroundColor: '#eee',
+            }, baseWordStyle);
         }
+
+        return baseWordStyle;
     }
 
-    revealBothWords = () => ({
-        wordLeftRevealed: true,
-        wordRightRevealed: true
-    });
-
-    revealLeftWord = () => ({
-        wordLeftRevealed: true,
-        wordRightRevealed: false
-    });
-
-    revealRightWord = () => ({
-        wordLeftRevealed: false,
-        wordRightRevealed: true
-    });
-
-
-    handleClickLeftWord = () => {
-        if (this.state.wordLeftRevealed) {
-            return;
+    getWordTextStyle = (side) => {
+        if (this.props.translation.hidden === side) {
+            return { color: '#eee'};
         }
 
-        this.props.handleClickLeftWord();
-        this.setState(this.revealBothWords());
+        return {color: '#000'};
+    }
+
+    handleClickLeftWord = () => {
+        this.props.handleClickLeftWord(this.props.translation.hidden);
     }
 
     handleClickRightWord = () => {
-        if (this.state.wordRightRevealed) {
-            return;
-        }
-
-        this.props.handleClickRightWord();
-        this.setState(this.revealBothWords());
-    }
-
-    /**
-     * In case props change by clicking on the form buttons
-     * The second condition is used to avoid never ending loops
-     */
-    componentDidUpdate() {
-        if (this.props.leftTranslationsEntirelyHidden && this.state.wordLeftRevealed) {
-            this.setState(this.revealRightWord());
-        } else if (this.props.rightTranslationsEntirelyHidden && this.state.wordRightRevealed) {
-            this.setState(this.revealLeftWord());
-        } else if (this.props.allTranslationsRevealed && (!this.state.wordLeftRevealed || !this.state.wordRightRevealed)) {
-            this.setState(this.revealBothWords());
-        }
+        this.props.handleClickRightWord(this.props.translation.hidden);
     }
 
     render () {
@@ -115,17 +75,17 @@ class TranslationRevisionRow extends React.Component {
                 <View style={styles.view}>
                     <View
                         onStartShouldSetResponder={this.handleClickLeftWord}
-                        style={getWordViewStyle(!this.state.wordLeftRevealed)}
+                        style={this.getWordViewStyle('left')}
                     >
-                        <Text style={getWordTextStyle(!this.state.wordLeftRevealed)}>
+                        <Text style={this.getWordTextStyle('left')}>
                             {this.props.translation.word1}
                         </Text>
                     </View>
                     <View
                         onStartShouldSetResponder={this.handleClickRightWord}
-                        style={getWordViewStyle(!this.state.wordRightRevealed)}
+                        style={this.getWordViewStyle('right')}
                     >
-                        <Text style={getWordTextStyle(!this.state.wordRightRevealed)}>
+                        <Text style={this.getWordTextStyle('right')}>
                             {this.props.translation.word2}
                         </Text>
                     </View>

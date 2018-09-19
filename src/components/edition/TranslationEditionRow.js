@@ -4,8 +4,16 @@ import EditTranslationForm from './EditTranslationForm';
 import { translationDeleted } from '../../actions/translations';
 import { StyleSheet, Button, Text, View } from 'react-native';
 
+const mapStateToProps = (state, ownProps) => {
+    return {
+        translation: state.translations.find((translation) => {
+            return ownProps.id === translation.id;
+        })
+    };
+};
+
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    handleDelete: () => dispatch(translationDeleted(ownProps.translation.createdAt)),
+    handleDelete: () => dispatch(translationDeleted(ownProps.id)),
 });
 
 const styles = StyleSheet.create({
@@ -83,6 +91,6 @@ class TranslationEditionRow extends React.Component {
 }
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(TranslationEditionRow);

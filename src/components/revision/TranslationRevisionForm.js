@@ -1,10 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button, View, Text, StyleSheet } from 'react-native';
-import { translationsShuffled, translationsUnshuffled } from '../../actions/translations';
-import { shuffledPressed, unshuffledPressed} from '../../actions/ui';
-import { translationsEntirelyHidden, allTranslationsRevealed } from '../../actions/ui';
+import { Button, View, StyleSheet } from 'react-native';
+import {
+    translationsShuffled,
+    translationsUnshuffled,
+    allTranslationsRevealed,
+    translationsEntirelyHidden
+} from '../../actions/translations';
 import Header from '../../components/ui/Header';
+import translationsService from '../../services/translations';
 
 const getRandomNumbers = (arrayLength) => {
     const numbers = [];
@@ -16,11 +20,7 @@ const getRandomNumbers = (arrayLength) => {
 };
 
 const mapStateToProps = (state) => ({
-    translationsLength: state.translations ? state.translations.length : 0,
-    leftTranslationsEntirelyHidden: state.ui.leftTranslationsEntirelyHidden,
-    rightTranslationsEntirelyHidden: state.ui.rightTranslationsEntirelyHidden,
-    allTranslationsRevealed: state.ui.allTranslationsRevealed,
-    shuffled: state.ui.shuffled
+    translations: state.translations
 });
 
 const styles = StyleSheet.create({
@@ -38,14 +38,10 @@ const styles = StyleSheet.create({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    handleShuffle: (translationsLength) => {
-        dispatch(translationsShuffled(getRandomNumbers(translationsLength)));
-        dispatch(shuffledPressed());
-    },
-    handleUnshuffle: () => {
-        dispatch(translationsUnshuffled());
-        dispatch(unshuffledPressed());
-    },
+    handleShuffle: (translationsLength) => dispatch(translationsShuffled(
+        getRandomNumbers(translationsLength)
+    )),
+    handleUnshuffle: () => dispatch(translationsUnshuffled()),
     handleDisplayEverything: () => dispatch(allTranslationsRevealed()),
     handleHideLeft: () => dispatch(translationsEntirelyHidden('left')),
     handleHideRight: () => dispatch(translationsEntirelyHidden('right'))
@@ -60,13 +56,13 @@ class TranslationRevisionForm extends React.Component {
                 <View style={styles.row}>
                     <View style={styles.button}>
                         <Button
-                            onPress={() => this.props.handleShuffle(this.props.translationsLength)}
+                            onPress={() => this.props.handleShuffle(this.props.translations.length)}
                             title="Shuffle"
                         />
                     </View>
                     <View style={styles.button}>
                         <Button
-                            disabled={!this.props.shuffled}
+                            disabled={translationsService.translationsAreOrdered(this.props.translations)}
                             onPress={() => this.props.handleUnshuffle()}
                             title="Unshuffle"
                         />
@@ -75,21 +71,21 @@ class TranslationRevisionForm extends React.Component {
                 <View style={styles.row}>
                     <View style={styles.button}>
                         <Button
-                            disabled={this.props.leftTranslationsEntirelyHidden}
+                            disabled={translationsService.translationsAreHidden(this.props.translations, 'left')}
                             onPress={() => this.props.handleHideLeft()}
                             title="Hide left"
                         />
                     </View>
                     <View style={styles.button}>
                         <Button
-                            disabled={this.props.rightTranslationsEntirelyHidden}
+                            disabled={translationsService.translationsAreHidden(this.props.translations, 'right')}
                             onPress={() => this.props.handleHideRight()}
                             title="Hide right"
                         />
                     </View>
                     <View style={styles.button}>
                         <Button
-                            disabled={this.props.allTranslationsRevealed}
+                            disabled={translationsService.allTranslationsAreVisible(this.props.translations)}
                             onPress={() => this.props.handleDisplayEverything()}
                             title="Display all"
                         />

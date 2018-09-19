@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { translationAdded } from '../../actions/translations';
 import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
 import Header from '../../components/ui/Header';
+import uuidv4 from 'uuid/v4';
 import { waitForIt } from '../../services/helpers';
 
 const mapDispatchToProps = (dispatch) => ({
@@ -44,8 +45,7 @@ class NewTranslationForm extends React.Component {
         super(props);
         this.state = {
             word1: props.translation.word1,
-            word2: props.translation.word2,
-            createdAt: props.translation.createdAt
+            word2: props.translation.word2
         };
     }
 
@@ -65,12 +65,12 @@ class NewTranslationForm extends React.Component {
         this.props.handleTranslationAdded({
             word1: this.state.word1,
             word2: this.state.word2,
-            createdAt: Date.now()
+            createdAt: Date.now(),
+            id: uuidv4()
         });
         this.setState({
             word1: '',
-            word2: '',
-            createdAt: null
+            word2: ''
         });
     }
 
@@ -130,8 +130,7 @@ NewTranslationForm.defaultProps = {
     labelWord2: 'Word 2:',
     translation: {
         word1: '',
-        word2: '',
-        createdAt: null
+        word2: ''
     }
 };
 

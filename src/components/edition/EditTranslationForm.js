@@ -44,8 +44,7 @@ class EditTranslationForm extends React.Component {
         super(props);
         this.state = {
             word1: props.translation.word1,
-            word2: props.translation.word2,
-            createdAt: props.translation.createdAt
+            word2: props.translation.word2
         };
     }
 
@@ -53,7 +52,7 @@ class EditTranslationForm extends React.Component {
         this.props.handleTranslationUpdated({
             word1: this.state.word1,
             word2: this.state.word2,
-            createdAt: this.state.createdAt
+            id: this.props.translation.id
         });
         this.props.onUpdate();
     }
@@ -110,8 +109,7 @@ EditTranslationForm.defaultProps = {
     labelWord2: 'Word 2:',
     translation: {
         word1: '',
-        word2: '',
-        createdAt: null
+        word2: ''
     }
 };
 

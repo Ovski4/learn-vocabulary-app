@@ -9,12 +9,14 @@ import reducer from './src/reducers/index';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import migrations from './src/migrations';
+import transformer from './src/transformer';
 
 const persistedReducer = persistReducer(
     {
         key: 'root',
         version: 1,
         whitelist: ['translations'],
+        transforms: [transformer],
         migrate: createMigrate(migrations),
         storage: storage,
     },

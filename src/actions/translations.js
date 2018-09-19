@@ -1,11 +1,6 @@
-export const translationsInitialized = translations => ({
-    type: 'TRANSLATIONS_INITIALIZED',
-    translations
-});
-
-export const translationDeleted = createdAt => ({
+export const translationDeleted = id => ({
     type: 'TRANSLATION_DELETED',
-    createdAt
+    id
 });
 
 export const translationAdded = translation => ({
@@ -16,6 +11,20 @@ export const translationAdded = translation => ({
 export const translationUpdated = translation => ({
     type: 'TRANSLATION_UPDATED',
     translation
+});
+
+export const translationsEntirelyHidden = side => ({
+    type: 'TRANSLATIONS_ENTIRELY_HIDDEN',
+    side
+});
+
+export const allTranslationsRevealed = () => ({
+    type: 'ALL_TRANSLATIONS_REVEALED'
+});
+
+export const translationRevealed = (id) => ({
+    type: 'TRANSLATION_REVEALED',
+    id
 });
 
 export const translationsShuffled = randomNumbers => ({

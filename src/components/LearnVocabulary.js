@@ -8,7 +8,7 @@ import { View } from 'react-native';
 
 const mapStateToProps = (state) => {
     return {
-        mode: state.ui.mode,
+        mode: state.mode,
         translations: state.translations
     }
 };

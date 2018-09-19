@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import ui from './ui';
+import mode from './mode';
 import translations from './translations';
 
 export default combineReducers({
-  ui,
+  mode,
   translations
 });

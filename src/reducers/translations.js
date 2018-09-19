@@ -1,17 +1,19 @@
 import translationsService from '../services/translations';
-import uuidv4 from 'uuid/v4';
 
 const translationsReducer =  (translations = [], action) => {
-
     switch (action.type) {
-        case 'TRANSLATIONS_INITIALIZED':
-            return onTranslationsInitialized(translations, action);
         case 'TRANSLATION_ADDED':
             return onTranslationAdded(translations, action);
         case 'TRANSLATION_DELETED':
             return onTranslationDeleted(translations, action);
         case 'TRANSLATION_UPDATED':
             return onTranslationUpdated(translations, action);
+        case 'TRANSLATIONS_ENTIRELY_HIDDEN':
+            return onTranslationsEntirelyHidden(translations, action);
+        case 'ALL_TRANSLATIONS_REVEALED':
+            return onAllTranslationsRevealed(translations);
+        case 'TRANSLATION_REVEALED':
+            return onTranslationRevealed(translations, action);
         case 'TRANSLATIONS_SHUFFLED':
             return onTranslationsShuffled(translations, action);
         case 'TRANSLATIONS_UNSHUFFLED':
@@ -21,22 +23,7 @@ const translationsReducer =  (translations = [], action) => {
     }
 }
 
-const onTranslationsInitialized = (translations, action) => {
-    return action.translations;
-}
-
-const onTranslationsShuffled = (translations, action) => {
-    return translationsService.shuffle(translations, action.randomNumbers);
-}
-
-const onTranslationsUnshuffled = (translations) => {
-    return translationsService.unshuffle(translations);
-}
-
 const onTranslationAdded = (translations, action) => {
-
-    action.translation.id = uuidv4();
-
     return [
         ...translations,
         action.translation
@@ -45,13 +32,13 @@ const onTranslationAdded = (translations, action) => {
 
 const onTranslationDeleted = (translations, action) => {
     return translations.filter(
-        (element) => element.createdAt !== action.createdAt
+        (element) => element.id !== action.id
     );
 }
 
 const onTranslationUpdated = (translations, action) => {
     return translations.map((translation) => {
-        if (translation.createdAt !== action.translation.createdAt) {
+        if (translation.id !== action.translation.id) {
             return translation;
         } else {
             return {
@@ -59,6 +46,45 @@ const onTranslationUpdated = (translations, action) => {
                 ...action.translation
             };
         }
+    });
+}
+
+const onTranslationsShuffled = (translations, action) => {
+    return translationsService.shuffle(
+        [...translations],
+        action.randomNumbers
+    );
+}
+
+const onTranslationsUnshuffled = (translations) => {
+    return translationsService.unshuffle([...translations]);
+}
+
+const onTranslationRevealed = (translations, action) => {
+    return translations.map((translation) => {
+        if (translation.id !== action.id) {
+            return translation;
+        } else {
+            translation.hidden = false;
+
+            return translation;
+        }
+    });
+}
+
+const onAllTranslationsRevealed = (translations) => {
+    return translations.map((translation) => {
+        translation.hidden = false;
+
+        return translation;
+    });
+}
+
+const onTranslationsEntirelyHidden = (translations, action) => {
+    return translations.map((translation) => {
+        translation.hidden = action.side;
+
+        return translation;
     });
 }
 
