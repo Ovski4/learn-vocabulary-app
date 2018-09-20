@@ -8,17 +8,11 @@ import { View } from 'react-native';
 
 const mapStateToProps = (state) => {
     return {
-        mode: state.mode,
-        translations: state.translations
+        mode: state.mode
     }
 };
 
-class LearnVocabulary extends React.Component {
-
-    capitalize = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
+class LearnVocabulary extends React.PureComponent {
     render() {
         const FormComponents = {
             'edition': NewTranslationForm,
@@ -29,15 +23,11 @@ class LearnVocabulary extends React.Component {
             <View style={{flex:1}}>
                 <TranslationModeChooser/>
                 {React.createElement(FormComponents[this.props.mode])}
-                <TranslationList
-                    mode={this.props.mode}
-                    translations={this.props.translations}
-                />
+                <TranslationList/>
             </View>
         );
     }
 }
-
 
 export default connect(
     mapStateToProps

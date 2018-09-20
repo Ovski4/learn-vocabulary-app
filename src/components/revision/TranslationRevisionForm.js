@@ -47,7 +47,7 @@ const mapDispatchToProps = (dispatch) => ({
     handleHideRight: () => dispatch(translationsEntirelyHidden('right'))
 });
 
-class TranslationRevisionForm extends React.Component {
+class TranslationRevisionForm extends React.PureComponent {
 
     render() {
         return (

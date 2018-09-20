@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     }
 });
 
-class TranslationModeChooser extends React.Component {
+class TranslationModeChooser extends React.PureComponent {
 
     ucfirst = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
