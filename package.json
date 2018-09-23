@@ -22,7 +22,15 @@
   "jest": {
     "preset": "jest-expo",
     "collectCoverage": true,
-    "coverageReporters": ["json", "html"]
+    "coverageThreshold": {
+        "global": {
+            "branches": 0,
+            "functions": 0,
+            "lines": 45,
+            "statements": 0
+        }
+    },
+    "verbose": true
   },
   "dependencies": {
     "expo": "^27.0.1",
