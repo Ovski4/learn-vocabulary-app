@@ -21,6 +21,7 @@ Below you'll find information about performing common tasks. The most recent ver
   * [Ejecting from Create React Native App](#ejecting-from-create-react-native-app)
     * [Build Dependencies (Xcode & Android Studio)](#build-dependencies-xcode-android-studio)
     * [Should I Use ExpoKit?](#should-i-use-expokit)
+    * [Getting the private key for google play](#getting-the-private-key-for-google-play)
 * [Troubleshooting](#troubleshooting)
   * [Networking](#networking)
   * [iOS Simulator won't open](#ios-simulator-wont-open)
@@ -151,6 +152,18 @@ This is usually as simple as running `npm run eject` in your project, which will
 #### Should I Use ExpoKit?
 
 If you have made use of Expo APIs while working on your project, then those API calls will stop working if you eject to a regular React Native project. If you want to continue using those APIs, you can eject to "React Native + ExpoKit" which will still allow you to build your own native code and continue using the Expo APIs. See the [ejecting guide](https://github.com/react-community/create-react-native-app/blob/master/EJECTING.md) for more details about this option.
+
+#### Getting the private key for Google Play ####
+
+```bash
+expo fetch:android:keystore
+
+java    \
+  -jar pepk.jar \
+  --keystore=learn-vocabulary.jks \
+  --alias=QG92c2tpL2xlYXJuLXZvY2FidWxhcnk= \
+  --output=encrypted_private_key_path \ --encryptionkey=eb10fe8f7c7c9df715022017b00c6471f8ba8170b13049a11e6c09ffe3056a104a3bbe4ac5a955f4ba4fe93fc8cef27558a3eb9d2a529a2092761fb833b656cd48b9de6a
+```
 
 ## Troubleshooting
 

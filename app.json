@@ -20,7 +20,9 @@
                 "xhdpi": "./assets/splashscreen.png",
                 "xxhdpi": "./assets/splashscreen.png",
                 "xxxhdpi": "./assets/splashscreen.png"
-            }
+            },
+            "permissions": [],
+            "versionCode": 2
         },
         "assetBundlePatterns": [
             "./assets/*"
