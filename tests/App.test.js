@@ -1,10 +1,12 @@
 import React from 'react';
 import App from '../App';
-
 import renderer from 'react-test-renderer';
 
-it('Should renders without crashing', () => {
-  const rendered = renderer.create(<App />).toJSON();
+describe('App render', () => {
 
-  expect(rendered).toBeTruthy();
+    it('Should renders without crashing', async (done) => {
+        const rendered = (await renderer.create(<App />)).toJSON();
+        expect(rendered).toBeTruthy();
+        done();
+    });
 });

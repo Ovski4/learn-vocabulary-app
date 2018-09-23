@@ -1,0 +1,10 @@
+image: node:10-stretch
+
+stages:
+  - test
+
+tests:
+  stage: test
+  script:
+    - yarn
+    - yarn run test
