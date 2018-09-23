@@ -1,3 +1,7 @@
+[![pipeline status](https://gitlab.com/ovski-projects/learn-vocabulary/react-native-app/badges/master/pipeline.svg)](https://gitlab.com/ovski-projects/learn-vocabulary/react-native-app/commits/master)
+
+[![coverage report](https://gitlab.com/ovski-projects/learn-vocabulary/react-native-app/badges/master/coverage.svg)](https://gitlab.com/ovski-projects/learn-vocabulary/react-native-app/commits/master)
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
