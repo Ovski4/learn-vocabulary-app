@@ -23,12 +23,12 @@
     "preset": "jest-expo",
     "collectCoverage": true,
     "coverageThreshold": {
-        "global": {
-            "branches": 0,
-            "functions": 0,
-            "lines": 45,
-            "statements": 0
-        }
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 45,
+        "statements": 0
+      }
     },
     "verbose": true
   },
@@ -36,6 +36,7 @@
     "expo": "^27.0.1",
     "react": "16.3.1",
     "react-native": "v0.55",
+    "react-navigation": "^2.16.0",
     "react-redux": "^5.0.7",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",

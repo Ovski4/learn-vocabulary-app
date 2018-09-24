@@ -1,13 +1,11 @@
 import React from 'react';
-import TranslationEditionRow from './edition/TranslationEditionRow';
-import TranslationRevisionRow from './revision/TranslationRevisionRow';
+import TranslationRow from './TranslationRow';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
-import Header from './ui/Header';
+import Header from '../ui/Header';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
     return {
-        mode: state.mode,
         translations: [...state.translations].reverse()
     }
 };
@@ -28,20 +26,12 @@ const styles = StyleSheet.create({
 class TranslationList extends React.PureComponent {
 
     render() {
-        const RowComponents = {
-            'edition': TranslationEditionRow,
-            'revision': TranslationRevisionRow
-        }
-
         const getListItem = (translation) => {
-            return React.createElement(
-                RowComponents[this.props.mode],
-                {
-                    key: translation.id,
-                    id: translation.id,
-                    hidden: translation.hidden
-                }
-            );
+            return <TranslationRow
+                key={translation.id}
+                id={translation.id}
+                hidden={translation.hidden}
+            />;
         };
 
         const listEmptyComponent =
@@ -52,17 +42,6 @@ class TranslationList extends React.PureComponent {
             </View>
         ;
 
-        const content =
-            <FlatList
-                data={this.props.translations}
-                extraData={this.props.mode}
-                index={({item}) => item.index}
-                renderItem={({item}) => getListItem(item)}
-                keyExtractor={(item, index) => item.id}
-                ListEmptyComponent={listEmptyComponent}
-            />
-        ;
-
         return(
             <View style={{flex: 1}}>
                 <Header>Translations</Header>
@@ -70,7 +49,13 @@ class TranslationList extends React.PureComponent {
                     flex: 1,
                     borderColor: '#bbb'
                 }}>
-                    {content}
+                    <FlatList
+                        data={this.props.translations}
+                        index={({item}) => item.index}
+                        renderItem={({item}) => getListItem(item)}
+                        keyExtractor={(item, index) => item.id}
+                        ListEmptyComponent={listEmptyComponent}
+                    />
                 </View>
             </View>
         );

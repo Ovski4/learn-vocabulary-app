@@ -1,34 +1,25 @@
+import RevisionScreen from './revision/RevisionScreen';
+import EditionScreen from './edition/EditionScreen';
+import SettingsScreen from './settings/SettingsScreen';
 import React from 'react';
-import { connect } from 'react-redux';
-import NewTranslationForm from './edition/NewTranslationForm';
-import TranslationRevisionForm from './revision/TranslationRevisionForm';
-import TranslationModeChooser from './TranslationModeChooser';
-import TranslationList from './TranslationList';
-import { View } from 'react-native';
+import { createBottomTabNavigator } from 'react-navigation';
 
-const mapStateToProps = (state) => {
-    return {
-        mode: state.mode
+const RootStack = createBottomTabNavigator(
+    {
+        Revision: RevisionScreen,
+        Edition: EditionScreen,
+        Settings: SettingsScreen,
+    },
+    {
+        initialRouteName: 'Edition',
+        tabBarOptions: {
+            activeTintColor: '#03A9F4'
+        }
+    }
+);
+  
+export default class LearnVocabulary extends React.Component {
+    render() {
+        return <RootStack />;
     }
 };
-
-class LearnVocabulary extends React.PureComponent {
-    render() {
-        const FormComponents = {
-            'edition': NewTranslationForm,
-            'revision': TranslationRevisionForm
-        }
-
-        return (
-            <View style={{flex:1}}>
-                <TranslationModeChooser/>
-                {React.createElement(FormComponents[this.props.mode])}
-                <TranslationList/>
-            </View>
-        );
-    }
-}
-
-export default connect(
-    mapStateToProps
-)(LearnVocabulary);

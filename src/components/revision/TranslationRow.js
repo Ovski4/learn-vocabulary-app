@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     }
 });
 
-class TranslationRevisionRow extends React.PureComponent {
+class TranslationRow extends React.PureComponent {
 
     getWordViewStyle = (side) => {
         const baseWordStyle = {
@@ -98,4 +98,4 @@ class TranslationRevisionRow extends React.PureComponent {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(TranslationRevisionRow);
+)(TranslationRow);

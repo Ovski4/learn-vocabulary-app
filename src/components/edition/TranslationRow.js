@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     }
 });
 
-class TranslationEditionRow extends React.Component {
+class TranslationRow extends React.Component {
 
     constructor(props) {
         super(props);
@@ -93,4 +93,4 @@ class TranslationEditionRow extends React.Component {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(TranslationEditionRow);
+)(TranslationRow);
