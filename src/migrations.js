@@ -17,11 +17,12 @@ export default {
     1: (state) => {
         const newState = {...state};
         const translations = newState.translations.map((translation) => {
-            translation.id = uuidv4();
-
-            return translation;
+            return {
+                ...translation,
+                id: uuidv4()
+            }
         })
 
-        return { translations }
+        return { translations };
     }
 };
