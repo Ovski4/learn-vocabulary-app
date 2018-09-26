@@ -15,7 +15,7 @@ export default createTransform(
                 id: translation.id
             }
         });
-        
+
         return transformed;
     },
 
