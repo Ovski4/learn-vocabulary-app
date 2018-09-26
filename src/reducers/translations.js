@@ -1,6 +1,7 @@
 import translationsService from '../services/translations';
 
 const translationsReducer =  (translations = [], action) => {
+
     switch (action.type) {
         case 'TRANSLATION_ADDED':
             return onTranslationAdded(translations, action);

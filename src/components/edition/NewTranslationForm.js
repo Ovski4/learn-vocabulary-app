@@ -5,6 +5,7 @@ import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
 import Header from '../../components/ui/Header';
 import uuidv4 from 'uuid/v4';
 import { waitForIt } from '../../services/helpers';
+import Tags from 'react-native-tags';
 
 const mapDispatchToProps = (dispatch) => ({
     handleTranslationAdded: (translation) => dispatch(translationAdded(translation)),
@@ -16,12 +17,15 @@ const styles = StyleSheet.create({
         margin: 5,
         marginBottom: 0
     },
-    word1: {
+    label: {
+        minWidth: 50
+    },
+    word: {
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 5
     },
-    word2: {
+    tags: {
         flexDirection: 'row',
         alignItems: 'center'
     },
@@ -39,13 +43,35 @@ const styles = StyleSheet.create({
     }
 });
 
+const tagComponentStyle = StyleSheet.create({
+    containerStyle: {
+        marginLeft: -5,
+        alignItems: 'flex-start'
+    },
+    inputContainerStyle:{
+        borderRadius: 4,
+    },
+    inputStyle: {
+        backgroundColor: 'white',
+        paddingLeft: 3,
+        paddingRight: 3,
+        margin: 0,
+    },
+    tagContainerStyle: {
+        borderRadius:6,
+        marginBottom: 0,
+        marginRight: 0,
+    }
+});
+
 class NewTranslationForm extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             word1: props.translation.word1,
-            word2: props.translation.word2
+            word2: props.translation.word2,
+            tags: []
         };
     }
 
@@ -70,16 +96,25 @@ class NewTranslationForm extends React.Component {
         });
         this.setState({
             word1: '',
-            word2: ''
+            word2: '',
+            tags: []
         });
     }
 
-    handleChange = (word, text) => {
+    handleWordChange = (word, text) => {
         waitForIt(() => {
             var newWord = {};
             newWord[word] = text;
             this.setState((previousState) => {
                 return Object.assign({}, previousState, newWord);
+            });
+        }, 300);
+    }
+
+    handleTagsChange = (tags) => {
+        waitForIt(() => {
+            this.setState((previousState) => {
+                return Object.assign({}, previousState, {tags});
             });
         }, 300);
     }
@@ -91,27 +126,42 @@ class NewTranslationForm extends React.Component {
                 <Header>Add a translation</Header>
                 <View style={styles.row}>
                     <View style={{flex: 4}}>
-                        <View style={styles.word1}>
-                            <View>
+                        <View style={styles.word}>
+                            <View style={styles.label}>
                                 <Text>{this.props.labelWord1}</Text>
                             </View>
                             <View style={styles.input}>
                                 <TextInput
                                     ref="input1"
                                     underlineColorAndroid="transparent"
-                                    onChangeText={(text) => this.handleChange('word1', text)}
+                                    onChangeText={(text) => this.handleWordChange('word1', text)}
                                 />
                             </View>
                         </View>
-                        <View style={styles.word2}>
-                            <View>
+                        <View style={styles.word}>
+                            <View style={styles.label}>
                                 <Text>{this.props.labelWord2}</Text>
                             </View>
                             <View style={styles.input}>
                                 <TextInput
                                     ref="input2"
                                     underlineColorAndroid="transparent"
-                                    onChangeText={(text) => this.handleChange('word2', text)}
+                                    onChangeText={(text) => this.handleWordChange('word2', text)}
+                                />
+                            </View>
+                        </View>
+                        <View style={styles.tags}>
+                            <View style={styles.label}>
+                                <Text>Tags:</Text>
+                            </View>
+                            <View style={styles.input}>
+                                <Tags
+                                    initialTags={this.state.tags}
+                                    onChangeTags={tags => this.handleTagsChange(tags)}
+                                    containerStyle={tagComponentStyle.containerStyle}
+                                    inputContainerStyle={tagComponentStyle.inputContainerStyle}
+                                    inputStyle={tagComponentStyle.inputStyle}
+                                    tagContainerStyle={tagComponentStyle.tagContainerStyle}
                                 />
                             </View>
                         </View>
