@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import translations from './translations';
-import tags from './tags';
-import tagsTranslations from './tagsTranslations';
+import reduceReducers from "reduce-reducers";
+import uiTranslationsReducer from './uiTranslations';
+import translationsReducer from './translations';
+import tagsReducer from './tags';
 
 export default combineReducers({
-  translations,
-  tags,
-  tagsTranslations
+    translations: reduceReducers(uiTranslationsReducer, translationsReducer),
+    tags: tagsReducer
 });

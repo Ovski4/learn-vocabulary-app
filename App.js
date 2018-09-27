@@ -14,8 +14,8 @@ import transformers from './src/transformers/index';
 const persistedReducer = persistReducer(
     {
         key: 'root',
-        version: 1,
-        whitelist: ['translations'],
+        version: 2,
+        whitelist: ['translations', 'tags'],
         transforms: transformers,
         migrate: createMigrate(migrations),
         storage: storage,

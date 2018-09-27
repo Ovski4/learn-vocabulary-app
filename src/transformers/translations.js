@@ -8,7 +8,8 @@ const inboundTranslationsTransform = (inboundTranslations, key) => {
            word1: translation.word1,
            word2: translation.word2,
            createdAt: translation.createdAt,
-           id: translation.id
+           id: translation.id,
+           tags: translation.tags
        }
    });
 
@@ -23,7 +24,7 @@ const outboundTranslationsTransform = (outboundTranslations, key) => {
    const transformed = [...outboundTranslations].map((translation, index) => {
        translation.hidden = false;
        translation.index = index;
-       
+
        return translation;
    });
 

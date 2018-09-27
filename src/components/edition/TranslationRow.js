@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import EditTranslationForm from './EditTranslationForm';
 import { translationDeleted } from '../../actions/translations';
+import { tagsDeleted } from '../../actions/tags';
 import { StyleSheet, Button, Text, View } from 'react-native';
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,7 +14,10 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    handleDelete: () => dispatch(translationDeleted(ownProps.id)),
+    handleDelete: () => {
+        dispatch(translationDeleted(ownProps.id))
+        dispatch(tagsDeleted(ownProps.id))
+    }
 });
 
 const styles = StyleSheet.create({

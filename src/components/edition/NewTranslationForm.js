@@ -1,14 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { translationAdded } from '../../actions/translations';
+import { tagsAdded } from '../../actions/tags';
 import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
 import Header from '../../components/ui/Header';
 import uuidv4 from 'uuid/v4';
 import { waitForIt } from '../../services/helpers';
 import Tags from 'react-native-tags';
 
+const mapStateToProps = (state) => ({
+    tags: state.tags
+});
+
 const mapDispatchToProps = (dispatch) => ({
     handleTranslationAdded: (translation) => dispatch(translationAdded(translation)),
+    handleTagsAdded: (tags, translationId) => dispatch(tagsAdded(tags, translationId)),
 });
 
 const styles = StyleSheet.create({
@@ -69,8 +75,8 @@ class NewTranslationForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            word1: props.translation.word1,
-            word2: props.translation.word2,
+            word1: '',
+            word2: '',
             tags: []
         };
     }
@@ -85,15 +91,39 @@ class NewTranslationForm extends React.Component {
         return false;
     }
 
+    findTagByLabel = (tagLabel) => {
+        return this.props.tags.find(tag => tag.label === tagLabel);
+    }
+
+    prepareTranslationTags = () => {
+        return this.state.tags.map((tagLabel) => {
+            const existingTag = this.findTagByLabel(tagLabel);
+            if (existingTag) {
+                return existingTag;
+            }
+
+            return {
+                label: tagLabel,
+                id: uuidv4(),
+                createdAt: Date.now()
+            };
+        });
+    }
+
     handleSubmit = () => {
-        this.refs.input1.clear();
-        this.refs.input2.clear();
-        this.props.handleTranslationAdded({
+        const tags = this.prepareTranslationTags();
+        const translation = {
             word1: this.state.word1,
             word2: this.state.word2,
             createdAt: Date.now(),
-            id: uuidv4()
-        });
+            id: uuidv4(),
+            tags: tags.map(tag => tag.id)
+        };
+
+        this.refs.input1.clear();
+        this.refs.input2.clear();
+        this.props.handleTranslationAdded(translation);
+        this.props.handleTagsAdded(tags, translation.id);
         this.setState({
             word1: '',
             word2: '',
@@ -178,13 +208,9 @@ class NewTranslationForm extends React.Component {
 NewTranslationForm.defaultProps = {
     labelWord1: 'Word 1:',
     labelWord2: 'Word 2:',
-    translation: {
-        word1: '',
-        word2: ''
-    }
 };
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(NewTranslationForm);

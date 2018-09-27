@@ -6179,6 +6179,10 @@ realpath-native@^1.0.0:
   dependencies:
     util.promisify "^1.0.0"
 
+reduce-reducers@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.4.3.tgz#8e052618801cd8fc2714b4915adaa8937eb6d66c"
+
 redux-logger@^2.7.4:
   version "2.10.2"
   resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-2.10.2.tgz#3c5a5f0a6f32577c1deadf6655f257f82c6c3937"

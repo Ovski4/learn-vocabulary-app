@@ -24,5 +24,20 @@ export default {
         })
 
         return { translations };
+    },
+
+    /**
+     * Add tags
+     */
+    2: (state) => {
+        const newState = {...state};
+        const translations = newState.translations.map((translation) => {
+            return {
+                ...translation,
+                tags: []
+            }
+        });
+
+       return { translations };
     }
 };
