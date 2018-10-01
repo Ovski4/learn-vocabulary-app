@@ -43,6 +43,23 @@ describe('Translations service', () => {
         expect(unshuffledArray).toEqual(expectedArray);
     });
 
+    it('Should filter by tag id', () => {
+        const array = [
+            { id: '1', tags:['1'] },
+            { id: '2', tags:['2'] },
+            { id: '3', tags:['1'] },
+            { id: '4', tags:[] },
+            { id: '5', tags:[] },
+        ];
+        const expectedArray = [
+            { id: '1', tags:['1'] },
+            { id: '3', tags:['1'] },
+        ];
+        const filteredArray = translationsService.filterByTagId(array, '1');
+
+        expect(filteredArray).toEqual(expectedArray);
+    });
+
     it('Should check whether or not the translations are ordered', () => {
         const array1 = [
             { createdAt: 1 }, 

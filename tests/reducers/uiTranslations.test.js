@@ -2,10 +2,10 @@ import reducer from '../../src/reducers/uiTranslations';
 import {
     translationsShuffled,
     translationsUnshuffled,
-    translationsEntirelyHidden,
+    translationsHidden,
     translationRevealed,
     allTranslationsRevealed
-} from '../../src/actions/translations';
+} from '../../src/actions/uiTranslations';
 
 /**
  * Syntax => reducer(state, action)
@@ -19,16 +19,35 @@ describe('Translations reducer', () => {
 
     it('Should reveal all the translations', () => {
         const initialState = [
-            { hidden: false },
-            { hidden: 'left' },
-            { hidden: 'right' },
+            { hidden: false, id: '1' },
+            { hidden: 'left', id: '2' },
+            { hidden: 'right', id: '3' },
         ];
         const expectedState = [
-            { hidden: false },
-            { hidden: false },
-            { hidden: false },
+            { hidden: false, id: '1' },
+            { hidden: false, id: '2' },
+            { hidden: false, id: '3' },
         ];
-        const newState = reducer(initialState, allTranslationsRevealed());
+        const newState = reducer(initialState, allTranslationsRevealed(initialState));
+
+        expect(newState).toEqual(expectedState);
+    });
+
+    it('Should revealsome translations', () => {
+        const initialState = [
+            { hidden: false, id: '1' },
+            { hidden: 'left', id: '2' },
+            { hidden: 'right', id: '3' },
+        ];
+        const expectedState = [
+            { hidden: false, id: '1' },
+            { hidden: false, id: '2' },
+            { hidden: 'right', id: '3' },
+        ];
+        const newState = reducer(initialState, allTranslationsRevealed([
+            { hidden: false, id: '1' },
+            { hidden: 'left', id: '2' }
+        ]));
 
         expect(newState).toEqual(expectedState);
     });
@@ -60,7 +79,7 @@ describe('Translations reducer', () => {
             { hidden: 'left', id: '2' },
             { hidden: 'left', id: '3' },
         ];
-        const newState = reducer(initialState, translationsEntirelyHidden('left'));
+        const newState = reducer(initialState, translationsHidden(initialState, 'left'));
 
         expect(newState).toEqual(expectedState);
     });

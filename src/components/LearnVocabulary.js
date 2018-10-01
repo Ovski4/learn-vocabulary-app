@@ -11,7 +11,7 @@ const RootStack = createBottomTabNavigator(
         Settings: SettingsScreen,
     },
     {
-        initialRouteName: 'Edition',
+        initialRouteName: 'Revision',
         tabBarOptions: {
             activeTintColor: '#03A9F4'
         }

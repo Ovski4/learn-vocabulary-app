@@ -3,19 +3,33 @@ import translationsService from '../services/translations';
 const uiTranslationsReducer = (translations = [], action) => {
 
     switch (action.type) {
-        case 'TRANSLATIONS_ENTIRELY_HIDDEN':
-            return onTranslationsEntirelyHidden(translations, action);
+        case 'TRANSLATIONS_HIDDEN':
+            return onTranslationsHidden(translations, action);
         case 'ALL_TRANSLATIONS_REVEALED':
-            return onAllTranslationsRevealed(translations);
+            return onAllTranslationsRevealed(translations, action);
         case 'TRANSLATION_REVEALED':
             return onTranslationRevealed(translations, action);
         case 'TRANSLATIONS_SHUFFLED':
             return onTranslationsShuffled(translations, action);
         case 'TRANSLATIONS_UNSHUFFLED':
-            return onTranslationsUnshuffled(translations, action);
+            return onTranslationsUnshuffled(translations);
         default:
             return translations;
     }
+}
+
+const replaceTranslations = (oldTranslations, newTranslations) => {
+    return [...oldTranslations].map(translation => {
+        const newTranslation = newTranslations.find(newTranslation => {
+            return newTranslation.id === translation.id;
+        });
+
+        if (typeof newTranslation !== 'undefined') {
+           return newTranslation;
+        } else {
+            return translation;
+        }
+   });
 }
 
 const onTranslationsShuffled = (translations, action) => {
@@ -41,20 +55,24 @@ const onTranslationRevealed = (translations, action) => {
     });
 }
 
-const onAllTranslationsRevealed = (translations) => {
-    return translations.map((translation) => {
+const onAllTranslationsRevealed = (translations, action) => {
+    const revealedTranslations = action.translations.map((translation) => {
         translation.hidden = false;
 
         return translation;
     });
+
+    return replaceTranslations(translations, revealedTranslations);
 }
 
-const onTranslationsEntirelyHidden = (translations, action) => {
-    return translations.map((translation) => {
+const onTranslationsHidden = (translations, action) => {
+    const hiddenTranslations = action.translations.map((translation) => {
         translation.hidden = action.side;
 
         return translation;
     });
+
+    return replaceTranslations(translations, hiddenTranslations);
 }
 
 export default uiTranslationsReducer;

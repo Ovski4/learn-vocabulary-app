@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { translationRevealed } from '../../actions/translations';
+import { translationRevealed } from '../../actions/uiTranslations';
 import { StyleSheet, Text, View } from 'react-native';
 
 const mapStateToProps = (state, ownProps) => {

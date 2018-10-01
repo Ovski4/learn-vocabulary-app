@@ -1,11 +1,13 @@
 import React from 'react';
 import TranslationRow from './TranslationRow';
+import translationsService from '../../services/translations'
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Header from '../ui/Header';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
     return {
+        ui: state.ui,
         translations: [...state.translations].reverse()
     }
 };
@@ -42,6 +44,12 @@ class TranslationList extends React.PureComponent {
             </View>
         ;
 
+        const tagFilterId = this.props.ui.translationsFilteredBy;
+        const translationList = tagFilterId !== null ?
+            translationsService.filterByTagId(this.props.translations, tagFilterId) :
+            this.props.translations
+        ;
+
         return(
             <View style={{flex: 1}}>
                 <Header>Translations</Header>
@@ -50,7 +58,7 @@ class TranslationList extends React.PureComponent {
                     borderColor: '#bbb'
                 }}>
                     <FlatList
-                        data={this.props.translations}
+                        data={translationList}
                         index={({item}) => item.index}
                         renderItem={({item}) => getListItem(item)}
                         keyExtractor={(item, index) => item.id}

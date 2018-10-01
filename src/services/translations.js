@@ -25,6 +25,12 @@ const unshuffle = (translations) => {
     });
 };
 
+const filterByTagId = (translations, tagId) => {
+    return translations.filter((translation) => {
+        return translation.tags.includes(tagId);
+    });
+}
+
 const translationsAreOrdered = (translations) => {
     let timestamp = -1;
     for (let i = 0; i < translations.length; i++) {
@@ -61,6 +67,7 @@ const allTranslationsAreVisible = (translations) => {
 export default {
     unshuffle,
     shuffle,
+    filterByTagId,
     translationsAreOrdered,
     translationsAreHidden,
     allTranslationsAreVisible
