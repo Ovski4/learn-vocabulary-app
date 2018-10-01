@@ -61,9 +61,13 @@ const tagComponentStyle = StyleSheet.create({
         margin: 0,
     },
     tagContainerStyle: {
-        borderRadius:6,
+        borderRadius: 4,
         marginBottom: 0,
         marginRight: 0,
+        backgroundColor: '#03A9F4'
+    },
+    tagTextStyle: {
+        color: '#ffffff'
     }
 });
 class EditTranslationForm extends React.Component {
@@ -168,6 +172,7 @@ class EditTranslationForm extends React.Component {
                             inputContainerStyle={tagComponentStyle.inputContainerStyle}
                             inputStyle={tagComponentStyle.inputStyle}
                             tagContainerStyle={tagComponentStyle.tagContainerStyle}
+                            tagTextStyle={tagComponentStyle.tagTextStyle}
                         />
                     </View>
                 </View>

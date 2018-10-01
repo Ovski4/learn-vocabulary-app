@@ -36,6 +36,21 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row'
+    },
+    tagsSelectorRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        justifyContent: 'center'
+    },
+    picker:{
+        height: 40,
+        width: 200,
+        paddingLeft: 20
+    },
+    filterText: {
+        fontSize: 16,
+        color: '#929292'
     }
 });
 
@@ -120,11 +135,11 @@ class Actions extends React.PureComponent {
                         />
                     </View>
                 </View>
-                <View style={styles.row}>
-                    <Text>Filter by</Text>
+                <View style={styles.tagsSelectorRow}>
+                    <Text style={styles.filterText}>Filter by:</Text>
                     <Picker
                         selectedValue={this.state.selectedTag}
-                        style={{ height: 50, width: 250 }}
+                        style={styles.picker}
                         onValueChange={(tag) => {
                             // Reveal everything when we change the tag
                             this.props.handleDisplayEverything(visibleTranslations)
