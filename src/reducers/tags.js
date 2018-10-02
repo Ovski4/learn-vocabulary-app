@@ -21,8 +21,8 @@ const onTagsAdded = (tags, action) => {
         const existingTag = findTag(tags, action.tags[i].id);
         if (typeof existingTag === 'object') {
             // Add new translation id on existing tag
-            if (!existingTags[i].translations.includes(action.translationId)) {
-                existingTags[i].translations.push(action.translationId);
+            if (!existingTag.translations.includes(action.translationId)) {
+                existingTag.translations.push(action.translationId);
             }
         } else {
             // Add new tag with the translation id

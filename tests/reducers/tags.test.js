@@ -169,6 +169,69 @@ describe('Tags reducer', () => {
 
     });
 
+    it('Should not update the tags', () => {
+        const initialState = [
+            {
+                createdAt: 1,
+                id: '1',
+                label: 'first tag',
+                translations: ['translation_id_1']
+            },
+            {
+                createdAt: 2,
+                id: '2',
+                label: 'second tag',
+                translations: ['translation_id_2']
+            },
+            {
+                createdAt: 3,
+                id: '3',
+                label: 'third tag',
+                translations: ['translation_id_2']
+            }
+        ]
+
+        const newState = reducer(initialState, tagsUpdated(
+            [
+                {
+                    createdAt: 2,
+                    id: '2',
+                    label: 'second tag',
+                    translations: ['translation_id_2']
+                },
+                {
+                    createdAt: 3,
+                    id: '3',
+                    label: 'third tag',
+                    translations: ['translation_id_2']
+                }
+            ],
+            'translation_id_2'
+        ));
+
+        expect(newState).toEqual([
+            {
+                createdAt: 1,
+                id: '1',
+                label: 'first tag',
+                translations: ['translation_id_1']
+            },
+            {
+                createdAt: 2,
+                id: '2',
+                label: 'second tag',
+                translations: ['translation_id_2']
+            },
+            {
+                createdAt: 3,
+                id: '3',
+                label: 'third tag',
+                translations: ['translation_id_2']
+            }
+        ]);
+
+    });
+
     it('Should delete tags', () => {
         const initialState = [
             {
