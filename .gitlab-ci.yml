@@ -2,9 +2,32 @@ image: node:10-stretch
 
 stages:
   - test
+  - build
 
 tests:
   stage: test
   script:
     - yarn
     - yarn run test
+
+manually-build:
+  stage: build
+  when: manual
+  except:
+    - tags
+  script:
+  - yarn
+  - yarn global add expo-cli
+  - expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
+  - expo build:android
+
+build:
+  stage: build
+  when: manual
+  only:
+    - tags
+  script:
+  - yarn
+  - yarn global add expo-cli
+  - expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
+  - expo build:android
