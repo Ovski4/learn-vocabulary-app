@@ -66,11 +66,11 @@ const tagComponentStyle = StyleSheet.create({
     tagContainerStyle: {
         borderRadius: 4,
         marginBottom: 0,
-        marginRight: 0,
-        backgroundColor: '#03A9F4'
+        marginRight: 0
     },
     tagTextStyle: {
-        color: '#ffffff'
+        color: '#03A9F4',
+        fontWeight: 'bold'
     }
 });
 
@@ -191,6 +191,7 @@ class NewTranslationForm extends React.Component {
                             <View style={styles.input}>
                                 <Tags
                                     initialTags={this.state.tags}
+                                    createTagOnReturn={true}
                                     onChangeTags={tags => this.handleTagsChange(tags)}
                                     containerStyle={tagComponentStyle.containerStyle}
                                     inputContainerStyle={tagComponentStyle.inputContainerStyle}
