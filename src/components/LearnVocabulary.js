@@ -8,7 +8,7 @@ const RootStack = createBottomTabNavigator(
     {
         Revision: RevisionScreen,
         Edition: EditionScreen,
-        Settings: SettingsScreen,
+        // Settings: SettingsScreen,
     },
     {
         initialRouteName: 'Revision',
