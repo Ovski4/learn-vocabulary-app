@@ -5,6 +5,9 @@
         "slug": "learn-vocabulary",
         "sdkVersion": "27.0.0",
         "orientation": "portrait",
+        "updates": {
+            "enabled": false
+        },
         "android": {
             "package": "net.ovski.learnvocabulary",
             "icon": "./assets/icon.png",
