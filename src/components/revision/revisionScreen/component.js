@@ -1,6 +1,6 @@
 import React from 'react';
-import Actions from './Actions';
-import TranslationList from './TranslationList';
+import Actions from '../actions/connect';
+import TranslationList from '../translationList/connect';
 import { StyleSheet, View, Image } from 'react-native';
 
 const styles = StyleSheet.create({

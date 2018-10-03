@@ -1,21 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { translationAdded } from '../../actions/translations';
-import { tagsAdded } from '../../actions/tags';
 import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
-import Header from '../../components/ui/Header';
+import { waitForIt } from '../../../services/helpers';
 import uuidv4 from 'uuid/v4';
-import { waitForIt } from '../../services/helpers';
+import Header from '../../../components/ui/Header';
 import Tags from 'react-native-tags';
-
-const mapStateToProps = (state) => ({
-    tags: state.tags
-});
-
-const mapDispatchToProps = (dispatch) => ({
-    handleTranslationAdded: (translation) => dispatch(translationAdded(translation)),
-    handleTagsAdded: (tags, translationId) => dispatch(tagsAdded(tags, translationId)),
-});
 
 const styles = StyleSheet.create({
     row: {
@@ -216,7 +204,4 @@ NewTranslationForm.defaultProps = {
     labelWord2: 'Word 2:',
 };
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(NewTranslationForm);
+export default NewTranslationForm;
