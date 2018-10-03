@@ -2,6 +2,13 @@ import React from 'react';
 import Actions from './Actions';
 import TranslationList from './TranslationList';
 import { StyleSheet, View, Image } from 'react-native';
+import { connect } from 'react-redux';
+
+const mapStateToProps = (state) => {
+    return {
+        translationsLength: state.translations.length
+    }
+};
 
 const styles = StyleSheet.create({
     page: {
@@ -11,6 +18,13 @@ const styles = StyleSheet.create({
 });
 
 class RevisionScreen extends React.PureComponent {
+
+    constructor(props) {
+        super(props);
+        if (props.translationsLength === 0) {
+            props.navigation.navigate('Edition');
+        }
+    }
 
     static navigationOptions = {
         tabBarIcon: ({tintColor}) => <Image
@@ -29,4 +43,4 @@ class RevisionScreen extends React.PureComponent {
     }
 }
 
-export default RevisionScreen;
+export default connect(mapStateToProps)(RevisionScreen);
