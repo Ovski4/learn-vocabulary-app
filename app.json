@@ -1,6 +1,6 @@
 {
     "expo": {
-        "version": "1.0.1",
+        "version": "1.1.0",
         "name": "Learn Vocabulary",
         "slug": "learn-vocabulary",
         "sdkVersion": "27.0.0",
@@ -25,7 +25,7 @@
                 "xxxhdpi": "./assets/splashscreen.png"
             },
             "permissions": [],
-            "versionCode": 2
+            "versionCode": 3
         },
         "assetBundlePatterns": [
             "./assets/*"
