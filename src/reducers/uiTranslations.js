@@ -1,22 +1,13 @@
+import { createReducer } from '../services/helpers';
 import translationsService from '../services/translations';
 
-const uiTranslationsReducer = (translations = [], action) => {
-
-    switch (action.type) {
-        case 'TRANSLATIONS_HIDDEN':
-            return onTranslationsHidden(translations, action);
-        case 'ALL_TRANSLATIONS_REVEALED':
-            return onAllTranslationsRevealed(translations, action);
-        case 'TRANSLATION_REVEALED':
-            return onTranslationRevealed(translations, action);
-        case 'TRANSLATIONS_SHUFFLED':
-            return onTranslationsShuffled(translations, action);
-        case 'TRANSLATIONS_UNSHUFFLED':
-            return onTranslationsUnshuffled(translations);
-        default:
-            return translations;
-    }
-}
+const actionHandlers = {
+    TRANSLATIONS_HIDDEN: (translations, action) => onTranslationsHidden(translations, action),
+    ALL_TRANSLATIONS_REVEALED: (translations, action) => onAllTranslationsRevealed(translations, action),
+    TRANSLATION_REVEALED: (translations, action) => onTranslationRevealed(translations, action),
+    TRANSLATIONS_SHUFFLED: (translations, action) => onTranslationsShuffled(translations, action),
+    TRANSLATIONS_UNSHUFFLED: (translations, action) => onTranslationsUnshuffled(translations, action)
+};
 
 const replaceTranslations = (oldTranslations, newTranslations) => {
     return [...oldTranslations].map(translation => {
@@ -74,5 +65,7 @@ const onTranslationsHidden = (translations, action) => {
 
     return replaceTranslations(translations, hiddenTranslations);
 }
+
+const uiTranslationsReducer = createReducer([], actionHandlers);
 
 export default uiTranslationsReducer;

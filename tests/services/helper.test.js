@@ -1,6 +1,6 @@
-import { waitForIt } from '../../src/services/helpers';
+import { waitForIt, createReducer } from '../../src/services/helpers';
 
-describe('Helper service', () => {
+describe('WaitForIt', () => {
 
     const sleep = (ms) => {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -39,5 +39,26 @@ describe('Helper service', () => {
         // Wait enough to be sure the waitForIt function ran
         await sleep(350)
         expect(counter).toEqual(2);
+    });
+});
+
+describe('createReducer', () => {
+
+    it('Should call the actions', async () => {
+        const actionHandlers = {
+            TEST: (state, action) => ({'test': '1'})
+        };
+        const reducer = createReducer({'test': '2'}, actionHandlers);
+        const actionTest = {type: 'TEST'};
+        const wrongAction = {type: 'WRONG'};
+
+        let state = reducer({'test': '2'}, wrongAction);
+        expect(state).toEqual({'test': '2'});
+
+        state = reducer(state, actionTest);
+        expect(state).toEqual({'test': '1'});
+
+        state = reducer(state, wrongAction);
+        expect(state).toEqual({'test': '1'});
     });
 });

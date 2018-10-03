@@ -1,17 +1,14 @@
 // TODO use immutable js
+import { createReducer } from '../services/helpers';
 
-const tagsReducer =  (tags = [], action) => {
+const actionHandlers = {
+    TAGS_ADDED: (tags, action) => onTagsAdded(tags, action),
+    TAGS_UPDATED: (tags, action) => onTagsUpdated(tags, action),
+    TAGS_DELETED: (tags, action) => onTagsDeleted(tags, action)
+};
 
-    switch (action.type) {
-        case 'TAGS_ADDED':
-            return onTagsAdded(tags, action);
-        case 'TAGS_UPDATED':
-            return onTagsUpdated(tags, action);
-        case 'TAGS_DELETED':
-            return onTagsDeleted(tags, action);
-        default:
-            return tags;
-    }
+const findTag = (tags, tagId) => {
+    return tags.find(tag => tag.id === tagId);
 }
 
 const onTagsAdded = (tags, action) => {
@@ -78,8 +75,6 @@ const onTagsDeleted = (tags, action) => {
     return existingTags;
 }
 
-const findTag = (tags, tagId) => {
-    return tags.find(tag => tag.id === tagId);
-}
+const tagsReducer = createReducer([], actionHandlers);
 
 export default tagsReducer;

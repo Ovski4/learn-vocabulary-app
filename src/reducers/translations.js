@@ -1,16 +1,10 @@
-const translationsReducer =  (translations = [], action) => {
+import { createReducer } from '../services/helpers';
 
-    switch (action.type) {
-        case 'TRANSLATION_ADDED':
-            return onTranslationAdded(translations, action);
-        case 'TRANSLATION_DELETED':
-            return onTranslationDeleted(translations, action);
-        case 'TRANSLATION_UPDATED':
-            return onTranslationUpdated(translations, action);
-        default:
-            return translations;
-    }
-}
+const actionHandlers = {
+    TRANSLATION_ADDED: (translations, action) => onTranslationAdded(translations, action),
+    TRANSLATION_UPDATED: (translations, action) => onTranslationUpdated(translations, action),
+    TRANSLATION_DELETED: (translations, action) => onTranslationDeleted(translations, action)
+};
 
 const onTranslationAdded = (translations, action) => {
     return [
@@ -37,5 +31,7 @@ const onTranslationUpdated = (translations, action) => {
         }
     });
 }
+
+const translationsReducer = createReducer([], actionHandlers);
 
 export default translationsReducer;
