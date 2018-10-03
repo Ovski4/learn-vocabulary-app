@@ -1,7 +1,7 @@
 import React from 'react';
 import NewTranslationForm from './NewTranslationForm';
 import TranslationList from './TranslationList';
-import { View, Image, StyleSheet } from 'react-native';
+import { KeyboardAvoidingView, Image, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     page: {
@@ -21,10 +21,10 @@ class EditionScreen extends React.PureComponent {
 
     render() {
         return (
-            <View style={styles.page}>
+            <KeyboardAvoidingView style={styles.page} behavior="padding">
                 <NewTranslationForm/>
                 <TranslationList/>
-            </View>
+            </KeyboardAvoidingView>
         );
     }
 }
