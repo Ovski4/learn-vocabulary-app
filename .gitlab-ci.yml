@@ -23,7 +23,6 @@ manually-build:
 
 build:
   stage: build
-  when: manual
   only:
     - tags
   script:
