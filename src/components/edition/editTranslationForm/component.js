@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
-import { waitForIt } from '../../../services/helpers';
+import BaseTranslationForm from '../BaseTranslationForm';
 import Tags from 'react-native-tags';
-import uuidv4 from 'uuid/v4';
 
 const styles = StyleSheet.create({
     view: {
@@ -34,32 +33,8 @@ const styles = StyleSheet.create({
     }
 });
 
-const tagComponentStyle = StyleSheet.create({
-    containerStyle: {
-        marginLeft: -5,
-        alignItems: 'flex-start'
-    },
-    inputContainerStyle:{
-        borderRadius: 4,
-    },
-    inputStyle: {
-        backgroundColor: 'white',
-        paddingLeft: 3,
-        paddingRight: 3,
-        margin: 0,
-    },
-    tagContainerStyle: {
-        borderRadius: 4,
-        marginBottom: 0,
-        marginRight: 0
-    },
-    tagTextStyle: {
-        color: '#03A9F4',
-        fontWeight: 'bold'
-    }
-});
 
-class EditTranslationForm extends React.PureComponent {
+class EditTranslationForm extends BaseTranslationForm {
 
     constructor(props) {
         super(props);
@@ -70,25 +45,6 @@ class EditTranslationForm extends React.PureComponent {
                 return props.tags.find(tag => tag.id === tagId).label
             })
         };
-    }
-
-    findTagByLabel = (tagLabel) => {
-        return this.props.tags.find(tag => tag.label === tagLabel);
-    }
-
-    prepareTranslationTags = () => {
-        return this.state.tags.map((tagLabel) => {
-            const existingTag = this.findTagByLabel(tagLabel);
-            if (existingTag) {
-                return existingTag;
-            }
-
-            return {
-                label: tagLabel,
-                id: uuidv4(),
-                createdAt: Date.now()
-            };
-        });
     }
 
     handleSubmit = () => {
@@ -104,24 +60,6 @@ class EditTranslationForm extends React.PureComponent {
         this.props.onUpdate();
     }
 
-    handleWordChange = (word, text) => {
-        waitForIt(() => {
-            var newWord = {};
-            newWord[word] = text;
-            this.setState((previousState) => {
-                return Object.assign({}, previousState, newWord);
-            });
-        }, 300);
-    }
-
-    handleTagsChange = (tags) => {
-        waitForIt(() => {
-            this.setState((previousState) => {
-                return Object.assign({}, previousState, {tags});
-            });
-        }, 300);
-    }
-
     render() {
         return (
             <View style={styles.view}>
@@ -130,11 +68,7 @@ class EditTranslationForm extends React.PureComponent {
                         <Text>{this.props.labelWord1}</Text>
                     </View>
                     <View style={styles.input}>
-                        <TextInput
-                            underlineColorAndroid="transparent"
-                            defaultValue={this.state.word1}
-                            onChangeText={(text) => this.handleWordChange('word1', text)}
-                        />
+                        {this.getSubViews().textInput1}
                     </View>
                 </View>
                 <View style={styles.row}>
@@ -142,11 +76,7 @@ class EditTranslationForm extends React.PureComponent {
                         <Text>{this.props.labelWord2}</Text>
                     </View>
                     <View style={styles.input}>
-                        <TextInput
-                            underlineColorAndroid="transparent"
-                            defaultValue={this.state.word2}
-                            onChangeText={(text) => this.handleWordChange('word2', text)}
-                        />
+                        {this.getSubViews().textInput2}
                     </View>
                 </View>
                 <View style={styles.row}>
@@ -154,21 +84,12 @@ class EditTranslationForm extends React.PureComponent {
                         <Text>{this.props.labelTags}</Text>
                     </View>
                     <View style={styles.input}>
-                        <Tags
-                            initialTags={this.state.tags}
-                            createTagOnReturn={true}
-                            onChangeTags={tags => this.handleTagsChange(tags)}
-                            containerStyle={tagComponentStyle.containerStyle}
-                            inputContainerStyle={tagComponentStyle.inputContainerStyle}
-                            inputStyle={tagComponentStyle.inputStyle}
-                            tagContainerStyle={tagComponentStyle.tagContainerStyle}
-                            tagTextStyle={tagComponentStyle.tagTextStyle}
-                        />
+                        {this.getSubViews().tagsInput}
                     </View>
                 </View>
                 <View style={styles.submitButtonWrapper}>
                     <View style={styles.submitButton}>
-                        <Button title="Submit" onPress={this.handleSubmit}/>
+                        <Button disabled={this.cannotBeSubmitted()} title="Submit" onPress={this.handleSubmit}/>
                     </View>
                 </View>
             </View>

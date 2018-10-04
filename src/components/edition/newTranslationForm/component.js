@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
-import { waitForIt } from '../../../services/helpers';
+import BaseTranslationForm from '../BaseTranslationForm';
 import uuidv4 from 'uuid/v4';
 import Header from '../../../components/ui/Header';
 import Tags from 'react-native-tags';
@@ -37,32 +37,7 @@ const styles = StyleSheet.create({
     }
 });
 
-const tagComponentStyle = StyleSheet.create({
-    containerStyle: {
-        marginLeft: -5,
-        alignItems: 'flex-start'
-    },
-    inputContainerStyle:{
-        borderRadius: 4,
-    },
-    inputStyle: {
-        backgroundColor: 'white',
-        paddingLeft: 3,
-        paddingRight: 3,
-        margin: 0,
-    },
-    tagContainerStyle: {
-        borderRadius: 4,
-        marginBottom: 0,
-        marginRight: 0
-    },
-    tagTextStyle: {
-        color: '#03A9F4',
-        fontWeight: 'bold'
-    }
-});
-
-class NewTranslationForm extends React.Component {
+class NewTranslationForm extends BaseTranslationForm {
 
     constructor(props) {
         super(props);
@@ -71,35 +46,6 @@ class NewTranslationForm extends React.Component {
             word2: '',
             tags: []
         };
-    }
-
-    cannotBeCreated = () => {
-        if (this.state.word1.trim().length === 0 ||
-            this.state.word2.trim().length === 0
-        ) {
-            return true;
-        }
-
-        return false;
-    }
-
-    findTagByLabel = (tagLabel) => {
-        return this.props.tags.find(tag => tag.label === tagLabel);
-    }
-
-    prepareTranslationTags = () => {
-        return this.state.tags.map((tagLabel) => {
-            const existingTag = this.findTagByLabel(tagLabel);
-            if (existingTag) {
-                return existingTag;
-            }
-
-            return {
-                label: tagLabel,
-                id: uuidv4(),
-                createdAt: Date.now()
-            };
-        });
     }
 
     handleSubmit = () => {
@@ -123,26 +69,7 @@ class NewTranslationForm extends React.Component {
         });
     }
 
-    handleWordChange = (word, text) => {
-        waitForIt(() => {
-            var newWord = {};
-            newWord[word] = text;
-            this.setState((previousState) => {
-                return Object.assign({}, previousState, newWord);
-            });
-        }, 300);
-    }
-
-    handleTagsChange = (tags) => {
-        waitForIt(() => {
-            this.setState((previousState) => {
-                return Object.assign({}, previousState, {tags});
-            });
-        }, 300);
-    }
-
     render() {
-
         return (
             <View>
                 <Header>Add a translation</Header>
@@ -153,11 +80,7 @@ class NewTranslationForm extends React.Component {
                                 <Text>{this.props.labelWord1}</Text>
                             </View>
                             <View style={styles.input}>
-                                <TextInput
-                                    ref="input1"
-                                    underlineColorAndroid="transparent"
-                                    onChangeText={(text) => this.handleWordChange('word1', text)}
-                                />
+                                {this.getSubViews().textInput1}
                             </View>
                         </View>
                         <View style={styles.word}>
@@ -165,11 +88,7 @@ class NewTranslationForm extends React.Component {
                                 <Text>{this.props.labelWord2}</Text>
                             </View>
                             <View style={styles.input}>
-                                <TextInput
-                                    ref="input2"
-                                    underlineColorAndroid="transparent"
-                                    onChangeText={(text) => this.handleWordChange('word2', text)}
-                                />
+                                {this.getSubViews().textInput2}
                             </View>
                         </View>
                         <View style={styles.tags}>
@@ -177,21 +96,12 @@ class NewTranslationForm extends React.Component {
                                 <Text>Tags:</Text>
                             </View>
                             <View style={styles.input}>
-                                <Tags
-                                    initialTags={this.state.tags}
-                                    createTagOnReturn={true}
-                                    onChangeTags={tags => this.handleTagsChange(tags)}
-                                    containerStyle={tagComponentStyle.containerStyle}
-                                    inputContainerStyle={tagComponentStyle.inputContainerStyle}
-                                    inputStyle={tagComponentStyle.inputStyle}
-                                    tagContainerStyle={tagComponentStyle.tagContainerStyle}
-                                    tagTextStyle={tagComponentStyle.tagTextStyle}
-                                />
+                            {this.getSubViews().tagsInput}
                             </View>
                         </View>
                     </View>
                     <View style={styles.button}>
-                        <Button disabled={this.cannotBeCreated()} title="Submit" onPress={this.handleSubmit}/>
+                        <Button disabled={this.cannotBeSubmitted()} title="Submit" onPress={this.handleSubmit}/>
                     </View>
                 </View>
             </View>
