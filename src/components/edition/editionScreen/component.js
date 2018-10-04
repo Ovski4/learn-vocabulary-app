@@ -1,7 +1,7 @@
 import React from 'react';
-import NewTranslationForm from './NewTranslationForm';
-import TranslationList from './TranslationList';
 import { KeyboardAvoidingView, Image, StyleSheet } from 'react-native';
+import NewTranslationForm from '../newTranslationForm/component';
+import TranslationList from '../translationList/component';
 
 const styles = StyleSheet.create({
     page: {

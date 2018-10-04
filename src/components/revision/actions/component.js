@@ -1,29 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Text, Picker, Button, View, StyleSheet } from 'react-native';
-import {
-    translationsShuffled,
-    translationsUnshuffled,
-    allTranslationsRevealed,
-    translationsHidden
-} from '../../actions/uiTranslations';
-import { translationsFilteredByTag } from '../../actions/ui';
-import Header from '../../components/ui/Header';
-import translationsService from '../../services/translations';
-
-const getRandomNumbers = (arrayLength) => {
-    const numbers = [];
-    for (let i = 0; i < arrayLength; i++) {
-        numbers.push(Math.random());
-    }
-
-    return numbers;
-};
-
-const mapStateToProps = (state) => ({
-    translations: state.translations,
-    tags: state.tags
-});
+import Header from '../../../components/ui/Header';
+import translationsService from '../../../services/translations';
 
 const styles = StyleSheet.create({
     button: {
@@ -54,18 +32,7 @@ const styles = StyleSheet.create({
     }
 });
 
-const mapDispatchToProps = (dispatch) => ({
-    handleShuffle: (translationsLength) => dispatch(translationsShuffled(
-        getRandomNumbers(translationsLength)
-    )),
-    handleUnshuffle: () => dispatch(translationsUnshuffled()),
-    handleDisplayEverything: (translations) => dispatch(allTranslationsRevealed(translations)),
-    handleHideLeft: (translations) => dispatch(translationsHidden(translations, 'left')),
-    handleHideRight: (translations) => dispatch(translationsHidden(translations, 'right')),
-    handleFilterByTag: (tagId) => dispatch(translationsFilteredByTag(tagId))
-});
-
-class Actions extends React.PureComponent {
+class Actions extends React.Component {
 
     constructor(props) {
         super(props);
@@ -154,7 +121,4 @@ class Actions extends React.PureComponent {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Actions);
+export default Actions;

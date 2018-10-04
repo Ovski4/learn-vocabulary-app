@@ -1,20 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { translationUpdated } from '../../actions/translations';
-import { tagsUpdated } from '../../actions/tags';
 import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
-import { waitForIt } from '../../services/helpers';
+import { waitForIt } from '../../../services/helpers';
 import Tags from 'react-native-tags';
 import uuidv4 from 'uuid/v4';
-
-const mapStateToProps = (state) => ({
-    tags: state.tags
-});
-
-const mapDispatchToProps = (dispatch) => ({
-    handleTranslationUpdated: (translation) => dispatch(translationUpdated(translation)),
-    handleTagsUpdated: (tags, translationId) => dispatch(tagsUpdated(tags, translationId)),
-});
 
 const styles = StyleSheet.create({
     view: {
@@ -70,7 +58,8 @@ const tagComponentStyle = StyleSheet.create({
         fontWeight: 'bold'
     }
 });
-class EditTranslationForm extends React.Component {
+
+class EditTranslationForm extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -198,7 +187,4 @@ EditTranslationForm.defaultProps = {
     }
 };
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(EditTranslationForm);
+export default EditTranslationForm;

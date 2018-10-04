@@ -1,6 +1,6 @@
-import RevisionScreen from './revision/RevisionScreen';
-import EditionScreen from './edition/EditionScreen';
-import SettingsScreen from './settings/SettingsScreen';
+import RevisionScreen from './revision/revisionScreen/component';
+import EditionScreen from './edition/editionScreen/component';
+import SettingsScreen from './settings/settingsScreen/component';
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 

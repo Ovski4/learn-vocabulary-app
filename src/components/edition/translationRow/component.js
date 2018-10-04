@@ -1,24 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import EditTranslationForm from './EditTranslationForm';
-import { translationDeleted } from '../../actions/translations';
-import { tagsDeleted } from '../../actions/tags';
 import { StyleSheet, Button, Text, View } from 'react-native';
-
-const mapStateToProps = (state, ownProps) => {
-    return {
-        translation: state.translations.find((translation) => {
-            return ownProps.id === translation.id;
-        })
-    };
-};
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    handleDelete: () => {
-        dispatch(translationDeleted(ownProps.id))
-        dispatch(tagsDeleted(ownProps.id))
-    }
-});
+import EditTranslationForm from '../editTranslationForm/connect';
 
 const styles = StyleSheet.create({
     view: {
@@ -94,7 +76,4 @@ class TranslationRow extends React.Component {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(TranslationRow);
+export default TranslationRow;

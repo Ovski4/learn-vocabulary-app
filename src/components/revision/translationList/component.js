@@ -1,16 +1,8 @@
 import React from 'react';
-import TranslationRow from './TranslationRow';
-import translationsService from '../../services/translations'
 import { StyleSheet, Text, View, FlatList } from 'react-native';
-import Header from '../ui/Header';
-import { connect } from 'react-redux';
-
-const mapStateToProps = (state) => {
-    return {
-        ui: state.ui,
-        translations: [...state.translations].reverse()
-    }
-};
+import TranslationRow from '../translationRow/connect';
+import translationsService from '../../../services/translations'
+import Header from '../../ui/Header';
 
 const styles = StyleSheet.create({
     emptyListView: {
@@ -70,4 +62,4 @@ class TranslationList extends React.PureComponent {
     }
 }
 
-export default connect(mapStateToProps)(TranslationList);
+export default TranslationList;

@@ -1,5 +1,5 @@
 import React from 'react';
-import SettingsScreen from '../../../src/components/settings/SettingsScreen';
+import SettingsScreen from '../../../src/components/settings/settingsScreen/component';
 import renderer from 'react-test-renderer';
 
 describe('SettingsScreen component', () => {
