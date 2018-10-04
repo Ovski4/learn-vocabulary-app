@@ -19,7 +19,7 @@ manually-build:
   - yarn
   - yarn global add expo-cli
   - expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
-  - expo build:android
+  - expo build:android --no-publish
 
 build:
   stage: build
