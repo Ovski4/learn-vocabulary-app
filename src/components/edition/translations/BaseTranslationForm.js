@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
-import { waitForIt } from '../../services/helpers';
+import { waitForIt } from '../../../services/helpers';
 import uuidv4 from 'uuid/v4';
 import Tags from 'react-native-tags';
 

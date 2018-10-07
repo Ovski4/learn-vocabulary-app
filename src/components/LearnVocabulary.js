@@ -1,7 +1,7 @@
 import RevisionScreen from './revision/revisionScreen/component';
-import EditionScreen from './edition/editionScreen/component';
+import EditionScreen from './edition/translations/editionScreen/component';
 import SettingsScreen from './settings/settingsScreen/component';
-import React from 'react';
+import React from 'react';  
 import { createBottomTabNavigator } from 'react-navigation';
 
 const RootStack = createBottomTabNavigator(

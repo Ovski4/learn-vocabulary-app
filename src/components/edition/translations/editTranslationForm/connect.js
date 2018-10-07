@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { translationUpdated } from '../../../actions/translations';
-import { tagsUpdated } from '../../../actions/tags';
+import { translationUpdated } from '../../../../actions/translations';
+import { tagsUpdated } from '../../../../actions/tags';
 import EditTranslationForm from './component';
 
 const mapStateToProps = (state) => ({

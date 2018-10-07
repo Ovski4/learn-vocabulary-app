@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import TranslationRow from '../translationRow/connect';
-import Header from '../../ui/Header';
+import Header from '../../../ui/Header';
 
 const styles = StyleSheet.create({
     emptyListView: {

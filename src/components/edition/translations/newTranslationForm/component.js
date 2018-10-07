@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
 import BaseTranslationForm from '../BaseTranslationForm';
 import uuidv4 from 'uuid/v4';
-import Header from '../../../components/ui/Header';
+import Header from '../../../ui/Header';
 import Tags from 'react-native-tags';
 
 const styles = StyleSheet.create({

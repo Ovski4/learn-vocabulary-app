@@ -1,5 +1,5 @@
 import React from 'react';
-import EditTranslationForm from '../../../src/components/edition/editTranslationForm/component';
+import EditTranslationForm from '../../../src/components/edition/translations/editTranslationForm/component';
 import renderer from 'react-test-renderer';
 
 describe('EditTranslationForm component', () => {
