@@ -102,11 +102,13 @@ class BaseTranslationForm extends React.Component {
             textInput1: <TextInput
                 ref="input1"
                 underlineColorAndroid="transparent"
+                defaultValue={this.state.word1}
                 onChangeText={(text) => this.handleWordChange('word1', text)}
             />,
             textInput2: <TextInput
                 ref="input2"
                 underlineColorAndroid="transparent"
+                defaultValue={this.state.word2}
                 onChangeText={(text) => this.handleWordChange('word2', text)}
             />
         }
