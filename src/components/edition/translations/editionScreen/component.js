@@ -1,12 +1,11 @@
 import React from 'react';
-import { KeyboardAvoidingView, Image, StyleSheet } from 'react-native';
+import { KeyboardAvoidingView, Image, StyleSheet, StatusBar, Platform } from 'react-native';
 import NewTranslationForm from '../newTranslationForm/connect';
 import TranslationList from '../translationList/connect';
 
 const styles = StyleSheet.create({
     page: {
-        flex:1,
-        marginTop: 30
+        flex:1
     }
 });
 
