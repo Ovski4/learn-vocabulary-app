@@ -10,7 +10,7 @@ import {
 /**
  * Syntax => reducer(state, action)
  */
-describe('Translations reducer', () => {
+describe('UI translations reducer', () => {
 
     it('Should return the initial translations', () => {
         const initialTranslations = reducer(undefined, {});

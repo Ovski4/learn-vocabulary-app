@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardAvoidingView, Image, StyleSheet, StatusBar, Platform } from 'react-native';
+import { KeyboardAvoidingView, StyleSheet } from 'react-native';
 import NewTranslationForm from '../newTranslationForm/connect';
 import TranslationList from '../translationList/connect';
 
@@ -10,13 +10,6 @@ const styles = StyleSheet.create({
 });
 
 class EditionScreen extends React.PureComponent {
-
-    static navigationOptions = {
-        tabBarIcon: ({tintColor}) => <Image
-            source={require('./assets/icon.png')}
-            style={{ height: 30, width: 30, tintColor: tintColor}}
-        />
-    }
 
     render() {
         return (

@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Platform, StatusBar } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView } from 'react-native';
+import NewTagForm from '../newTagForm/connect';
+import TagList from '../tagList/connect';
 
 const styles = StyleSheet.create({
     page: {
@@ -15,9 +17,10 @@ class TagsEditionScreen extends React.Component {
 
     render() {
         return (
-            <View styles={styles.page}>
-                <Text>Tags Screen</Text>
-            </View>
+            <KeyboardAvoidingView style={styles.page} behavior="padding">
+                <NewTagForm/>
+                <TagList/>
+            </KeyboardAvoidingView>
         );
     }
 }

@@ -39,5 +39,19 @@ export default {
         });
 
        return { translations };
+    },
+
+    /**
+     * Remove translations on tags
+     */
+    3: (state) => {
+        const newState = {...state};
+        const tags = newState.tags.map((tag) => {
+            const { translations, ...tagsWithoutTranslations } = tag;
+
+            return tagsWithoutTranslations;
+        });
+
+       return Object.assign(newState, {tags});
     }
 };

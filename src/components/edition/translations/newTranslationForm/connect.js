@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { translationAdded } from '../../../../actions/translations';
-import { tagsAdded } from '../../../../actions/tags';
 import NewTranslationForm from './component';
 
 const mapStateToProps = (state) => ({
@@ -8,8 +7,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    handleTranslationAdded: (translation) => dispatch(translationAdded(translation)),
-    handleTagsAdded: (tags, translationId) => dispatch(tagsAdded(tags, translationId)),
+    handleTranslationAdded: (translation) => dispatch(translationAdded(translation))
 });
 
 export default connect(
