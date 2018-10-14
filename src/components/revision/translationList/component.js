@@ -28,10 +28,14 @@ class TranslationList extends React.PureComponent {
             />;
         };
 
+        const emptyListText = this.props.translations.length > 0 ?
+            'No translation found' :
+            'Add a translation to start learning!'
+        ;
         const listEmptyComponent =
             <View style={styles.emptyListView}>
                 <Text style={styles.emptyListText}>
-                    Add a translation to start learning!
+                    {emptyListText}
                 </Text>
             </View>
         ;
