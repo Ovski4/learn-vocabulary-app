@@ -1,7 +1,7 @@
 import React from 'react';
 import Actions from '../actions/connect';
 import TranslationList from '../translationList/connect';
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, Platform, StatusBar, Image } from 'react-native';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 const styles = StyleSheet.create({
     page: {
         flex:1,
-        marginTop: 30
+        marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
     }
 });
 

@@ -1,13 +1,14 @@
 import RevisionScreen from './revision/revisionScreen/component';
-import EditionScreen from './edition/editionScreen/component';
+import EditionScreen from './edition/translations/editionScreen/component';
 import SettingsScreen from './settings/settingsScreen/component';
+import EditionNavigator from './edition/navigator/EditionNavigator';
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 
 const RootStack = createBottomTabNavigator(
     {
         Revision: RevisionScreen,
-        Edition: EditionScreen,
+        Edition: EditionNavigator,
         // Settings: SettingsScreen,
     },
     {
@@ -17,7 +18,7 @@ const RootStack = createBottomTabNavigator(
         }
     }
 );
-  
+
 export default class LearnVocabulary extends React.Component {
     render() {
         return <RootStack />;

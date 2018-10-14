@@ -78,4 +78,42 @@ describe('Migrations', () => {
             expect(migratedState.translations[i].tags.length).toEqual(0);
         }
     });
+
+    it('Should migrate from version 2 to 3', () => {
+        const initialState = {
+            translations: [
+                {
+                    word1: 'Translation',
+                    word2: 'Traduction',
+                    createdAt: 1537166675288,
+                    id: '1',
+                    tags: ['1']
+                },
+                {
+                    word1: 'Pain',
+                    word2: 'Douleur',
+                    createdAt: 1537166685284,
+                    id: '2',
+                    tags: ['1']
+                }
+            ],
+            tags: [
+                {
+                    label: 'tag1',
+                    id: '1',
+                    createdAt: 1537166687285,
+                    translations: ['1', '2']
+                }
+            ]
+        };
+
+        const migratedState = migrations[3](initialState);
+        for (let i = 0; i < initialState.tags.length; i++) {
+            // Check immutability
+            expect(initialState.tags[i]).toHaveProperty('translations');
+
+            // Check new property
+            expect(migratedState.tags[i]).not.toHaveProperty('translations');
+        }
+    });
 });

@@ -58,7 +58,7 @@ describe('Translations reducer', () => {
                 word2: 'Traduction',
                 createdAt: 1537166675288,
                 id: '2eab4',
-                tags: []
+                tags: ['1', '2']
             },
             {
                 word1: 'Pain',

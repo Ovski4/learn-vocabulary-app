@@ -1,5 +1,4 @@
-import { translationDeleted } from '../../../actions/translations';
-import { tagsDeleted } from '../../../actions/tags';
+import { translationDeleted } from '../../../../actions/translations';
 import { connect } from 'react-redux';
 import TranslationRow from './component';
 
@@ -14,7 +13,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
     handleDelete: () => {
         dispatch(translationDeleted(ownProps.id))
-        dispatch(tagsDeleted(ownProps.id))
     }
 });
 

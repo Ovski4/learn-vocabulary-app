@@ -2,8 +2,7 @@ import React from 'react';
 import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
 import BaseTranslationForm from '../BaseTranslationForm';
 import uuidv4 from 'uuid/v4';
-import Header from '../../../components/ui/Header';
-import Tags from 'react-native-tags';
+import Header from '../../../ui/Header';
 
 const styles = StyleSheet.create({
     row: {
@@ -49,19 +48,16 @@ class NewTranslationForm extends BaseTranslationForm {
     }
 
     handleSubmit = () => {
-        const tags = this.prepareTranslationTags();
-        const translation = {
-            word1: this.state.word1,
-            word2: this.state.word2,
-            createdAt: Date.now(),
-            id: uuidv4(),
-            tags: tags.map(tag => tag.id)
-        };
-
         this.refs.input1.clear();
         this.refs.input2.clear();
-        this.props.handleTranslationAdded(translation);
-        this.props.handleTagsAdded(tags, translation.id);
+        this.props.handleTranslationAdded({
+            id: uuidv4(),
+            createdAt: Date.now(),
+            word1: this.state.word1,
+            word2: this.state.word2,
+            tags: this.state.tags.map(tag => tag.id)
+        });
+        console.log('emptying tags');
         this.setState({
             word1: '',
             word2: '',
@@ -95,8 +91,8 @@ class NewTranslationForm extends BaseTranslationForm {
                             <View style={styles.label}>
                                 <Text>Tags:</Text>
                             </View>
-                            <View style={styles.input}>
-                            {this.getSubViews().tagsInput}
+                            <View style={{flex: 1}}>
+                                {this.getSubViews().tagsInput}
                             </View>
                         </View>
                     </View>

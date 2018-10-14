@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import TranslationRow from '../translationRow/connect';
-import translationsService from '../../../services/translations'
-import Header from '../../ui/Header';
+import Header from '../../../ui/Header';
 
 const styles = StyleSheet.create({
     emptyListView: {
@@ -22,28 +21,19 @@ class TranslationList extends React.PureComponent {
     render() {
         const getListItem = (translation) => {
             return <TranslationRow
-                key={translation.id}
-                id={translation.id}
-                hidden={translation.hidden}
-            />;
+                    key={translation.id}
+                    id={translation.id}
+                    hidden={translation.hidden}
+                />
+            ;
         };
 
-        const emptyListText = this.props.translations.length > 0 ?
-            'No translation found' :
-            'Add a translation to start learning!'
-        ;
         const listEmptyComponent =
             <View style={styles.emptyListView}>
                 <Text style={styles.emptyListText}>
-                    {emptyListText}
+                    Add a translation to start learning!
                 </Text>
             </View>
-        ;
-
-        const tagFilterId = this.props.ui.translationsFilteredBy;
-        const translationList = tagFilterId !== null ?
-            translationsService.filterByTagId(this.props.translations, tagFilterId) :
-            this.props.translations
         ;
 
         return(
@@ -54,7 +44,7 @@ class TranslationList extends React.PureComponent {
                     borderColor: '#bbb'
                 }}>
                     <FlatList
-                        data={translationList}
+                        data={this.props.translations}
                         index={({item}) => item.index}
                         renderItem={({item}) => getListItem(item)}
                         keyExtractor={(item, index) => item.id}

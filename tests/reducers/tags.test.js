@@ -1,8 +1,8 @@
 import reducer from '../../src/reducers/tags';
 import {
-    tagsAdded,
-    tagsUpdated,
-    tagsDeleted,
+    tagAdded,
+    tagDeleted,
+    tagUpdated,
 } from '../../src/actions/tags';
 
 /**
@@ -15,267 +15,77 @@ describe('Tags reducer', () => {
         expect(initialState).toEqual([]);
     });
 
-    it('Should add tags', () => {
-        const state = reducer([], tagsAdded(
-            [
-                {
-                    createdAt: 1,
-                    id: '1',
-                    label: 'new tag'
-                },
-                {
-                    createdAt: 2,
-                    id: '2',
-                    label: 'yet another tag'
-                }
-            ],
-            'new_translation_id'
-        ));
+    it('Should add a tag', () => {
+        const newState = reducer([], tagAdded({
+            label: 'Test',
+            createdAt: 1,
+            id: '1',
+            translations: ['1', '2']
+        }));
 
-        expect(state).toEqual([
-            {
-                createdAt: 1,
-                id: '1',
-                label: 'new tag',
-                translations: ['new_translation_id']
-            },
-            {
-                createdAt: 2,
-                id: '2',
-                label: 'yet another tag',
-                translations: ['new_translation_id']
-            }
-        ]);
-        
+        expect(newState).toEqual([{
+            label: 'Test',
+            createdAt: 1,
+            id: '1',
+            translations: ['1', '2']
+        }]);
     });
 
-    it('Should add translation id on tag', () => {
+    it('Should delete a tag', () => {
         const initialState = [
             {
+                label: 'Test',
                 createdAt: 1,
                 id: '1',
-                label: 'not a new tag',
-                translations: ['translation_id_x']
+                translations: []
             }
-        ]
+        ];
 
-        const newState = reducer(initialState, tagsAdded(
-            [
-                {
-                    createdAt: 1,
-                    id: '1',
-                    label: 'not a new tag'
-                },
-                {
-                    createdAt: 2,
-                    id: '2',
-                    label: 'new tag'
-                }
-            ],
-            'new_translation_id'
-        ));
+        const newState1 = reducer(initialState, tagDeleted('fake'));
+        expect(newState1.length).toEqual(1);
 
-        expect(newState).toEqual([
-            {
-                createdAt: 1,
-                id: '1',
-                label: 'not a new tag',
-                translations: ['translation_id_x', 'new_translation_id']
-            },
-            {
-                createdAt: 2,
-                id: '2',
-                label: 'new tag',
-                translations: ['new_translation_id']
-            }
-        ]);
+        const newState2 = reducer(initialState, tagDeleted('1'));
+        expect(newState2).toEqual([]);
     });
 
-    it('Should update (add and remove) tags', () => {
+    it('Should update a tag', () => {
         const initialState = [
             {
-                createdAt: 1,
-                id: '1',
-                label: 'first tag',
-                translations: ['translation_id_1', 'translation_id_2']
+                label: 'Traduction',
+                createdAt: 1537166675288,
+                id: '2eab4',
+                translations: []
             },
             {
-                createdAt: 2,
-                id: '2',
-                label: 'second tag',
-                translations: ['translation_id_1']
-            },
-            {
-                createdAt: 3,
-                id: '3',
-                label: 'third tag',
-                translations: ['translation_id_2']
-            },
-            {
-                createdAt: 4,
-                id: '4',
-                label: 'fourth tag',
-                translations: ['translation_id_2']
+                label: 'Douleur',
+                createdAt: 1537166685284,
+                id: 'de-5fr',
+                translations: []
             }
-        ]
+        ];
 
-        const newState = reducer(initialState, tagsUpdated(
-            [
-                {
-                    createdAt: 1,
-                    id: '1',
-                    label: 'first tag'
-                },
-                {
-                    createdAt: 3,
-                    id: '3',
-                    label: 'third tag'
-                },
-                {
-                    createdAt: 5,
-                    id: '5',
-                    label: 'fifth tag'
-                },
-            ],
-            'translation_id_1'
-        ));
-
-        expect(newState).toEqual([
+        const expectedState = [
             {
-                createdAt: 1,
-                id: '1',
-                label: 'first tag',
-                translations: ['translation_id_1', 'translation_id_2']
+                label: 'Test2',
+                createdAt: 1537166675288,
+                id: '2eab4',
+                translations: ['2']
             },
             {
-                createdAt: 3,
-                id: '3',
-                label: 'third tag',
-                translations: ['translation_id_2', 'translation_id_1']
-            },
-            {
-                createdAt: 4,
-                id: '4',
-                label: 'fourth tag',
-                translations: ['translation_id_2']
-            },
-            {
-                createdAt: 5,
-                id: '5',
-                label: 'fifth tag',
-                translations: ['translation_id_1']
+                label: 'Douleur',
+                createdAt: 1537166685284,
+                id: 'de-5fr',
+                translations: []
             }
-        ]);
+        ];
 
+        const newState = reducer(initialState, tagUpdated({
+            label: 'Test2',
+            createdAt: 1537166675288,
+            id: '2eab4',
+            translations: ['2']
+        }));
+
+        expect(newState).toEqual(expectedState);
     });
-
-    it('Should not update the tags', () => {
-        const initialState = [
-            {
-                createdAt: 1,
-                id: '1',
-                label: 'first tag',
-                translations: ['translation_id_1']
-            },
-            {
-                createdAt: 2,
-                id: '2',
-                label: 'second tag',
-                translations: ['translation_id_2']
-            },
-            {
-                createdAt: 3,
-                id: '3',
-                label: 'third tag',
-                translations: ['translation_id_2']
-            }
-        ]
-
-        const newState = reducer(initialState, tagsUpdated(
-            [
-                {
-                    createdAt: 2,
-                    id: '2',
-                    label: 'second tag',
-                    translations: ['translation_id_2']
-                },
-                {
-                    createdAt: 3,
-                    id: '3',
-                    label: 'third tag',
-                    translations: ['translation_id_2']
-                }
-            ],
-            'translation_id_2'
-        ));
-
-        expect(newState).toEqual([
-            {
-                createdAt: 1,
-                id: '1',
-                label: 'first tag',
-                translations: ['translation_id_1']
-            },
-            {
-                createdAt: 2,
-                id: '2',
-                label: 'second tag',
-                translations: ['translation_id_2']
-            },
-            {
-                createdAt: 3,
-                id: '3',
-                label: 'third tag',
-                translations: ['translation_id_2']
-            }
-        ]);
-
-    });
-
-    it('Should delete tags', () => {
-        const initialState = [
-            {
-                createdAt: 1,
-                id: '1',
-                label: 'first tag',
-                translations: ['translation_id_1', 'translation_id_2']
-            },
-            {
-                createdAt: 2,
-                id: '2',
-                label: 'second tag',
-                translations: ['translation_id_1']
-            },
-            {
-                createdAt: 3,
-                id: '3',
-                label: 'third tag',
-                translations: ['translation_id_2']
-            },
-            {
-                createdAt: 4,
-                id: '4',
-                label: 'fourth tag',
-                translations: ['translation_id_2']
-            }
-        ]
-
-        const newState = reducer(initialState, tagsDeleted('translation_id_2'));
-
-        expect(newState).toEqual([
-            {
-                createdAt: 1,
-                id: '1',
-                label: 'first tag',
-                translations: ['translation_id_1']
-            },
-            {
-                createdAt: 2,
-                id: '2',
-                label: 'second tag',
-                translations: ['translation_id_1']
-            }
-        ]);
-    });
-
 })

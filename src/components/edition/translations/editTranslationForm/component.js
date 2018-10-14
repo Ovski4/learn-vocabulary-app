@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
+import { StyleSheet, Button, Text, View } from 'react-native';
 import BaseTranslationForm from '../BaseTranslationForm';
-import Tags from 'react-native-tags';
 
 const styles = StyleSheet.create({
     view: {
@@ -13,7 +12,8 @@ const styles = StyleSheet.create({
     },
     label: {
         width: '15%',
-        margin: 5
+        margin: 5,
+        justifyContent: 'center'
     },
     input: {
         flex: 1,
@@ -42,21 +42,18 @@ class EditTranslationForm extends BaseTranslationForm {
             word1: props.translation.word1,
             word2: props.translation.word2,
             tags: props.translation.tags.map((tagId) => {
-                return props.tags.find(tag => tag.id === tagId).label
+                return props.tags.find(tag => tag.id === tagId)
             })
         };
     }
 
     handleSubmit = () => {
-        const tags = this.prepareTranslationTags();
-        const translation = {
+        this.props.handleTranslationUpdated({
+            id: this.props.translation.id,
             word1: this.state.word1,
             word2: this.state.word2,
-            id: this.props.translation.id,
-            tags: tags.map(tag => tag.id)
-        };
-        this.props.handleTranslationUpdated(translation);
-        this.props.handleTagsUpdated(tags, translation.id);
+            tags: this.state.tags.map(tag => tag.id)
+        });
         this.props.onUpdate();
     }
 
@@ -83,7 +80,7 @@ class EditTranslationForm extends BaseTranslationForm {
                     <View style={styles.label}>
                         <Text>{this.props.labelTags}</Text>
                     </View>
-                    <View style={styles.input}>
+                    <View style={{flex: 1, marginRight: 5}}>
                         {this.getSubViews().tagsInput}
                     </View>
                 </View>

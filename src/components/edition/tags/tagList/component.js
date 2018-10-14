@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
-import TranslationRow from '../translationRow/connect';
-import Header from '../../ui/Header';
+import Header from '../../../ui/Header';
+import TagRow from '../tagRow/connect';
 
 const styles = StyleSheet.create({
     emptyListView: {
@@ -16,14 +16,13 @@ const styles = StyleSheet.create({
     }
 });
 
-class TranslationList extends React.PureComponent {
+class TagList extends React.PureComponent {
 
     render() {
-        const getListItem = (translation) => {
-            return <TranslationRow
-                    key={translation.id}
-                    id={translation.id}
-                    hidden={translation.hidden}
+        const getListItem = (tag) => {
+            return <TagRow
+                    key={tag.id}
+                    id={tag.id}
                 />
             ;
         };
@@ -31,20 +30,20 @@ class TranslationList extends React.PureComponent {
         const listEmptyComponent =
             <View style={styles.emptyListView}>
                 <Text style={styles.emptyListText}>
-                    Add a translation to start learning!
+                    Add new tags to categorize your translations
                 </Text>
             </View>
         ;
 
         return(
             <View style={{flex: 1}}>
-                <Header>Translations</Header>
+                <Header>Tags</Header>
                 <View style={{
                     flex: 1,
                     borderColor: '#bbb'
                 }}>
                     <FlatList
-                        data={this.props.translations}
+                        data={this.props.tags}
                         index={({item}) => item.index}
                         renderItem={({item}) => getListItem(item)}
                         keyExtractor={(item, index) => item.id}
@@ -56,4 +55,4 @@ class TranslationList extends React.PureComponent {
     }
 }
 
-export default TranslationList;
+export default TagList;

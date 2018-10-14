@@ -1,16 +1,14 @@
-export const tagsAdded = (tags, translationId) => ({
-    type: 'TAGS_ADDED',
-    tags,
-    translationId
+export const tagAdded = tag => ({
+    type: 'TAG_ADDED',
+    tag
 });
 
-export const tagsUpdated = (tags, translationId) => ({
-    type: 'TAGS_UPDATED',
-    tags,
-    translationId
+export const tagUpdated = tag => ({
+    type: 'TAG_UPDATED',
+    tag,
 });
 
-export const tagsDeleted = (translationId) => ({
-    type: 'TAGS_DELETED',
-    translationId
+export const tagDeleted = id => ({
+    type: 'TAG_DELETED',
+    id
 });
