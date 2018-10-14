@@ -23,7 +23,7 @@ const TopTabs = createMaterialTopTabNavigator(
                height: 3
             },
             tabStyle: {
-                height: 35
+                height: 40
             },
             labelStyle: {
                 fontSize: 12
