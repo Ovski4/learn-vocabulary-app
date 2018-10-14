@@ -57,7 +57,6 @@ class NewTranslationForm extends BaseTranslationForm {
             word2: this.state.word2,
             tags: this.state.tags.map(tag => tag.id)
         });
-        console.log('emptying tags');
         this.setState({
             word1: '',
             word2: '',
