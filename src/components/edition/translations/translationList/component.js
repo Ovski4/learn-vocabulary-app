@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import TranslationRow from '../translationRow/connect';
 import Header from '../../../ui/Header';
+import translationsService from '../../../../services/translations';
 
 const styles = StyleSheet.create({
     emptyListView: {
@@ -36,6 +37,12 @@ class TranslationList extends React.PureComponent {
             </View>
         ;
 
+        const search = this.props.ui.translationsSearch.edition;
+        let translationList = this.props.translations;
+        if (search.length > 0) {
+            translationList = translationsService.filterBySearch(translationList, search);
+        }
+
         return(
             <View style={{flex: 1}}>
                 <Header>Translations</Header>
@@ -44,7 +51,7 @@ class TranslationList extends React.PureComponent {
                     borderColor: '#bbb'
                 }}>
                     <FlatList
-                        data={this.props.translations}
+                        data={translationList}
                         index={({item}) => item.index}
                         renderItem={({item}) => getListItem(item)}
                         keyExtractor={(item, index) => item.id}
