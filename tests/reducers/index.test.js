@@ -13,7 +13,11 @@ describe('Root reducer', () => {
             translations: [],
             tags: [],
             ui: {
-                translationsFilteredBy: null
+                translationsFilteredBy: null,
+                translationsSearch: {
+                    edition: '',
+                    revision: '',
+                }
             }
         });
     });
@@ -56,8 +60,12 @@ describe('Root reducer', () => {
                     translations: ['2']
                 }
             ],
-            "ui": {
-                "translationsFilteredBy": null
+            ui: {
+                translationsFilteredBy: null,
+                translationsSearch: {
+                    edition: '',
+                    revision: ''
+                }
             }
         };
         
@@ -96,8 +104,12 @@ describe('Root reducer', () => {
                     translations: ['2']
                 }
             ],
-            "ui": {
-                "translationsFilteredBy": null
+            ui: {
+                translationsFilteredBy: null,
+                translationsSearch: {
+                    edition: '',
+                    revision: ''
+                }
             }
         });
     });

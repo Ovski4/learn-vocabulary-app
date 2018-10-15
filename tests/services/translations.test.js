@@ -60,6 +60,24 @@ describe('Translations service', () => {
         expect(filteredArray).toEqual(expectedArray);
     });
 
+    it('Should seach some translations', () => {
+        const array = [
+            { id: '1', word1: 'Hello', word2: 'Bonjour' },
+            { id: '2', word1: 'Red', word2: 'Rouge' },
+            { id: '3', word1: 'Loop', word2: 'Boucle' },
+            { id: '4', word1: 'Blue', word2: 'Bleu' },
+            { id: '5', word1: 'Jerk', word2: 'Salop' },
+        ];
+        const expectedArray = [
+            { id: '1', word1: 'Hello', word2: 'Bonjour' },
+            { id: '3', word1: 'Loop', word2: 'Boucle' },
+            { id: '5', word1: 'Jerk', word2: 'Salop' },
+        ];
+        const filteredArray = translationsService.filterBySearch(array, 'lo');
+
+        expect(filteredArray).toEqual(expectedArray);
+    });
+
     it('Should check whether or not the translations are ordered', () => {
         const array1 = [
             { createdAt: 1 }, 
