@@ -31,6 +31,16 @@ const filterByTagId = (translations, tagId) => {
     });
 }
 
+const filterBySearch = (translations, text) => {
+    return translations.filter((translation) => {
+        const search = text.toLowerCase();
+        const word1 = translation.word1.toLowerCase();
+        const word2 = translation.word2.toLowerCase();
+
+        return word1.includes(search) || word2.includes(search);
+    });
+}
+
 const translationsAreOrdered = (translations) => {
     let timestamp = -1;
     for (let i = 0; i < translations.length; i++) {
@@ -68,6 +78,7 @@ export default {
     unshuffle,
     shuffle,
     filterByTagId,
+    filterBySearch,
     translationsAreOrdered,
     translationsAreHidden,
     allTranslationsAreVisible

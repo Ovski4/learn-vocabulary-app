@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, Picker, Button, View, StyleSheet } from 'react-native';
 import Header from '../../../components/ui/Header';
 import translationsService from '../../../services/translations';
+import TranslationsSearchBar from '../../ui/TranslationSearchBar';
 
 const styles = StyleSheet.create({
     button: {
@@ -116,6 +117,7 @@ class Actions extends React.Component {
                         {pickerItems}    
                     </Picker>
                 </View>
+                <TranslationsSearchBar/>
             </View>
         );
     }
