@@ -41,7 +41,7 @@ class TranslationList extends React.PureComponent {
         ;
 
         const tagFilterId = this.props.ui.translationsFilteredBy;
-        const search = this.props.ui.translationsSearch;
+        const search = this.props.ui.translationsSearch.revision;
 
         let translationList = this.props.translations;
         if (search.length > 0) {

@@ -2,7 +2,10 @@ import { createReducer } from '../services/helpers';
 
 const initialState = {
     translationsFilteredBy: null,
-    translationsSearch: ''
+    translationsSearch: {
+        revision: '',
+        edition: ''
+    }
 }
 
 const actionHandlers = {
@@ -18,9 +21,12 @@ const onTranslationsFilteredByTag = (ui, action) => {
 }
 
 const onTranslationsSearched = (ui, action) => {
+    const newSearch = {};
+    newSearch[action.scope] = action.text;
+
     return {
         translationsFilteredBy: ui.translationsFilteredBy,
-        translationsSearch: action.text
+        translationsSearch: Object.assign(ui.translationsSearch, newSearch)
     };
 }
 

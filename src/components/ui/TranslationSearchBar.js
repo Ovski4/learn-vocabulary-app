@@ -6,9 +6,9 @@ import { SearchBar } from 'react-native-elements';
 import { waitForIt } from '../../services/helpers';
 
 const mapDispatchToProps = (dispatch) => ({
-    handleFullTextSearch: (text) => dispatch(translationsSearched(text))
+    handleFullTextSearch: (text, scope) => dispatch(translationsSearched(text, scope))
 });
-    
+
 const styles = StyleSheet.create({
     inputStyle: {
         marginLeft: 5,
@@ -31,7 +31,7 @@ class TranslationSearchBar extends React.Component {
         // Do not wait on clear text
         const waitingTime = text == '' ? 0 : 300;
         waitForIt(() => {
-            this.props.handleFullTextSearch(text);
+            this.props.handleFullTextSearch(text, this.props.scope);
         }, waitingTime);
     }
 

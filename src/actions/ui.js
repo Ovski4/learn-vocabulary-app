@@ -3,7 +3,8 @@ export const translationsFilteredByTag = (tagId) => ({
     tagId
 });
 
-export const translationsSearched = (text) => ({
+export const translationsSearched = (text, scope) => ({
     type: 'TRANSLATIONS_SEARCHED',
-    text
+    text,
+    scope
 });

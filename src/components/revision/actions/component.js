@@ -117,7 +117,7 @@ class Actions extends React.Component {
                         {pickerItems}    
                     </Picker>
                 </View>
-                <TranslationsSearchBar/>
+                <TranslationsSearchBar scope="revision"/>
             </View>
         );
     }
