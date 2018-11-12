@@ -41,23 +41,18 @@ describe('Root reducer', () => {
             tags: [
                 {
                     id: '1',
-                    translations: ['1', '2']
                 },
                 {
                     id: '2',
-                    translations: ['1', '3']
                 },
                 {
                     id: '3',
-                    translations: ['1', '3']
                 },
                 {
                     id: '4',
-                    translations: ['3', '2']
                 },
                 {
                     id: '5',
-                    translations: ['2']
                 }
             ],
             ui: {
@@ -89,19 +84,15 @@ describe('Root reducer', () => {
             tags: [
                 {
                     id: '1',
-                    translations: ['1', '2']
                 },
                 {
                     id: '3',
-                    translations: ['1', '3']
                 },
                 {
                     id: '4',
-                    translations: ['3', '2']
                 },
                 {
                     id: '5',
-                    translations: ['2']
                 }
             ],
             ui: {
