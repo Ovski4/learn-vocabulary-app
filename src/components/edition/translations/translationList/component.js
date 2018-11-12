@@ -32,7 +32,7 @@ class TranslationList extends React.PureComponent {
         const listEmptyComponent =
             <View style={styles.emptyListView}>
                 <Text style={styles.emptyListText}>
-                    Add a translation to start learning!
+                    {this.props.literals.addToStart}
                 </Text>
             </View>
         ;
@@ -45,7 +45,7 @@ class TranslationList extends React.PureComponent {
 
         return(
             <View style={{flex: 1}}>
-                <Header>Translations</Header>
+                <Header>{this.props.literals.header}</Header>
                 <View style={{
                     flex: 1,
                     borderColor: '#bbb'

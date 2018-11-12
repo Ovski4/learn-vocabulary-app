@@ -67,12 +67,12 @@ class NewTranslationForm extends BaseTranslationForm {
     render() {
         return (
             <View>
-                <Header>Add a translation</Header>
+                <Header>{this.props.literals.header}</Header>
                 <View style={styles.row}>
                     <View style={{flex: 4}}>
                         <View style={styles.word}>
                             <View style={styles.label}>
-                                <Text>{this.props.labelWord1}</Text>
+                                <Text>{this.props.literals.labelWord1}:</Text>
                             </View>
                             <View style={styles.input}>
                                 {this.getSubViews().textInput1}
@@ -80,7 +80,7 @@ class NewTranslationForm extends BaseTranslationForm {
                         </View>
                         <View style={styles.word}>
                             <View style={styles.label}>
-                                <Text>{this.props.labelWord2}</Text>
+                                <Text>{this.props.literals.labelWord2}:</Text>
                             </View>
                             <View style={styles.input}>
                                 {this.getSubViews().textInput2}
@@ -88,7 +88,7 @@ class NewTranslationForm extends BaseTranslationForm {
                         </View>
                         <View style={styles.tags}>
                             <View style={styles.label}>
-                                <Text>Tags:</Text>
+                                <Text>{this.props.literals.labelTags}:</Text>
                             </View>
                             <View style={{flex: 1}}>
                                 {this.getSubViews().tagsInput}
@@ -96,17 +96,12 @@ class NewTranslationForm extends BaseTranslationForm {
                         </View>
                     </View>
                     <View style={styles.button}>
-                        <Button disabled={this.cannotBeSubmitted()} title="Submit" onPress={this.handleSubmit}/>
+                        <Button disabled={this.cannotBeSubmitted()} title={this.props.literals.form.submit} onPress={this.handleSubmit}/>
                     </View>
                 </View>
             </View>
         );
     }
 }
-
-NewTranslationForm.defaultProps = {
-    labelWord1: 'Word 1:',
-    labelWord2: 'Word 2:',
-};
 
 export default NewTranslationForm;

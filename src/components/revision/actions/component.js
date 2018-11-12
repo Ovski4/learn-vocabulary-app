@@ -60,23 +60,23 @@ class Actions extends React.Component {
                 return <Picker.Item key={tag.id} value={tag.id} label={tag.label} />
             })
         ;
-        pickerItems.unshift(<Picker.Item key={'none'} value={null} label="No tag selected" />)
+        pickerItems.unshift(<Picker.Item key={'none'} value={null} label={this.props.literals.noTagSelected} />)
 
         return (
             <View>
-                <Header>Actions</Header>
+                <Header>{this.props.literals.header}</Header>
                 <View style={styles.row}>
                     <View style={styles.button}>
                         <Button
                             onPress={() => this.props.handleShuffle(this.props.translations.length)}
-                            title="Shuffle"
+                            title={this.props.literals.shuffle}
                         />
                     </View>
                     <View style={styles.button}>
                         <Button
                             disabled={translationsService.translationsAreOrdered(this.props.translations)}
                             onPress={() => this.props.handleUnshuffle()}
-                            title="Unshuffle"
+                            title={this.props.literals.unshuffle}
                         />
                     </View>
                 </View>
@@ -85,26 +85,26 @@ class Actions extends React.Component {
                         <Button
                             disabled={translationsService.translationsAreHidden(visibleTranslations, 'left')}
                             onPress={() => this.props.handleHideLeft(visibleTranslations)}
-                            title="Hide left"
+                            title={this.props.literals.hideLeft}
                         />
                     </View>
                     <View style={styles.button}>
                         <Button
                             disabled={translationsService.translationsAreHidden(visibleTranslations, 'right')}
                             onPress={() => this.props.handleHideRight(visibleTranslations)}
-                            title="Hide right"
+                            title={this.props.literals.hideRight}
                         />
                     </View>
                     <View style={styles.button}>
                         <Button
                             disabled={translationsService.allTranslationsAreVisible(visibleTranslations)}
                             onPress={() => this.props.handleDisplayEverything(visibleTranslations)}
-                            title="Display all"
+                            title={this.props.literals.displayAll}
                         />
                     </View>
                 </View>
                 <View style={styles.tagsSelectorRow}>
-                    <Text style={styles.filterText}>Filter by:</Text>
+                    <Text style={styles.filterText}>{this.props.literals.filterLabel}:</Text>
                     <Picker
                         selectedValue={this.state.selectedTag}
                         style={styles.picker}

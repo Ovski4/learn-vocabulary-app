@@ -30,14 +30,14 @@ class TagList extends React.PureComponent {
         const listEmptyComponent =
             <View style={styles.emptyListView}>
                 <Text style={styles.emptyListText}>
-                    Add new tags to categorize your translations
+                    {this.props.literals.addToStart}
                 </Text>
             </View>
         ;
 
         return(
             <View style={{flex: 1}}>
-                <Header>Tags</Header>
+                <Header>{this.props.literals.header}</Header>
                 <View style={{
                     flex: 1,
                     borderColor: '#bbb'

@@ -114,7 +114,7 @@ class TagSelector extends React.Component {
                 return <Picker.Item key={tag.id} value={tag.id} label={tag.label} />
             })
         ;
-        pickerItems.unshift(<Picker.Item key={'none'} value={null} label="Pick a tag" />)
+        pickerItems.unshift(<Picker.Item key={'none'} value={null} label={this.props.literals.pick.label} />)
 
         return (
             <View>

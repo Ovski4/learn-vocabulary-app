@@ -116,4 +116,26 @@ describe('Migrations', () => {
             expect(migratedState.tags[i]).not.toHaveProperty('translations');
         }
     });
+
+    it('Should migrate from version 3 to 4', () => {
+        const initialState = {
+            translations: [],
+            tags: []
+        };
+
+        const migratedState = migrations[4](initialState);
+
+        // Check immutability
+        expect(initialState).not.toHaveProperty('config');
+
+        // Check new property
+        expect(migratedState).toEqual({
+            translations: [],
+            tags: [],
+            config: {
+                locale: 'en'
+            }
+        });
+    });
+
 });

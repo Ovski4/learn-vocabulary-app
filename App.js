@@ -14,7 +14,7 @@ const persistedReducer = persistReducer(
     {
         key: 'root',
         version: 3,
-        whitelist: ['translations', 'tags'],
+        whitelist: ['translations', 'tags', 'config'],
         transforms: transformers,
         migrate: createMigrate(migrations),
         storage: storage,

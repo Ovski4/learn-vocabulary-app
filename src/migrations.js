@@ -53,5 +53,16 @@ export default {
         });
 
        return Object.assign(newState, {tags});
+    },
+
+    /**
+     * Add config with default locale
+     */
+    4: (state) => {
+        return Object.assign({...state}, {
+            config: {
+                locale: 'en'
+            }
+        });
     }
 };

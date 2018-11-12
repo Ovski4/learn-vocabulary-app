@@ -1,7 +1,7 @@
-import reducer from '../src/reducers/index';
+import reducer from '../../src/reducers/index';
 import { createStore } from 'redux';
 import React from 'react';
-import LearnVocabulary from '../src/components/LearnVocabulary';
+import LearnVocabulary from '../../src/components/LearnVocabulary';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux'
 
@@ -18,6 +18,9 @@ describe('LearnVocabulary component', () => {
                     edition: '',
                     revision: '',
                 }
+            },
+            config: {
+                locale: 'en'
             }
         });
 
@@ -89,6 +92,9 @@ describe('LearnVocabulary component', () => {
                     edition: '',
                     revision: ''
                 }
+            },
+            config: {
+                locale: 'en'
             }
         });
 

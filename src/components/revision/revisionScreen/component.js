@@ -26,12 +26,15 @@ class RevisionScreen extends React.PureComponent {
         }
     }
 
-    static navigationOptions = {
-        tabBarIcon: ({tintColor}) => <Image
-            source={require('./assets/icon.png')}
-            style={{ height: 30, width: 30, tintColor: tintColor}}
-        />
-    }
+    static navigationOptions = ({ screenProps }) => {
+        return {
+            tabBarLabel: screenProps.titles.revision,
+            tabBarIcon: ({tintColor}) => <Image
+                source={require('./assets/icon.png')}
+                style={{ height: 30, width: 30, tintColor: tintColor}}
+            />
+        }
+    };
 
     render() {
         return (

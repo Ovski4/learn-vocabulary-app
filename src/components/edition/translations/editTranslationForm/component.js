@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
     }
 });
 
-
 class EditTranslationForm extends BaseTranslationForm {
 
     constructor(props) {
@@ -62,7 +61,7 @@ class EditTranslationForm extends BaseTranslationForm {
             <View style={styles.view}>
                 <View style={styles.row}>
                     <View style={styles.label}>
-                        <Text>{this.props.labelWord1}</Text>
+                        <Text>{this.props.literals.labelWord1}:</Text>
                     </View>
                     <View style={styles.input}>
                         {this.getSubViews().textInput1}
@@ -70,7 +69,7 @@ class EditTranslationForm extends BaseTranslationForm {
                 </View>
                 <View style={styles.row}>
                     <View style={styles.label}>
-                        <Text>{this.props.labelWord2}</Text>
+                        <Text>{this.props.literals.labelWord2}:</Text>
                     </View>
                     <View style={styles.input}>
                         {this.getSubViews().textInput2}
@@ -78,7 +77,7 @@ class EditTranslationForm extends BaseTranslationForm {
                 </View>
                 <View style={styles.row}>
                     <View style={styles.label}>
-                        <Text>{this.props.labelTags}</Text>
+                        <Text>{this.props.literals.labelTags}:</Text>
                     </View>
                     <View style={{flex: 1, marginRight: 5}}>
                         {this.getSubViews().tagsInput}
@@ -86,23 +85,12 @@ class EditTranslationForm extends BaseTranslationForm {
                 </View>
                 <View style={styles.submitButtonWrapper}>
                     <View style={styles.submitButton}>
-                        <Button disabled={this.cannotBeSubmitted()} title="Submit" onPress={this.handleSubmit}/>
+                        <Button disabled={this.cannotBeSubmitted()} title={this.props.literals.form.submit} onPress={this.handleSubmit}/>
                     </View>
                 </View>
             </View>
         );
     }
 }
-
-EditTranslationForm.defaultProps = {
-    labelWord1: 'Word 1:',
-    labelWord2: 'Word 2:',
-    labelTags: 'Tags:',
-    translation: {
-        word1: '',
-        word2: '',
-        tags: []
-    }
-};
 
 export default EditTranslationForm;

@@ -52,7 +52,7 @@ class TagRow extends React.Component {
                     </View>
                     <View style={styles.actions}>
                         <View style={styles.button}>
-                            <Button title="Edit" onPress={this.toggleEditable}/>
+                            <Button title={this.props.literals.edit} onPress={this.toggleEditable}/>
                         </View>
                         <View style={styles.button}>
                             <Button title="X" onPress={this.props.handleDelete}/>
