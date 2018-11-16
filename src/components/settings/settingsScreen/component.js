@@ -1,19 +1,27 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, Picker } from 'react-native';
 import translator from '../../../services/translator';
+import Header from '../../../components/ui/Header';
 
 const styles = StyleSheet.create({
     page: {
         flex:1,
         marginTop: 30
     },
-    picker: {
+    row: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 5
+    },
+    label: {
+        fontSize: 16,
+        color: '#929292'
+    },
+    picker:{
         height: 40,
         width: 200,
         paddingLeft: 20
-    },
-    row: {
-        flexDirection: 'row',
     }
 });
 
@@ -46,8 +54,11 @@ class SettingsScreen extends React.Component {
 
         return (
             <View style={styles.page}>
+                <Header>{translator.get('screens.settings', this.state.selectedLocale)}</Header>
                 <View style={styles.row}>
-                    <Text>{translator.get('settings.language', this.state.selectedLocale)}</Text>
+                    <Text style={styles.label}>
+                        {translator.get('settings.language', this.state.selectedLocale)}:
+                    </Text>
                     <Picker
                         selectedValue={this.state.selectedLocale}
                         style={styles.picker}
