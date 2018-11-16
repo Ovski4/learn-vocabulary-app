@@ -8,7 +8,7 @@ const translationsLocalesMap = {
 
 const locales = [
     { id: 'en', label: 'English' },
-    { id: 'fr', label: 'Francais' }
+    { id: 'fr', label: 'Français' }
 ];
 
 const resolve = (keys, translations) => {
