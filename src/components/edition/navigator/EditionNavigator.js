@@ -3,6 +3,8 @@ import TagsEditionScreen from '../../edition/tags/editionScreen/component';
 import TranslationsEditionScreen from '../../edition/translations/editionScreen/component';
 import React from 'react';
 import { View, Image, StyleSheet, StatusBar, Platform } from 'react-native';
+import { connect } from 'react-redux';
+import translator from '../../../services/translator';
 
 const styles = StyleSheet.create({
     screen: {
@@ -10,6 +12,15 @@ const styles = StyleSheet.create({
         marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
     }
 });
+
+const mapStateToProps = (state) => {
+    return {
+        titles: {
+            tags: translator.get('edition.tags.list.header', state.config.locale),
+            translations: translator.get('edition.translations.list.header', state.config.locale)
+        }
+    }
+};
 
 const TopTabs = createMaterialTopTabNavigator(
     {
@@ -49,10 +60,12 @@ class EditionNavigator extends React.Component {
     render() {
       return (
         <View style={styles.screen}>
-            <TopTabs navigation={this.props.navigation} />
+            <TopTabs navigation={this.props.navigation} screenProps={{titles: this.props.titles}} />
         </View>
       );
     }
 }
 
-export default EditionNavigator;
+export default connect(
+    mapStateToProps,
+)(EditionNavigator);
