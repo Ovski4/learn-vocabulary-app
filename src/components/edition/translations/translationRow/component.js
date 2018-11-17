@@ -10,17 +10,18 @@ const styles = StyleSheet.create({
     },
     word: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         padding: 10
     },
+    wordText: {
+        textAlign: 'center'
+    },
     words: {
+        flexGrow: 1,
         flexDirection: 'row',
-        flex: 3
+        alignItems: 'center'
     },
     actions: {
         flexDirection: 'row',
-        flex: 1,
         alignItems: 'center'
     },
     button:{
@@ -46,12 +47,12 @@ class TranslationRow extends React.Component {
             return(
                 <View style={styles.view}>
                     <View style={styles.words}>
-                        <View style={styles.word}>
-                            <Text>{this.props.translation.word1}</Text>
-                        </View>
-                        <View style={styles.word}>
-                            <Text>{this.props.translation.word2}</Text>
-                        </View>
+                            <View style={styles.word}>
+                                <Text style={styles.wordText}>{this.props.translation.word1}</Text>
+                            </View>
+                            <View style={styles.word}>
+                                <Text style={styles.wordText}>{this.props.translation.word2}</Text>
+                            </View>
                     </View>
                     <View style={styles.actions}>
                         <View style={styles.button}>

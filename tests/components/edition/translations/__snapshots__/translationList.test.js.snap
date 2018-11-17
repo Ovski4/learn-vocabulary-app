@@ -246,17 +246,16 @@ exports[`TranslationList component Should render the component with translations
             <View
               style={
                 Object {
-                  "flex": 3,
+                  "alignItems": "center",
                   "flexDirection": "row",
+                  "flexGrow": 1,
                 }
               }
             >
               <View
                 style={
                   Object {
-                    "alignItems": "center",
                     "flex": 1,
-                    "justifyContent": "center",
                     "padding": 10,
                   }
                 }
@@ -265,6 +264,11 @@ exports[`TranslationList component Should render the component with translations
                   accessible={true}
                   allowFontScaling={true}
                   ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
                 >
                   word3
                 </Text>
@@ -272,9 +276,7 @@ exports[`TranslationList component Should render the component with translations
               <View
                 style={
                   Object {
-                    "alignItems": "center",
                     "flex": 1,
-                    "justifyContent": "center",
                     "padding": 10,
                   }
                 }
@@ -283,6 +285,11 @@ exports[`TranslationList component Should render the component with translations
                   accessible={true}
                   allowFontScaling={true}
                   ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
                 >
                   word4
                 </Text>
@@ -292,7 +299,6 @@ exports[`TranslationList component Should render the component with translations
               style={
                 Object {
                   "alignItems": "center",
-                  "flex": 1,
                   "flexDirection": "row",
                 }
               }
@@ -426,17 +432,16 @@ exports[`TranslationList component Should render the component with translations
             <View
               style={
                 Object {
-                  "flex": 3,
+                  "alignItems": "center",
                   "flexDirection": "row",
+                  "flexGrow": 1,
                 }
               }
             >
               <View
                 style={
                   Object {
-                    "alignItems": "center",
                     "flex": 1,
-                    "justifyContent": "center",
                     "padding": 10,
                   }
                 }
@@ -445,6 +450,11 @@ exports[`TranslationList component Should render the component with translations
                   accessible={true}
                   allowFontScaling={true}
                   ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
                 >
                   word1
                 </Text>
@@ -452,9 +462,7 @@ exports[`TranslationList component Should render the component with translations
               <View
                 style={
                   Object {
-                    "alignItems": "center",
                     "flex": 1,
-                    "justifyContent": "center",
                     "padding": 10,
                   }
                 }
@@ -463,6 +471,11 @@ exports[`TranslationList component Should render the component with translations
                   accessible={true}
                   allowFontScaling={true}
                   ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
                 >
                   word2
                 </Text>
@@ -472,7 +485,6 @@ exports[`TranslationList component Should render the component with translations
               style={
                 Object {
                   "alignItems": "center",
-                  "flex": 1,
                   "flexDirection": "row",
                 }
               }
@@ -718,17 +730,16 @@ exports[`TranslationList component Should render the component with translations
             <View
               style={
                 Object {
-                  "flex": 3,
+                  "alignItems": "center",
                   "flexDirection": "row",
+                  "flexGrow": 1,
                 }
               }
             >
               <View
                 style={
                   Object {
-                    "alignItems": "center",
                     "flex": 1,
-                    "justifyContent": "center",
                     "padding": 10,
                   }
                 }
@@ -737,6 +748,11 @@ exports[`TranslationList component Should render the component with translations
                   accessible={true}
                   allowFontScaling={true}
                   ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
                 >
                   word3
                 </Text>
@@ -744,9 +760,7 @@ exports[`TranslationList component Should render the component with translations
               <View
                 style={
                   Object {
-                    "alignItems": "center",
                     "flex": 1,
-                    "justifyContent": "center",
                     "padding": 10,
                   }
                 }
@@ -755,6 +769,11 @@ exports[`TranslationList component Should render the component with translations
                   accessible={true}
                   allowFontScaling={true}
                   ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
                 >
                   word4
                 </Text>
@@ -764,7 +783,6 @@ exports[`TranslationList component Should render the component with translations
               style={
                 Object {
                   "alignItems": "center",
-                  "flex": 1,
                   "flexDirection": "row",
                 }
               }
@@ -898,17 +916,16 @@ exports[`TranslationList component Should render the component with translations
             <View
               style={
                 Object {
-                  "flex": 3,
+                  "alignItems": "center",
                   "flexDirection": "row",
+                  "flexGrow": 1,
                 }
               }
             >
               <View
                 style={
                   Object {
-                    "alignItems": "center",
                     "flex": 1,
-                    "justifyContent": "center",
                     "padding": 10,
                   }
                 }
@@ -917,6 +934,11 @@ exports[`TranslationList component Should render the component with translations
                   accessible={true}
                   allowFontScaling={true}
                   ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
                 >
                   word1
                 </Text>
@@ -924,9 +946,7 @@ exports[`TranslationList component Should render the component with translations
               <View
                 style={
                   Object {
-                    "alignItems": "center",
                     "flex": 1,
-                    "justifyContent": "center",
                     "padding": 10,
                   }
                 }
@@ -935,6 +955,11 @@ exports[`TranslationList component Should render the component with translations
                   accessible={true}
                   allowFontScaling={true}
                   ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
                 >
                   word2
                 </Text>
@@ -944,7 +969,6 @@ exports[`TranslationList component Should render the component with translations
               style={
                 Object {
                   "alignItems": "center",
-                  "flex": 1,
                   "flexDirection": "row",
                 }
               }

@@ -12,9 +12,8 @@ const styles = StyleSheet.create({
 class TranslationRow extends React.PureComponent {
 
     getWordViewStyle = (side) => {
-        const baseWordStyle = {
+        const baseStyle = {
             flex: 1,
-            justifyContent: 'center',
             alignItems: 'center',
             padding: 12
         };
@@ -22,18 +21,26 @@ class TranslationRow extends React.PureComponent {
         if (this.props.translation.hidden === side) {
             return Object.assign({
                 backgroundColor: '#eee',
-            }, baseWordStyle);
+            }, baseStyle);
         }
 
-        return baseWordStyle;
+        return baseStyle;
     }
 
     getWordTextStyle = (side) => {
+        const baseStyle = {
+            textAlign: 'center'
+        };
+
         if (this.props.translation.hidden === side) {
-            return { color: '#eee'};
+            return Object.assign({
+                color: '#eee',
+            }, baseStyle);
         }
 
-        return {color: '#000'};
+        return Object.assign({
+            color: '#000',
+        }, baseStyle);
     }
 
     handleClickLeftWord = () => {

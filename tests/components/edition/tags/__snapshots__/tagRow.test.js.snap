@@ -13,17 +13,16 @@ exports[`TagRow component Should render the component with the english locale 1`
   <View
     style={
       Object {
-        "flex": 3,
+        "alignItems": "center",
         "flexDirection": "row",
+        "flexGrow": 1,
       }
     }
   >
     <View
       style={
         Object {
-          "alignItems": "center",
           "flex": 1,
-          "justifyContent": "center",
           "padding": 10,
         }
       }
@@ -32,6 +31,11 @@ exports[`TagRow component Should render the component with the english locale 1`
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
       >
         test
       </Text>
@@ -41,7 +45,6 @@ exports[`TagRow component Should render the component with the english locale 1`
     style={
       Object {
         "alignItems": "center",
-        "flex": 1,
         "flexDirection": "row",
       }
     }
@@ -173,17 +176,16 @@ exports[`TagRow component Should render the component with the french locale 1`]
   <View
     style={
       Object {
-        "flex": 3,
+        "alignItems": "center",
         "flexDirection": "row",
+        "flexGrow": 1,
       }
     }
   >
     <View
       style={
         Object {
-          "alignItems": "center",
           "flex": 1,
-          "justifyContent": "center",
           "padding": 10,
         }
       }
@@ -192,6 +194,11 @@ exports[`TagRow component Should render the component with the french locale 1`]
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
       >
         test
       </Text>
@@ -201,7 +208,6 @@ exports[`TagRow component Should render the component with the french locale 1`]
     style={
       Object {
         "alignItems": "center",
-        "flex": 1,
         "flexDirection": "row",
       }
     }

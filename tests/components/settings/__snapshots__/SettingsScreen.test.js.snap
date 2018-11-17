@@ -93,6 +93,36 @@ exports[`SettingsScreen component Should render the settings screen without cras
       />
     </View>
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "margin": 5,
+        },
+        Object {
+          "bottom": 0,
+          "position": "absolute",
+          "right": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#dcdcdc",
+        }
+      }
+    >
+      1.2.0
+    </Text>
+  </View>
 </View>
 `;
 
@@ -188,6 +218,36 @@ exports[`SettingsScreen component Should render the settings screen without cras
         }
       />
     </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "margin": 5,
+        },
+        Object {
+          "bottom": 0,
+          "position": "absolute",
+          "right": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#dcdcdc",
+        }
+      }
+    >
+      1.2.0
+    </Text>
   </View>
 </View>
 `;
