@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SettingsScreen component Should render the settings screen without crashing with english locale 1`] = `
+exports[`SettingsScreen component Should render the settings screen with the english locale 1`] = `
 <View
   style={
     Object {
@@ -128,7 +128,7 @@ exports[`SettingsScreen component Should render the settings screen without cras
 </View>
 `;
 
-exports[`SettingsScreen component Should render the settings screen without crashing with french locale 1`] = `
+exports[`SettingsScreen component Should render the settings screen with the french locale 1`] = `
 <View
   style={
     Object {
