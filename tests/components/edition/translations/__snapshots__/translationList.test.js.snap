@@ -191,14 +191,14 @@ exports[`TranslationList component Should render the component with translations
       data={
         Array [
           Object {
-            "createdAt": 1995-12-19T11:00:00.000Z,
+            "createdAt": 1995-12-20T00:00:00.000Z,
             "id": "2",
             "tags": Array [],
             "word1": "word3",
             "word2": "word4",
           },
           Object {
-            "createdAt": 1995-12-19T11:00:00.000Z,
+            "createdAt": 1995-12-20T00:00:00.000Z,
             "id": "1",
             "tags": Array [],
             "word1": "word1",

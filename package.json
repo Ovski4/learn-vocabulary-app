@@ -17,7 +17,7 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest"
+    "test": "docker run -it -v $(pwd):/var/app node:10-stretch bash -c \"cd /var/app && ./node_modules/jest/bin/jest.js\""
   },
   "jest": {
     "preset": "jest-expo",
