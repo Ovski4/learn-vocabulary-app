@@ -123,3 +123,127 @@ exports[`TagList component Should render the component with the english locale 1
   </View>
 </View>
 `;
+
+exports[`TagList component Should render the component with the french locale 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "margin": 5,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Étiquettes
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderColor": "#bbb",
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView
+      ListEmptyComponent={
+        <Component
+          style={
+            Object {
+              "borderColor": "#bbb",
+              "borderTopWidth": 0.4,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontStyle": "italic",
+                "lineHeight": 50,
+              }
+            }
+          >
+            Créez des étiquettes pour catégoriser vos traductions
+          </Text>
+        </Component>
+      }
+      data={Array []}
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      index={[Function]}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "borderColor": "#bbb",
+                "borderTopWidth": 0.4,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontStyle": "italic",
+                  "lineHeight": 50,
+                }
+              }
+            >
+              Créez des étiquettes pour catégoriser vos traductions
+            </Text>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;

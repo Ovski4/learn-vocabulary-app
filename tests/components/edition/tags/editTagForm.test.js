@@ -31,4 +31,14 @@ describe('EditTagForm component', () => {
         expect(rendered).toMatchSnapshot();
     });
 
+    it('Should render the component with the french locale', () => {
+        const rendered = renderer.create(
+            <Provider store={getStore('fr')}>
+                <EditTagForm tag={{id: '1', label: 'test'}} />
+            </Provider>
+        ).toJSON();
+
+        expect(rendered).toMatchSnapshot();
+    });
+
 });

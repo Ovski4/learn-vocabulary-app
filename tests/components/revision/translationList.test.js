@@ -25,4 +25,13 @@ describe('TranslationList component', () => {
         expect(rendered).toMatchSnapshot();
     });
 
+    it('Should render the component with the french locale', () => {
+        const rendered = renderer.create(
+            <Provider store={getStore('fr')}>
+                <TranslationList />
+            </Provider>).toJSON();
+
+        expect(rendered).toMatchSnapshot();
+    });
+
 });

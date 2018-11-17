@@ -266,3 +266,270 @@ exports[`EditTranslationForm component Should render the component with the engl
   </View>
 </View>
 `;
+
+exports[`EditTranslationForm component Should render the component with the french locale 1`] = `
+<View
+  style={
+    Object {
+      "borderColor": "#d6d7da",
+      "borderTopWidth": 0.4,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+          "margin": 5,
+          "width": "15%",
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        Mot 1
+        :
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderRadius": 2,
+          "flex": 1,
+          "margin": 5,
+          "paddingLeft": 5,
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        defaultValue="word1"
+        onChangeText={[Function]}
+        style={
+          Object {
+            "fontSize": 16,
+            "height": 32,
+          }
+        }
+        underlineColorAndroid="transparent"
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+          "margin": 5,
+          "width": "15%",
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        Mot 2
+        :
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderRadius": 2,
+          "flex": 1,
+          "margin": 5,
+          "paddingLeft": 5,
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        defaultValue="word2"
+        onChangeText={[Function]}
+        style={
+          Object {
+            "fontSize": 16,
+            "height": 32,
+          }
+        }
+        underlineColorAndroid="transparent"
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+          "margin": 5,
+          "width": "15%",
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        Étiquettes
+        :
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "marginRight": 5,
+        }
+      }
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eeeeee",
+              "borderRadius": 2,
+              "marginLeft": 5,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "height": 32,
+              }
+            }
+          >
+            <RCTPicker
+              items={
+                Array [
+                  Object {
+                    "label": "Choisissez une étiquette",
+                    "textColor": undefined,
+                    "value": null,
+                  },
+                ]
+              }
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              selectedIndex={0}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#ffffff",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "marginLeft": "15%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginBottom": 10,
+          "marginLeft": 15,
+          "marginRight": 5,
+          "marginTop": 5,
+        }
+      }
+    >
+      <View
+        accessibilityComponentType="button"
+        accessibilityTraits={
+          Array [
+            "button",
+          ]
+        }
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {},
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#007AFF",
+                  "fontSize": 18,
+                  "padding": 8,
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            Valider
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

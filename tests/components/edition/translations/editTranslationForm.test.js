@@ -31,4 +31,20 @@ describe('EditTranslationForm component', () => {
         expect(rendered).toMatchSnapshot();
     });
 
+    it('Should render the component with the french locale', () => {
+        const rendered = renderer.create(
+            <Provider store={getStore('fr')}>
+                <EditTranslationForm translation={{
+                    id: '1',
+                    createdAt: new Date('December 20 1995'),
+                    word1: 'word1',
+                    word2: 'word2',
+                    tags: []
+                }} />
+            </Provider>
+        ).toJSON();
+
+        expect(rendered).toMatchSnapshot();
+    });
+
 });

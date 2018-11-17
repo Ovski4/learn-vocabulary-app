@@ -26,4 +26,14 @@ describe('TagList component', () => {
         expect(rendered).toMatchSnapshot();
     });
 
+    it('Should render the component with the french locale', () => {
+        const rendered = renderer.create(
+            <Provider store={getStore('fr')}>
+                <TagList />
+            </Provider>
+        ).toJSON();
+
+        expect(rendered).toMatchSnapshot();
+    });
+
 });

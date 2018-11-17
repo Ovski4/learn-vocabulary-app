@@ -58,4 +58,14 @@ describe('TranslationList component', () => {
         expect(rendered).toMatchSnapshot();
     });
 
+    it('Should render the component with translations and with the french locale', () => {
+        const rendered = renderer.create(
+            <Provider store={getStoreWithTranslations('fr')}>
+                <TranslationList />
+            </Provider>
+        ).toJSON();
+
+        expect(rendered).toMatchSnapshot();
+    });
+
 });
