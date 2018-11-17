@@ -20,15 +20,9 @@ class LearnVocabulary extends React.Component {
 
         this.rootStack = createBottomTabNavigator(
             {
-                Revision: {
-                    screen: RevisionScreen,
-                },
-                Edition: {
-                    screen: EditionNavigator,
-                },
-                Settings: {
-                    screen: SettingsScreen,
-                },
+                Revision: RevisionScreen,
+                Edition: EditionNavigator,
+                Settings: SettingsScreen,
             },
             {
                 initialRouteName: 'Revision',
