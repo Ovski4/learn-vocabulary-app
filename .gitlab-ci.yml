@@ -10,23 +10,13 @@ tests:
     - yarn
     - ./node_modules/jest/bin/jest.js
 
-manually-build:
+build:
   stage: build
-  when: manual
-  except:
+  only:
+    - master
     - tags
   script:
   - yarn
   - yarn global add expo-cli
   - expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
   - expo build:android --no-publish
-
-build:
-  stage: build
-  only:
-    - tags
-  script:
-  - yarn
-  - yarn global add expo-cli
-  - expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
-  - expo build:android
