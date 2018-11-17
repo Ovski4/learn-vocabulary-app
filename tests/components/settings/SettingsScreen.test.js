@@ -4,9 +4,15 @@ import renderer from 'react-test-renderer';
 
 describe('SettingsScreen component', () => {
 
-    it('Should render the settings screen without crashing', async (done) => {
-        const rendered = (await renderer.create(<SettingsScreen />)).toJSON();
-        expect(rendered).toBeTruthy();
+    it('Should render the settings screen without crashing with english locale', async (done) => {
+        const rendered = (await renderer.create(<SettingsScreen locale="en" />)).toJSON();
+        expect(rendered).toMatchSnapshot();
+        done();
+    });
+
+    it('Should render the settings screen without crashing with french locale', async (done) => {
+        const rendered = (await renderer.create(<SettingsScreen locale="fr" />)).toJSON();
+        expect(rendered).toMatchSnapshot();
         done();
     });
 

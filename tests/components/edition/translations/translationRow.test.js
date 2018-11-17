@@ -7,9 +7,8 @@ import { Provider } from 'react-redux'
 
 describe('TranslationRow component', () => {
 
-    it('Should render the component', () => {
-
-        const store = createStore(reducer, {
+    const getStore = (locale) => {
+        return createStore(reducer, {
             translations: [
                 {
                     id: '1',
@@ -27,15 +26,18 @@ describe('TranslationRow component', () => {
                 }
             ],
             config: {
-                locale: 'en'
+                locale: locale
             }
         });
+    };
 
+    it('Should render the component with the english locale', () => {
         const rendered = renderer.create(
-            <Provider store={store}>
+            <Provider store={getStore('en')}>
                 <TranslationRow id="1" key="1"/>
             </Provider>
         ).toJSON();
+
         expect(rendered).toMatchSnapshot();
     });
 

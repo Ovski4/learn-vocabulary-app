@@ -7,15 +7,20 @@ import { Provider } from 'react-redux'
 
 describe('Actions component', () => {
 
-    it('Should render the component', () => {
-
-        const store = createStore(reducer, {
+    const getStore = (locale) => {
+        return createStore(reducer, {
             config: {
-                locale: 'en'
+                locale: locale
             }
         });
+    };
 
-        const rendered = renderer.create(<Provider store={store}><Actions /></Provider>).toJSON();
+    it('Should render the component with the english locale', () => {
+        const rendered = renderer.create(
+            <Provider store={getStore('en')}>
+                <Actions />
+            </Provider>).toJSON();
+
         expect(rendered).toMatchSnapshot();
     });
 

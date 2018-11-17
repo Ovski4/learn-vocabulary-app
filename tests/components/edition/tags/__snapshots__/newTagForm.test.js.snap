@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NewTagForm component Should render the component 1`] = `
+exports[`NewTagForm component Should render the component with the english locale 1`] = `
 <View>
   <View
     style={

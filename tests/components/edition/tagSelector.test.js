@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 
 describe('TagSelector component', () => {
 
-    it('Should render the component', () => {
+    it('Should render the component with the english locale', () => {
 
         const store = createStore(reducer, {
             tags: [

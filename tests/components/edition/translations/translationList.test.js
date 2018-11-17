@@ -7,26 +7,8 @@ import { Provider } from 'react-redux'
 
 describe('TranslationList component', () => {
 
-    it('Should render the component with an empty list', () => {
-
-        const store = createStore(reducer, {
-            translations: [],
-            config: {
-                locale: 'en'
-            }
-        });
-
-        const rendered = renderer.create(
-            <Provider store={store}>
-                <TranslationList />
-            </Provider>
-        ).toJSON();
-        expect(rendered).toMatchSnapshot();
-    });
-
-    it('Should render the component with translations', () => {
-
-        const store = createStore(reducer, {
+    const getStoreWithTranslations = (locale) => {
+        return createStore(reducer, {
             translations: [
                 {
                     id: '1',
@@ -44,6 +26,15 @@ describe('TranslationList component', () => {
                 }
             ],
             config: {
+                locale: locale
+            }
+        });
+    };
+
+    it('Should render the component with an empty list', () => {
+        const store = createStore(reducer, {
+            translations: [],
+            config: {
                 locale: 'en'
             }
         });
@@ -53,6 +44,17 @@ describe('TranslationList component', () => {
                 <TranslationList />
             </Provider>
         ).toJSON();
+
+        expect(rendered).toMatchSnapshot();
+    });
+
+    it('Should render the component with translations and with the english locale', () => {
+        const rendered = renderer.create(
+            <Provider store={getStoreWithTranslations('en')}>
+                <TranslationList />
+            </Provider>
+        ).toJSON();
+
         expect(rendered).toMatchSnapshot();
     });
 

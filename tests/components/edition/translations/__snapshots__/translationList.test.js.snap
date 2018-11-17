@@ -124,7 +124,7 @@ exports[`TranslationList component Should render the component with an empty lis
 </View>
 `;
 
-exports[`TranslationList component Should render the component with translations 1`] = `
+exports[`TranslationList component Should render the component with translations and with the english locale 1`] = `
 <View
   style={
     Object {

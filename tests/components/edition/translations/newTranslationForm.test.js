@@ -7,19 +7,21 @@ import { Provider } from 'react-redux'
 
 describe('NewTranslationForm component', () => {
 
-    it('Should render the component', () => {
-
-        const store = createStore(reducer, {
+    const getStore = (locale) => {
+        return createStore(reducer, {
             config: {
-                locale: 'en'
+                locale: locale
             }
         });
+    };
 
+    it('Should render the component with the english locale', () => {
         const rendered = renderer.create(
-            <Provider store={store}>
+            <Provider store={getStore('en')}>
                 <NewTranslationForm />
             </Provider>
         ).toJSON();
+
         expect(rendered).toMatchSnapshot();
     });
 
