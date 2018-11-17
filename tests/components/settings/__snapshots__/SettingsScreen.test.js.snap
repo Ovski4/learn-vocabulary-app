@@ -104,8 +104,9 @@ exports[`SettingsScreen component Should render the settings screen without cras
         },
         Object {
           "bottom": 0,
+          "paddingBottom": 30,
           "position": "absolute",
-          "right": 0,
+          "width": "100%",
         },
       ]
     }
@@ -117,10 +118,11 @@ exports[`SettingsScreen component Should render the settings screen without cras
       style={
         Object {
           "color": "#dcdcdc",
+          "textAlign": "center",
         }
       }
     >
-      1.2.0
+      v1.2.0
     </Text>
   </View>
 </View>
@@ -230,8 +232,9 @@ exports[`SettingsScreen component Should render the settings screen without cras
         },
         Object {
           "bottom": 0,
+          "paddingBottom": 30,
           "position": "absolute",
-          "right": 0,
+          "width": "100%",
         },
       ]
     }
@@ -243,10 +246,11 @@ exports[`SettingsScreen component Should render the settings screen without cras
       style={
         Object {
           "color": "#dcdcdc",
+          "textAlign": "center",
         }
       }
     >
-      1.2.0
+      v1.2.0
     </Text>
   </View>
 </View>

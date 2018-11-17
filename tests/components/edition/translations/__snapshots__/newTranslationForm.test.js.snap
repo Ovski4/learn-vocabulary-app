@@ -35,7 +35,7 @@ exports[`NewTranslationForm component Should render the component with the engli
     <View
       style={
         Object {
-          "flex": 4,
+          "flex": 7,
         }
       }
     >
@@ -229,7 +229,7 @@ exports[`NewTranslationForm component Should render the component with the engli
     <View
       style={
         Object {
-          "flex": 1,
+          "flex": 2,
           "justifyContent": "center",
           "marginLeft": 5,
         }
@@ -328,7 +328,7 @@ exports[`NewTranslationForm component Should render the component with the frenc
     <View
       style={
         Object {
-          "flex": 4,
+          "flex": 7,
         }
       }
     >
@@ -522,7 +522,7 @@ exports[`NewTranslationForm component Should render the component with the frenc
     <View
       style={
         Object {
-          "flex": 1,
+          "flex": 2,
           "justifyContent": "center",
           "marginLeft": 5,
         }

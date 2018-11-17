@@ -29,8 +29,11 @@ const styles = StyleSheet.create({
         paddingLeft: 5,
         marginLeft: 5
     },
+    form: {
+        flex: 7
+    },
     button: {
-        flex: 1,
+        flex: 2,
         justifyContent: 'center',
         marginLeft: 5
     }
@@ -69,7 +72,7 @@ class NewTranslationForm extends BaseTranslationForm {
             <View>
                 <Header>{this.props.literals.header}</Header>
                 <View style={styles.row}>
-                    <View style={{flex: 4}}>
+                    <View style={styles.form}>
                         <View style={styles.word}>
                             <View style={styles.label}>
                                 <Text>{this.props.literals.labelWord1}:</Text>

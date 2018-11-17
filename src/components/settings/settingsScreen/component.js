@@ -24,12 +24,14 @@ const styles = StyleSheet.create({
         paddingLeft: 20
     },
     version: {
+        width: '100%',
         position: 'absolute',
         bottom: 0,
-        right: 0
+        paddingBottom: 30
     },
     versionNumber: {
-        color: '#dcdcdc'
+        color: '#dcdcdc',
+        textAlign: 'center'
     }
 });
 
@@ -79,7 +81,7 @@ class SettingsScreen extends React.Component {
                     </Picker>
                 </View>
                 <View style={[styles.row, styles.version]}>
-                    <Text style={styles.versionNumber}>1.2.0</Text>
+                    <Text style={styles.versionNumber}>v1.2.0</Text>
                 </View>
             </View>
         );
