@@ -1,14 +1,5 @@
 import React from 'react';
-import { KeyboardAvoidingView, StyleSheet } from 'react-native';
-import NewTranslationForm from '../newTranslationForm/connect';
-import TranslationList from '../translationList/connect';
-import TranslationsSearchBar from '../../../ui/TranslationSearchBar';
-
-const styles = StyleSheet.create({
-    page: {
-        flex:1
-    }
-});
+import TranslationsEditionPage from '../editionPage/component';
 
 class TranslationsEditionScreen extends React.Component {
 
@@ -20,11 +11,7 @@ class TranslationsEditionScreen extends React.Component {
 
     render() {
         return (
-            <KeyboardAvoidingView style={styles.page} behavior="padding">
-                <NewTranslationForm/>
-                <TranslationsSearchBar scope="edition"/>
-                <TranslationList/>
-            </KeyboardAvoidingView>
+            <TranslationsEditionPage/>
         );
     }
 }
