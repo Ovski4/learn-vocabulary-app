@@ -158,7 +158,7 @@ exports[`SettingsScreen component Should render the settings screen with the eng
         }
       }
     >
-      v1.2.0
+      v1.4.0
     </Text>
   </View>
 </View>
@@ -322,7 +322,7 @@ exports[`SettingsScreen component Should render the settings screen with the fre
         }
       }
     >
-      v1.2.0
+      v1.4.0
     </Text>
   </View>
 </View>
