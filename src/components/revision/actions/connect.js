@@ -21,6 +21,7 @@ const getRandomNumbers = (arrayLength) => {
 const mapStateToProps = (state) => ({
     translations: state.translations,
     tags: state.tags,
+    tagsFeatureDisabled: !state.config.tagsFeature,
     literals: translator.get('revision.actions', state.config.locale)
 });
 

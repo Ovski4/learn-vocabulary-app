@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, Picker } from 'react-native';
+import { StyleSheet, View, Text, Image, Picker, CheckBox } from 'react-native';
 import translator from '../../../services/translator';
 import Header from '../../../components/ui/Header';
 
@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
-        margin: 5
+        margin: 5,
+        paddingLeft: 10
     },
     label: {
         fontSize: 16,
@@ -24,10 +24,9 @@ const styles = StyleSheet.create({
         paddingLeft: 20
     },
     version: {
-        width: '100%',
         position: 'absolute',
-        bottom: 0,
-        paddingBottom: 30
+        bottom: 30,
+        right: 30
     },
     versionNumber: {
         color: '#dcdcdc',
@@ -40,7 +39,8 @@ class SettingsScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedLocale: props.locale
+            selectedLocale: props.locale,
+            tagsFeatureDisabled: props.tagsFeatureDisabled
         };
     }
 
@@ -79,6 +79,18 @@ class SettingsScreen extends React.Component {
                     >
                         {pickerItems}
                     </Picker>
+                </View>
+                <View style={styles.row}>
+                    <Text style={styles.label}>
+                        {translator.get('settings.disableTagsFeature', this.state.selectedLocale)}:
+                    </Text>
+                    <CheckBox
+                        value={this.state.tagsFeatureDisabled}
+                        onValueChange={() => {
+                            this.setState({ tagsFeatureDisabled: !this.state.tagsFeatureDisabled});
+                            this.props.handleUpdateTagsFeatureDisabled(!this.state.tagsFeatureDisabled);
+                        }}
+                    />
                 </View>
                 <View style={[styles.row, styles.version]}>
                     <Text style={styles.versionNumber}>v1.2.0</Text>

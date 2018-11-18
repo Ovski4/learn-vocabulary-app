@@ -5,6 +5,7 @@ import translator from '../../../../services/translator';
 
 const mapStateToProps = (state) => ({
     tags: state.tags,
+    tagsFeatureDisabled: !state.config.tagsFeature,
     literals: Object.assign(
         translator.get('edition.translations.edit', state.config.locale),
         { form: translator.get('form', state.config.locale) },

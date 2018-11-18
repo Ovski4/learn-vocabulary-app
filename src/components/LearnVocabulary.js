@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
     return {
         screenTitles: translator.get('screens', state.config.locale),
+        tagsFeatureDisabled: !state.config.tagsFeature,
     }
 };
 
@@ -41,7 +42,10 @@ class LearnVocabulary extends React.Component {
     render() {
         const RootStack = this.rootStack;
 
-        return <RootStack screenProps={{titles: this.props.screenTitles}}/>;
+        return <RootStack screenProps={{
+            titles: this.props.screenTitles,
+            tagsFeatureDisabled: this.props.tagsFeatureDisabled
+        }}/>;
     }
 };
 

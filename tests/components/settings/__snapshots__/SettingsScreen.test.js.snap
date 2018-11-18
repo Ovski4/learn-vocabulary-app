@@ -35,8 +35,8 @@ exports[`SettingsScreen component Should render the settings screen with the eng
       Object {
         "alignItems": "center",
         "flexDirection": "row",
-        "justifyContent": "center",
         "margin": 5,
+        "paddingLeft": 10,
       }
     }
   >
@@ -95,18 +95,54 @@ exports[`SettingsScreen component Should render the settings screen with the eng
   </View>
   <View
     style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "margin": 5,
+        "paddingLeft": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#929292",
+          "fontSize": 16,
+        }
+      }
+    >
+      Hide fields related to tags
+      :
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "alignSelf": "flex-start",
+            "borderColor": "red",
+            "borderWidth": 1,
+          },
+          undefined,
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
       Array [
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "justifyContent": "center",
           "margin": 5,
+          "paddingLeft": 10,
         },
         Object {
-          "bottom": 0,
-          "paddingBottom": 30,
+          "bottom": 30,
           "position": "absolute",
-          "width": "100%",
+          "right": 30,
         },
       ]
     }
@@ -163,8 +199,8 @@ exports[`SettingsScreen component Should render the settings screen with the fre
       Object {
         "alignItems": "center",
         "flexDirection": "row",
-        "justifyContent": "center",
         "margin": 5,
+        "paddingLeft": 10,
       }
     }
   >
@@ -223,18 +259,54 @@ exports[`SettingsScreen component Should render the settings screen with the fre
   </View>
   <View
     style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "margin": 5,
+        "paddingLeft": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#929292",
+          "fontSize": 16,
+        }
+      }
+    >
+      Cacher les champs relatifs aux étiquettes
+      :
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "alignSelf": "flex-start",
+            "borderColor": "red",
+            "borderWidth": 1,
+          },
+          undefined,
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
       Array [
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "justifyContent": "center",
           "margin": 5,
+          "paddingLeft": 10,
         },
         Object {
-          "bottom": 0,
-          "paddingBottom": 30,
+          "bottom": 30,
           "position": "absolute",
-          "width": "100%",
+          "right": 30,
         },
       ]
     }

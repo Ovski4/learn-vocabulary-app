@@ -103,20 +103,24 @@ class Actions extends React.Component {
                         />
                     </View>
                 </View>
-                <View style={styles.tagsSelectorRow}>
-                    <Text style={styles.filterText}>{this.props.literals.filterLabel}:</Text>
-                    <Picker
-                        selectedValue={this.state.selectedTag}
-                        style={styles.picker}
-                        onValueChange={(tag) => {
-                            // Reveal everything when we change the tag
-                            this.props.handleDisplayEverything(visibleTranslations)
-                            this.filterByTag(tag)
-                        }}
-                    >
-                        {pickerItems}    
-                    </Picker>
-                </View>
+
+                {!this.props.tagsFeatureDisabled &&
+                    <View style={styles.tagsSelectorRow}>
+                        <Text style={styles.filterText}>{this.props.literals.filterLabel}:</Text>
+                        <Picker
+                            selectedValue={this.state.selectedTag}
+                            style={styles.picker}
+                            onValueChange={(tag) => {
+                                // Reveal everything when we change the tag
+                                this.props.handleDisplayEverything(visibleTranslations)
+                                this.filterByTag(tag)
+                            }}
+                        >
+                            {pickerItems}    
+                        </Picker>
+                    </View>
+                }
+
                 <TranslationsSearchBar scope="revision"/>
             </View>
         );

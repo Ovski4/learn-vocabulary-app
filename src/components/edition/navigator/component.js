@@ -3,6 +3,7 @@ import TagsEditionScreen from '../../edition/tags/editionScreen/component';
 import TranslationsEditionScreen from '../../edition/translations/editionScreen/component';
 import React from 'react';
 import { View, Image, StyleSheet, StatusBar, Platform } from 'react-native';
+import TranslationsEditionPage from '../../edition/translations/editionPage/component';
 
 const styles = StyleSheet.create({
     screen: {
@@ -47,11 +48,20 @@ class EditionNavigator extends React.Component {
     };
 
     render() {
-      return (
-        <View style={styles.screen}>
-            <TopTabs navigation={this.props.navigation} screenProps={{titles: this.props.titles}} />
-        </View>
-      );
+
+        const content = this.props.screenProps.tagsFeatureDisabled ?
+            <TranslationsEditionPage topTabs={false}/> :
+            <TopTabs
+                navigation={this.props.navigation}
+                screenProps={{titles: this.props.titles}}
+            />
+        ;
+
+        return (
+            <View style={styles.screen}>
+                {content}
+            </View>
+        );
     }
 }
 
