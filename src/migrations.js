@@ -64,5 +64,21 @@ export default {
                 locale: 'en'
             }
         });
+    },
+
+    /**
+     * Add tag feature to true
+     */
+    5: (state) => {
+        const newState = {...state};
+
+        newState.config = Object.assign(
+            {...newState.config},
+            {
+                tagsFeature: true
+            }
+        );
+
+       return newState;
     }
 };
