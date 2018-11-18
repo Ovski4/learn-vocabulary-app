@@ -20,7 +20,8 @@ describe('Root reducer', () => {
                 }
             },
             config: {
-                locale: 'en'
+                locale: 'en',
+                tagsFeature: true
             }
         });
     });

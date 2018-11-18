@@ -89,14 +89,18 @@ class NewTranslationForm extends BaseTranslationForm {
                                 {this.getSubViews().textInput2}
                             </View>
                         </View>
-                        <View style={styles.tags}>
-                            <View style={styles.label}>
-                                <Text>{this.props.literals.labelTags}:</Text>
+
+                        {!this.props.tagsFeatureDisabled &&
+                            <View style={styles.tags}>
+                                <View style={styles.label}>
+                                    <Text>{this.props.literals.labelTags}:</Text>
+                                </View>
+                                <View style={{flex: 1}}>
+                                    {this.getSubViews().tagsInput}
+                                </View>
                             </View>
-                            <View style={{flex: 1}}>
-                                {this.getSubViews().tagsInput}
-                            </View>
-                        </View>
+                        }
+
                     </View>
                     <View style={styles.button}>
                         <Button disabled={this.cannotBeSubmitted()} title={this.props.literals.form.submit} onPress={this.handleSubmit}/>

@@ -5,7 +5,7 @@ import TagList from '../tagList/connect';
 
 const styles = StyleSheet.create({
     page: {
-        flex:1
+        flex: 1
     }
 });
 

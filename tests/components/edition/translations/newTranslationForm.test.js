@@ -10,7 +10,8 @@ describe('NewTranslationForm component', () => {
     const getStore = (locale) => {
         return createStore(reducer, {
             config: {
-                locale: locale
+                locale: locale,
+                tagsFeature: true
             }
         });
     };

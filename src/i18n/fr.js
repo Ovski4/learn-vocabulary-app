@@ -5,7 +5,8 @@ export default {
         settings: 'Paramètres'
     },
     settings: {
-        language: 'Langue'
+        language: 'Langue',
+        disableTagsFeature: 'Cacher les champs relatifs aux étiquettes'
     },
     tagSelector: {
         pick: {

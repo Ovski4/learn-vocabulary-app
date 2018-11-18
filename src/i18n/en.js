@@ -5,7 +5,8 @@ export default {
         settings: 'Settings'
     },
     settings: {
-        language: 'Language'
+        language: 'Language',
+        disableTagsFeature: 'Hide fields related to tags'
     },
     tagSelector: {
         pick: {

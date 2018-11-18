@@ -1,6 +1,7 @@
 import reducer from '../../src/reducers/config';
 import {
-    localeUpdated
+    localeUpdated,
+    disableTagsFeature
 } from '../../src/actions/config';
 
 /**
@@ -11,7 +12,8 @@ describe('UI reducer', () => {
     it('Should return the initial ui', () => {
         const initialState = reducer(undefined, {});
         expect(initialState).toEqual({
-            locale: 'en'
+            locale: 'en',
+            tagsFeature: true
         });
     });
 
@@ -19,7 +21,17 @@ describe('UI reducer', () => {
         const state = reducer(undefined, localeUpdated('de'));
 
         expect(state).toEqual({
-            locale: 'de'
+            locale: 'de',
+            tagsFeature: true
+        });
+    });
+
+    it('Should update the tagsFeature value', () => {
+        const state = reducer(undefined, disableTagsFeature(true));
+
+        expect(state).toEqual({
+            locale: 'en',
+            tagsFeature: false
         });
     });
 
