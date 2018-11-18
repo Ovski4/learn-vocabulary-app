@@ -13,8 +13,10 @@ const styles = StyleSheet.create({
 class TranslationsEditionPage extends React.Component {
 
     render() {
+        const keyboardVerticalOffset = this.props.topTabs ? 70 : 25;
+
         return (
-            <KeyboardAvoidingView style={styles.page} behavior="padding">
+            <KeyboardAvoidingView keyboardVerticalOffset={keyboardVerticalOffset} style={styles.page} behavior="padding">
                 <NewTranslationForm/>
                 <TranslationsSearchBar scope="edition"/>
                 <TranslationList/>
@@ -22,5 +24,9 @@ class TranslationsEditionPage extends React.Component {
         );
     }
 }
+
+TranslationsEditionPage.defaultProps = {
+    topTabs: true
+};
 
 export default TranslationsEditionPage;

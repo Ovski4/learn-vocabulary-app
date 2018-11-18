@@ -50,7 +50,7 @@ class EditionNavigator extends React.Component {
     render() {
 
         const content = this.props.screenProps.tagsFeatureDisabled ?
-            <TranslationsEditionPage/> :
+            <TranslationsEditionPage topTabs={false}/> :
             <TopTabs
                 navigation={this.props.navigation}
                 screenProps={{titles: this.props.titles}}
