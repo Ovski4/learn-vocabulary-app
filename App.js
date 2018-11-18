@@ -1,13 +1,12 @@
 import React from 'react';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import LearnVocabulary from './src/components/LearnVocabulary';
 import { createMigrate, persistStore, persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react'
 import storage from 'redux-persist/lib/storage';
 import reducer from './src/reducers/index';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore } from 'redux';
 import migrations from './src/migrations';
 import transformers from './src/transformers/index';
 
@@ -15,7 +14,7 @@ const persistedReducer = persistReducer(
     {
         key: 'root',
         version: 3,
-        whitelist: ['translations', 'tags'],
+        whitelist: ['translations', 'tags', 'config'],
         transforms: transformers,
         migrate: createMigrate(migrations),
         storage: storage,
@@ -23,10 +22,7 @@ const persistedReducer = persistReducer(
     reducer
 );
 
-const store = createStore(
-    persistedReducer,
-    applyMiddleware(thunk)
-);
+const store = createStore(persistedReducer);
 
 const persistor = persistStore(store);
 

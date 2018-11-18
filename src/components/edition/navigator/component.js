@@ -32,22 +32,27 @@ const TopTabs = createMaterialTopTabNavigator(
     }
 );
 
-export default class EditionNavigator extends React.Component {
+class EditionNavigator extends React.Component {
 
     static router = TopTabs.router;
 
-    static navigationOptions = {
-        tabBarIcon: ({tintColor}) => <Image
-            source={require('./assets/icon.png')}
-            style={{ height: 30, width: 30, tintColor: tintColor}}
-        />
-    }
+    static navigationOptions = ({ screenProps }) => {
+        return {
+            tabBarLabel: screenProps.titles.edition,
+            tabBarIcon: ({tintColor}) => <Image
+                source={require('./assets/icon.png')}
+                style={{ height: 30, width: 30, tintColor: tintColor}}
+            />
+        }
+    };
 
     render() {
       return (
         <View style={styles.screen}>
-            <TopTabs navigation={this.props.navigation} />
+            <TopTabs navigation={this.props.navigation} screenProps={{titles: this.props.titles}} />
         </View>
       );
     }
 }
+
+export default EditionNavigator;

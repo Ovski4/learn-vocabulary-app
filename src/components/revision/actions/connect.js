@@ -6,6 +6,7 @@ import {
     allTranslationsRevealed,
     translationsHidden
 } from '../../../actions/uiTranslations';
+import translator from '../../../services/translator';
 import Actions from './component';
 
 const getRandomNumbers = (arrayLength) => {
@@ -19,7 +20,8 @@ const getRandomNumbers = (arrayLength) => {
 
 const mapStateToProps = (state) => ({
     translations: state.translations,
-    tags: state.tags
+    tags: state.tags,
+    literals: translator.get('revision.actions', state.config.locale)
 });
 
 const mapDispatchToProps = (dispatch) => ({

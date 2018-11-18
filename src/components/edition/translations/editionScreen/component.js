@@ -10,7 +10,13 @@ const styles = StyleSheet.create({
     }
 });
 
-class EditionScreen extends React.PureComponent {
+class TranslationsEditionScreen extends React.Component {
+
+    static navigationOptions = ({ screenProps }) => {
+        return {
+            title: screenProps.titles.translations
+        }
+    };
 
     render() {
         return (
@@ -23,4 +29,4 @@ class EditionScreen extends React.PureComponent {
     }
 }
 
-export default EditionScreen;
+export default TranslationsEditionScreen;

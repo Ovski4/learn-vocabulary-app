@@ -4,6 +4,13 @@ import { StyleSheet, Keyboard } from 'react-native';
 import { translationsSearched } from '../../actions/ui';
 import { SearchBar } from 'react-native-elements';
 import { waitForIt } from '../../services/helpers';
+import translator from '../../services/translator';
+
+const mapStateToProps = (state) => {
+    return {
+        literals: translator.get('searchBar', state.config.locale)
+    }
+};
 
 const mapDispatchToProps = (dispatch) => ({
     handleFullTextSearch: (text, scope) => dispatch(translationsSearched(text, scope))
@@ -47,13 +54,13 @@ class TranslationSearchBar extends React.Component {
                     this.fullTextSearch('');
                     Keyboard.dismiss();
                 }}
-                placeholder='Look for translations'
+                placeholder={this.props.literals.placeholder}
             />
         );
     }
 };
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(TranslationSearchBar);

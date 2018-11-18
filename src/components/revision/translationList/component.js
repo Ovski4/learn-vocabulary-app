@@ -29,8 +29,8 @@ class TranslationList extends React.PureComponent {
         };
 
         const emptyListText = this.props.translations.length > 0 ?
-            'No translation found' :
-            'Add a translation to start learning!'
+            this.props.literals.notFound :
+            this.props.literals.addToStart
         ;
         const listEmptyComponent =
             <View style={styles.emptyListView}>
@@ -53,7 +53,7 @@ class TranslationList extends React.PureComponent {
 
         return(
             <View style={{flex: 1}}>
-                <Header>Translations</Header>
+                <Header>{this.props.literals.header}</Header>
                 <View style={{
                     flex: 1,
                     borderColor: '#bbb'

@@ -63,7 +63,7 @@ class EditTagForm extends BaseTagForm {
                 </View>
                 <View style={styles.submitButtonWrapper}>
                     <View style={styles.submitButton}>
-                        <Button disabled={this.cannotBeSubmitted()} title="Submit" onPress={this.handleSubmit}/>
+                        <Button disabled={this.cannotBeSubmitted()} title={this.props.literals.submit} onPress={this.handleSubmit}/>
                     </View>
                 </View>
             </View>

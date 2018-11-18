@@ -62,12 +62,12 @@ class NewTagForm extends BaseTagForm {
     render() {
         return (
             <View>
-                <Header>Add a tag</Header>
+                <Header>{this.props.literals.header}</Header>
                 <View style={styles.row}>
                     <View style={{flex: 4}}>
                         <View style={styles.word}>
                             <View style={styles.label}>
-                                <Text>Label:</Text>
+                                <Text>{this.props.literals.form.label}:</Text>
                             </View>
                             <View style={styles.input}>
                                 {this.getInputText()}
@@ -75,7 +75,7 @@ class NewTagForm extends BaseTagForm {
                         </View>
                     </View>
                     <View style={styles.button}>
-                        <Button disabled={this.cannotBeSubmitted()} title="Submit" onPress={this.handleSubmit}/>
+                        <Button disabled={this.cannotBeSubmitted()} title={this.props.literals.form.submit} onPress={this.handleSubmit}/>
                     </View>
                 </View>
             </View>

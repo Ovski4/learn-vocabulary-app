@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TagSelector component Should render the component with the english locale 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#eeeeee",
+        "borderRadius": 2,
+        "marginLeft": 5,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 32,
+        }
+      }
+    >
+      <RCTPicker
+        items={
+          Array [
+            Object {
+              "label": "Pick a tag",
+              "textColor": undefined,
+              "value": null,
+            },
+            Object {
+              "label": "test",
+              "textColor": undefined,
+              "value": "1",
+            },
+            Object {
+              "label": "test2",
+              "textColor": undefined,
+              "value": "2",
+            },
+          ]
+        }
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        selectedIndex={0}
+        style={
+          Array [
+            Object {
+              "height": 216,
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#ffffff",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`TagSelector component Should render the component with the french locale 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#eeeeee",
+        "borderRadius": 2,
+        "marginLeft": 5,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 32,
+        }
+      }
+    >
+      <RCTPicker
+        items={
+          Array [
+            Object {
+              "label": "Choisissez une étiquette",
+              "textColor": undefined,
+              "value": null,
+            },
+            Object {
+              "label": "test",
+              "textColor": undefined,
+              "value": "1",
+            },
+            Object {
+              "label": "test2",
+              "textColor": undefined,
+              "value": "2",
+            },
+          ]
+        }
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        selectedIndex={0}
+        style={
+          Array [
+            Object {
+              "height": 216,
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#ffffff",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+      }
+    }
+  />
+</View>
+`;

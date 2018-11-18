@@ -11,8 +11,10 @@ const styles = StyleSheet.create({
 
 class TagsEditionScreen extends React.Component {
 
-    static navigationOptions = {
-        tabBarLabel: 'Tags'
+    static navigationOptions = ({ screenProps }) => {
+        return {
+            title: screenProps.titles.tags
+        }
     };
 
     render() {

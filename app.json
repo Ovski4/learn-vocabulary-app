@@ -22,10 +22,13 @@
                 "xxxhdpi": "./assets/splashscreen.png"
             },
             "permissions": [],
-            "versionCode": 5
+            "versionCode": 6
         },
         "assetBundlePatterns": [
             "./assets/*"
-        ]
+        ],
+        "updates": {
+            "enabled": false
+        }
     }
 }

@@ -1,0 +1,1093 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TranslationList component Should render the component with an empty list 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "margin": 5,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Translations
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderColor": "#bbb",
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView
+      ListEmptyComponent={
+        <Component
+          style={
+            Object {
+              "borderColor": "#bbb",
+              "borderTopWidth": 0.4,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontStyle": "italic",
+                "lineHeight": 50,
+              }
+            }
+          >
+            Add a translation to start learning!
+          </Text>
+        </Component>
+      }
+      data={Array []}
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      index={[Function]}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "borderColor": "#bbb",
+                "borderTopWidth": 0.4,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontStyle": "italic",
+                  "lineHeight": 50,
+                }
+              }
+            >
+              Add a translation to start learning!
+            </Text>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`TranslationList component Should render the component with translations and with the english locale 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "margin": 5,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Translations
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderColor": "#bbb",
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView
+      ListEmptyComponent={
+        <Component
+          style={
+            Object {
+              "borderColor": "#bbb",
+              "borderTopWidth": 0.4,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontStyle": "italic",
+                "lineHeight": 50,
+              }
+            }
+          >
+            Add a translation to start learning!
+          </Text>
+        </Component>
+      }
+      data={
+        Array [
+          Object {
+            "createdAt": 1995-12-20T00:00:00.000Z,
+            "id": "2",
+            "tags": Array [],
+            "word1": "word3",
+            "word2": "word4",
+          },
+          Object {
+            "createdAt": 1995-12-20T00:00:00.000Z,
+            "id": "1",
+            "tags": Array [],
+            "word1": "word1",
+            "word2": "word2",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      index={[Function]}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "borderColor": "#d6d7da",
+                "borderTopWidth": 0.4,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "padding": 10,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  word3
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "padding": 10,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  word4
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "margin": 5,
+                  }
+                }
+              >
+                <View
+                  accessibilityComponentType="button"
+                  accessibilityTraits={
+                    Array [
+                      "button",
+                    ]
+                  }
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Array [
+                          Object {
+                            "color": "#007AFF",
+                            "fontSize": 18,
+                            "padding": 8,
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      Edit
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "margin": 5,
+                  }
+                }
+              >
+                <View
+                  accessibilityComponentType="button"
+                  accessibilityTraits={
+                    Array [
+                      "button",
+                    ]
+                  }
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Array [
+                          Object {
+                            "color": "#007AFF",
+                            "fontSize": 18,
+                            "padding": 8,
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      X
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "borderColor": "#d6d7da",
+                "borderTopWidth": 0.4,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "padding": 10,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  word1
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "padding": 10,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  word2
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "margin": 5,
+                  }
+                }
+              >
+                <View
+                  accessibilityComponentType="button"
+                  accessibilityTraits={
+                    Array [
+                      "button",
+                    ]
+                  }
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Array [
+                          Object {
+                            "color": "#007AFF",
+                            "fontSize": 18,
+                            "padding": 8,
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      Edit
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "margin": 5,
+                  }
+                }
+              >
+                <View
+                  accessibilityComponentType="button"
+                  accessibilityTraits={
+                    Array [
+                      "button",
+                    ]
+                  }
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Array [
+                          Object {
+                            "color": "#007AFF",
+                            "fontSize": 18,
+                            "padding": 8,
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      X
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`TranslationList component Should render the component with translations and with the french locale 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "margin": 5,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Traductions
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderColor": "#bbb",
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView
+      ListEmptyComponent={
+        <Component
+          style={
+            Object {
+              "borderColor": "#bbb",
+              "borderTopWidth": 0.4,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontStyle": "italic",
+                "lineHeight": 50,
+              }
+            }
+          >
+            Ajouter une traduction pour commencer à apprendre!
+          </Text>
+        </Component>
+      }
+      data={
+        Array [
+          Object {
+            "createdAt": 1995-12-20T00:00:00.000Z,
+            "id": "2",
+            "tags": Array [],
+            "word1": "word3",
+            "word2": "word4",
+          },
+          Object {
+            "createdAt": 1995-12-20T00:00:00.000Z,
+            "id": "1",
+            "tags": Array [],
+            "word1": "word1",
+            "word2": "word2",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      index={[Function]}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "borderColor": "#d6d7da",
+                "borderTopWidth": 0.4,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "padding": 10,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  word3
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "padding": 10,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  word4
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "margin": 5,
+                  }
+                }
+              >
+                <View
+                  accessibilityComponentType="button"
+                  accessibilityTraits={
+                    Array [
+                      "button",
+                    ]
+                  }
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Array [
+                          Object {
+                            "color": "#007AFF",
+                            "fontSize": 18,
+                            "padding": 8,
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      Éditer
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "margin": 5,
+                  }
+                }
+              >
+                <View
+                  accessibilityComponentType="button"
+                  accessibilityTraits={
+                    Array [
+                      "button",
+                    ]
+                  }
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Array [
+                          Object {
+                            "color": "#007AFF",
+                            "fontSize": 18,
+                            "padding": 8,
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      X
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "borderColor": "#d6d7da",
+                "borderTopWidth": 0.4,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "padding": 10,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  word1
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "padding": 10,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  word2
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "margin": 5,
+                  }
+                }
+              >
+                <View
+                  accessibilityComponentType="button"
+                  accessibilityTraits={
+                    Array [
+                      "button",
+                    ]
+                  }
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Array [
+                          Object {
+                            "color": "#007AFF",
+                            "fontSize": 18,
+                            "padding": 8,
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      Éditer
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "margin": 5,
+                  }
+                }
+              >
+                <View
+                  accessibilityComponentType="button"
+                  accessibilityTraits={
+                    Array [
+                      "button",
+                    ]
+                  }
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Array [
+                          Object {
+                            "color": "#007AFF",
+                            "fontSize": 18,
+                            "padding": 8,
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      X
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
