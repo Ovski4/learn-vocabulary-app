@@ -138,4 +138,29 @@ describe('Migrations', () => {
         });
     });
 
+    it('Should migrate from version 4 to 5', () => {
+        const initialState = {
+            translations: [],
+            tags: [],
+            config: {
+                locale: 'fr'
+            }
+        };
+
+        const migratedState = migrations[5](initialState);
+
+        // Check immutability
+        expect(initialState.config).not.toHaveProperty('tagsFeature');
+
+        // Check new property
+        expect(migratedState).toEqual({
+            translations: [],
+            tags: [],
+            config: {
+                locale: 'fr',
+                tagsFeature: true
+            }
+        });
+    });
+
 });
