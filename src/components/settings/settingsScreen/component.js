@@ -93,7 +93,7 @@ class SettingsScreen extends React.Component {
                     />
                 </View>
                 <View style={[styles.row, styles.version]}>
-                    <Text style={styles.versionNumber}>v1.4.0</Text>
+                    <Text style={styles.versionNumber}>v1.4.1</Text>
                 </View>
             </View>
         );
