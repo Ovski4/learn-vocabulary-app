@@ -51,12 +51,17 @@ class TranslationRow extends React.PureComponent {
         this.props.handleClickRightWord(this.props.translation.hidden);
     }
 
+    onTouchUp = (handleClick) => {
+        handleClick();
+    }
+
     render () {
         return (
             <View>
                 <View style={styles.view}>
                     <View
-                        onStartShouldSetResponder={this.handleClickLeftWord}
+                        onStartShouldSetResponder={() => true}
+                        onResponderRelease={() => this.onTouchUp(this.handleClickLeftWord)}
                         style={this.getWordViewStyle('left')}
                     >
                         <Text style={this.getWordTextStyle('left')}>
@@ -64,7 +69,8 @@ class TranslationRow extends React.PureComponent {
                         </Text>
                     </View>
                     <View
-                        onStartShouldSetResponder={this.handleClickRightWord}
+                        onStartShouldSetResponder={() => true}
+                        onResponderRelease={() => this.onTouchUp(this.handleClickRightWord)}
                         style={this.getWordViewStyle('right')}
                     >
                         <Text style={this.getWordTextStyle('right')}>
