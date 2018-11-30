@@ -65,7 +65,6 @@ class Actions extends React.Component {
         }),
     };
 
- 
     filterByTag = (selectedTag) => {
         this.setState({selectedTag});
         this.props.handleFilterByTag(selectedTag);
