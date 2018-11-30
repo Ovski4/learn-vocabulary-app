@@ -23,7 +23,7 @@ class TagList extends React.PureComponent {
         tags: PropTypes.array.isRequired,
         literals: PropTypes.shape({
             addToStart: PropTypes.string.isRequired,
-            header: PropTypes.header.isRequired
+            header: PropTypes.string.isRequired
         })
     };
 
