@@ -1,9 +1,11 @@
+import translationsService from '../services/translations';
+
 /**
 * Transform state on its way to being serialized and persisted.
 * Add view related things
 */
 const inboundTranslationsTransform = (inboundTranslations) => {
-    const transformed = [...inboundTranslations].map((translation) => {
+    const transformedTranslations = [...inboundTranslations].map((translation) => {
         return {
             word1: translation.word1,
             word2: translation.word2,
@@ -13,7 +15,7 @@ const inboundTranslationsTransform = (inboundTranslations) => {
         }
     });
 
-    return transformed;
+    return translationsService.unshuffle(transformedTranslations);
 }
 
 /**
@@ -21,14 +23,14 @@ const inboundTranslationsTransform = (inboundTranslations) => {
 * Get rid of everything which is related to the view
 */
 const outboundTranslationsTransform = (outboundTranslations) => {
-    const transformed = [...outboundTranslations].map((translation, index) => {
+    const transformedTranslations = [...outboundTranslations].map((translation, index) => {
         translation.hidden = false;
         translation.index = index;
 
         return translation;
     });
 
-    return transformed;
+    return transformedTranslations;
 }
 
 export {
