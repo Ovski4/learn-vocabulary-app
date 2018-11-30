@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, FlatList } from 'react-native';
 import TranslationRow from '../translationRow/connect';
 import translationsService from '../../../services/translations'
 import Header from '../../ui/Header';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
     emptyListView: {
@@ -18,6 +19,21 @@ const styles = StyleSheet.create({
 });
 
 class TranslationList extends React.PureComponent {
+
+    static propTypes = {
+        translations: PropTypes.array.isRequired,
+        literals: PropTypes.shape({
+            notFound: PropTypes.string.isRequired,
+            addToStart: PropTypes.string.isRequired,
+            header: PropTypes.string.isRequired
+        }),
+        ui: PropTypes.shape({
+            translationsFilteredBy: PropTypes.string,
+            translationsSearch: PropTypes.shape({
+                revision: PropTypes.string,
+            })
+        })
+    };
 
     render() {
         const getListItem = (translation) => {
@@ -62,7 +78,7 @@ class TranslationList extends React.PureComponent {
                         data={translationList}
                         index={({item}) => item.index}
                         renderItem={({item}) => getListItem(item)}
-                        keyExtractor={(item, index) => item.id}
+                        keyExtractor={(item) => item.id}
                         ListEmptyComponent={listEmptyComponent}
                     />
                 </View>

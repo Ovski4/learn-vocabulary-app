@@ -56,14 +56,14 @@ class BaseTranslationForm extends React.Component {
                 key={this.state.tags} // Reset the state when new initial tags are set
             />,
             textInput1: <TextInput
-                ref="input1"
+                ref={(input) => { this.input1 = input; }}
                 style={styles.textInput}
                 underlineColorAndroid="transparent"
                 defaultValue={this.state.word1}
                 onChangeText={(text) => this.handleWordChange('word1', text)}
             />,
             textInput2: <TextInput
-                ref="input2"
+                ref={(input) => { this.input2 = input; }}
                 style={styles.textInput}
                 underlineColorAndroid="transparent"
                 defaultValue={this.state.word2}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 import { waitForIt } from '../../../services/helpers';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
     textInput: {
@@ -10,6 +11,13 @@ const styles = StyleSheet.create({
 });
 
 class BaseTagForm extends React.Component {
+
+    static propTypes = {
+        tagLabels: PropTypes.array.isRequired,
+        tag: PropTypes.shape({
+            label: PropTypes.string.isRequired
+        })
+    };
 
     cannotBeSubmitted = () => {
         const taglabels = [...this.props.tagLabels];
@@ -40,7 +48,7 @@ class BaseTagForm extends React.Component {
 
     getInputText = () => {
         return <TextInput
-            ref="input"
+            ref={(input) => { this.input = input; }}
             style={styles.textInput}
             underlineColorAndroid="transparent"
             defaultValue={this.state.label}

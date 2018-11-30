@@ -4,6 +4,7 @@ import TranslationsEditionScreen from '../../edition/translations/editionScreen/
 import React from 'react';
 import { View, Image, StyleSheet, StatusBar, Platform } from 'react-native';
 import TranslationsEditionPage from '../../edition/translations/editionPage/component';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
     screen: {
@@ -36,6 +37,10 @@ const TopTabs = createMaterialTopTabNavigator(
 class EditionNavigator extends React.Component {
 
     static router = TopTabs.router;
+
+    static propTypes = {
+        titles: PropTypes.shape()
+    };
 
     static navigationOptions = ({ screenProps }) => {
         return {

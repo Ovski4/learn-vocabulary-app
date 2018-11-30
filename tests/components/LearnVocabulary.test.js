@@ -37,21 +37,24 @@ describe('LearnVocabulary component', () => {
                     tags: ['1', '2', '3'],
                     word1: 'Blue',
                     word2: 'Bleu',
-                    createdAt: new Date('December 17 1995')
+                    createdAt: new Date('December 17 1995'),
+                    hidden: false
                 },
                 {
                     id: '2',
                     tags: ['4', '5', '1'],
                     word1: 'Red',
                     word2: 'Rouge',
-                    createdAt: new Date('December 18 1995')
+                    createdAt: new Date('December 18 1995'),
+                    hidden: false
                 },
                 {
                     id: '3',
                     tags: ['4', '2', '3'],
                     word1: 'Green',
                     word2: 'Color',
-                    createdAt: new Date('December 20 1995')
+                    createdAt: new Date('December 20 1995'),
+                    hidden: false
                 }
             ],
             tags: [

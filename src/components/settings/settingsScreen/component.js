@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, Image, Picker, CheckBox } from 'react-native';
 import translator from '../../../services/translator';
 import Header from '../../../components/ui/Header';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
     page: {
@@ -43,6 +44,13 @@ class SettingsScreen extends React.Component {
             tagsFeatureDisabled: props.tagsFeatureDisabled
         };
     }
+
+    static propTypes = {
+        tagsFeatureDisabled: PropTypes.bool.isRequired,
+        locale: PropTypes.oneOf(['en', 'fr']),
+        handleUpdateLocale: PropTypes.func.isRequired,
+        handleUpdateTagsFeatureDisabled: PropTypes.func.isRequired
+    };
 
     static navigationOptions = ({ screenProps }) => {
         return {

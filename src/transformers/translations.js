@@ -2,7 +2,7 @@
 * Transform state on its way to being serialized and persisted.
 * Add view related things
 */
-const inboundTranslationsTransform = (inboundTranslations, key) => {
+const inboundTranslationsTransform = (inboundTranslations) => {
    const transformed = [...inboundTranslations].map((translation) => {
        return {
            word1: translation.word1,
@@ -20,7 +20,7 @@ const inboundTranslationsTransform = (inboundTranslations, key) => {
 * Transform state being rehydrated
 * Get rid of everything which is related to the view
 */
-const outboundTranslationsTransform = (outboundTranslations, key) => {
+const outboundTranslationsTransform = (outboundTranslations) => {
    const transformed = [...outboundTranslations].map((translation, index) => {
        translation.hidden = false;
        translation.index = index;

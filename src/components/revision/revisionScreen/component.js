@@ -2,6 +2,7 @@ import React from 'react';
 import Actions from '../actions/connect';
 import TranslationList from '../translationList/connect';
 import { StyleSheet, View, Platform, StatusBar, Image } from 'react-native';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
     page: {
@@ -18,6 +19,10 @@ class RevisionScreen extends React.PureComponent {
             props.navigation.navigate('Edition');
         }
     }
+
+    static propTypes = {
+        translationsLength: PropTypes.number.isRequired
+    };
 
     static navigationOptions = ({ screenProps }) => {
         return {

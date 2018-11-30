@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Button, Text, View } from 'react-native';
 import EditTranslationForm from '../editTranslationForm/connect';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
     view: {
@@ -37,6 +38,17 @@ class TranslationRow extends React.Component {
             editable: false
         };
     }
+
+    static propTypes = {
+        handleDelete: PropTypes.func.isRequired,
+        translation: PropTypes.shape({
+            word1: PropTypes.string.isRequired,
+            word2: PropTypes.string.isRequired
+        }),
+        literals: PropTypes.shape({
+            edit: PropTypes.string.isRequired,
+        })
+    };
 
     toggleEditable = () => {
         this.setState({editable: !this.state.editable});

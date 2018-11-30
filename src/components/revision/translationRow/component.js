@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
     view: {
@@ -10,6 +11,16 @@ const styles = StyleSheet.create({
 });
 
 class TranslationRow extends React.PureComponent {
+
+    static propTypes = {
+        handleClickRightWord: PropTypes.func.isRequired,
+        handleClickLeftWord: PropTypes.func.isRequired,
+        translation: PropTypes.shape({
+            hidden: PropTypes.oneOf([false, 'right', 'left']).isRequired,
+            word1: PropTypes.string.isRequired,
+            word2: PropTypes.string.isRequired
+        })
+    };
 
     getWordViewStyle = (side) => {
         const baseStyle = {

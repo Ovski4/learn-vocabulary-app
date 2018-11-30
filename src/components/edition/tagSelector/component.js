@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Picker, TouchableOpacity, Text, View } from 'react-native';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
     pickerContainer: {
@@ -35,6 +36,12 @@ const styles = StyleSheet.create({
 });
 
 class Tag extends React.PureComponent {
+
+    static propTypes = {
+        onPress: PropTypes.func.isRequired,
+        label: PropTypes.string.isRequired
+    };
+
     render() {
         return (
             <TouchableOpacity style={styles.tagButton} onPress={this.props.onPress}>
@@ -61,6 +68,17 @@ class TagSelector extends React.Component {
             tagPickedId: null
         };
     }
+
+    static propTypes = {
+        onChange: PropTypes.func.isRequired,
+        tags: PropTypes.array.isRequired,
+        initialSelectedTags: PropTypes.array.isRequired,
+        literals: PropTypes.shape({
+            pick: PropTypes.shape({
+                label: PropTypes.string.isRequired,
+            })
+        })
+    };
 
     getSelectableTags = (selectedTags) => {
         return this.props.tags.filter(tag => {
