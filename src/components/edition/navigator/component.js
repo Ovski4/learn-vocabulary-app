@@ -21,8 +21,8 @@ const TopTabs = createMaterialTopTabNavigator(
     {
         tabBarOptions: {
             indicatorStyle: {
-               backgroundColor: '#fff',
-               height: 3
+                backgroundColor: '#fff',
+                height: 3
             },
             tabStyle: {
                 height: 40

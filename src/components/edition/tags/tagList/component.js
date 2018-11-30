@@ -30,9 +30,9 @@ class TagList extends React.PureComponent {
     render() {
         const getListItem = (tag) => {
             return <TagRow
-                    key={tag.id}
-                    id={tag.id}
-                />
+                key={tag.id}
+                id={tag.id}
+            />
             ;
         };
 

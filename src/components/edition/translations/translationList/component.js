@@ -36,10 +36,10 @@ class TranslationList extends React.PureComponent {
     render() {
         const getListItem = (translation) => {
             return <TranslationRow
-                    key={translation.id}
-                    id={translation.id}
-                    hidden={translation.hidden}
-                />
+                key={translation.id}
+                id={translation.id}
+                hidden={translation.hidden}
+            />
             ;
         };
 
