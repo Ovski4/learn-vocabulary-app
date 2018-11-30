@@ -58,6 +58,7 @@ class NewTranslationForm extends BaseTranslationForm {
             createdAt: Date.now(),
             word1: this.state.word1,
             word2: this.state.word2,
+            hidden: false,
             tags: this.state.tags.map(tag => tag.id)
         });
         this.setState({
