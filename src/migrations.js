@@ -38,7 +38,7 @@ export default {
             }
         });
 
-       return { translations };
+        return { translations };
     },
 
     /**
@@ -52,7 +52,7 @@ export default {
             return tagsWithoutTranslations;
         });
 
-       return Object.assign(newState, {tags});
+        return Object.assign(newState, {tags});
     },
 
     /**
@@ -79,6 +79,6 @@ export default {
             }
         );
 
-       return newState;
+        return newState;
     }
 };

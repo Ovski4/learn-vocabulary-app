@@ -28,7 +28,7 @@ describe('TagSelector component', () => {
     it('Should render the component with the english locale', () => {
         const rendered = renderer.create(
             <Provider store={getStore('en')}>
-                <TagSelector initialSelectedTags={[{
+                <TagSelector onChange={() => {}} initialSelectedTags={[{
                     id: '1',
                     label: 'test'
                 }]}/>
@@ -41,7 +41,7 @@ describe('TagSelector component', () => {
     it('Should render the component with the french locale', () => {
         const rendered = renderer.create(
             <Provider store={getStore('fr')}>
-                <TagSelector initialSelectedTags={[{
+                <TagSelector onChange={() => {}} initialSelectedTags={[{
                     id: '1',
                     label: 'test'
                 }]}/>

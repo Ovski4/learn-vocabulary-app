@@ -16,11 +16,11 @@ const replaceTranslations = (oldTranslations, newTranslations) => {
         });
 
         if (typeof newTranslation !== 'undefined') {
-           return newTranslation;
+            return newTranslation;
         } else {
             return translation;
         }
-   });
+    });
 }
 
 const onTranslationsShuffled = (translations, action) => {

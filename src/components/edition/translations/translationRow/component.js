@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Button, Text, View } from 'react-native';
 import EditTranslationForm from '../editTranslationForm/connect';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
     view: {
@@ -38,6 +39,17 @@ class TranslationRow extends React.Component {
         };
     }
 
+    static propTypes = {
+        handleDelete: PropTypes.func.isRequired,
+        translation: PropTypes.shape({
+            word1: PropTypes.string.isRequired,
+            word2: PropTypes.string.isRequired
+        }),
+        literals: PropTypes.shape({
+            edit: PropTypes.string.isRequired,
+        })
+    };
+
     toggleEditable = () => {
         this.setState({editable: !this.state.editable});
     }
@@ -47,12 +59,12 @@ class TranslationRow extends React.Component {
             return(
                 <View style={styles.view}>
                     <View style={styles.words}>
-                            <View style={styles.word}>
-                                <Text style={styles.wordText}>{this.props.translation.word1}</Text>
-                            </View>
-                            <View style={styles.word}>
-                                <Text style={styles.wordText}>{this.props.translation.word2}</Text>
-                            </View>
+                        <View style={styles.word}>
+                            <Text style={styles.wordText}>{this.props.translation.word1}</Text>
+                        </View>
+                        <View style={styles.word}>
+                            <Text style={styles.wordText}>{this.props.translation.word2}</Text>
+                        </View>
                     </View>
                     <View style={styles.actions}>
                         <View style={styles.button}>

@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Header from '../../../ui/Header';
 import TagRow from '../tagRow/connect';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
     emptyListView: {
@@ -18,12 +19,20 @@ const styles = StyleSheet.create({
 
 class TagList extends React.PureComponent {
 
+    static propTypes = {
+        tags: PropTypes.array.isRequired,
+        literals: PropTypes.shape({
+            addToStart: PropTypes.string.isRequired,
+            header: PropTypes.string.isRequired
+        })
+    };
+
     render() {
         const getListItem = (tag) => {
             return <TagRow
-                    key={tag.id}
-                    id={tag.id}
-                />
+                key={tag.id}
+                id={tag.id}
+            />
             ;
         };
 
@@ -46,7 +55,7 @@ class TagList extends React.PureComponent {
                         data={this.props.tags}
                         index={({item}) => item.index}
                         renderItem={({item}) => getListItem(item)}
-                        keyExtractor={(item, index) => item.id}
+                        keyExtractor={(item) => item.id}
                         ListEmptyComponent={listEmptyComponent}
                     />
                 </View>

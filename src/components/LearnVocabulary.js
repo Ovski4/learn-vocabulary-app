@@ -5,6 +5,7 @@ import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import translator from '../services/translator';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const mapStateToProps = (state) => {
     return {
@@ -35,9 +36,15 @@ class LearnVocabulary extends React.Component {
 
     }
 
-    componentDidCatch (error, info) {
-        console.log(error, info);
-    }
+    static propTypes = {
+        screenTitles: PropTypes.object.isRequired,
+        tagsFeatureDisabled: PropTypes.bool.isRequired
+    };
+
+    // componentDidCatch (error, info) {
+    //     // Todo: store in state for further use
+    //     // console.log(error, info);
+    // }
 
     render() {
         const RootStack = this.rootStack;
@@ -47,7 +54,7 @@ class LearnVocabulary extends React.Component {
             tagsFeatureDisabled: this.props.tagsFeatureDisabled
         }}/>;
     }
-};
+}
 
 export default connect(
     mapStateToProps,

@@ -3,6 +3,7 @@ import { Text, Picker, Button, View, StyleSheet } from 'react-native';
 import Header from '../../../components/ui/Header';
 import translationsService from '../../../services/translations';
 import TranslationsSearchBar from '../../ui/TranslationSearchBar';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
     button: {
@@ -41,6 +42,28 @@ class Actions extends React.Component {
             selectedTag: null
         };
     }
+
+    static propTypes = {
+        handleFilterByTag: PropTypes.func.isRequired,
+        handleShuffle: PropTypes.func.isRequired,
+        handleUnshuffle: PropTypes.func.isRequired,
+        handleHideLeft: PropTypes.func.isRequired,
+        handleHideRight: PropTypes.func.isRequired,
+        handleDisplayEverything: PropTypes.func.isRequired,
+        translations: PropTypes.array.isRequired,
+        tags: PropTypes.array.isRequired,
+        tagsFeatureDisabled: PropTypes.bool.isRequired,
+        literals: PropTypes.shape({
+            noTagSelected: PropTypes.string.isRequired,
+            shuffle: PropTypes.string.isRequired,
+            unshuffle: PropTypes.string.isRequired,
+            hideLeft: PropTypes.string.isRequired,
+            hideRight: PropTypes.string.isRequired,
+            displayAll: PropTypes.string.isRequired,
+            filterLabel: PropTypes.string.isRequired,
+            header: PropTypes.string.isRequired
+        }),
+    };
 
     filterByTag = (selectedTag) => {
         this.setState({selectedTag});

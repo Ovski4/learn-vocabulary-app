@@ -5,6 +5,7 @@ import { translationsSearched } from '../../actions/ui';
 import { SearchBar } from 'react-native-elements';
 import { waitForIt } from '../../services/helpers';
 import translator from '../../services/translator';
+import PropTypes from 'prop-types';
 
 const mapStateToProps = (state) => {
     return {
@@ -34,6 +35,14 @@ const styles = StyleSheet.create({
 
 class TranslationSearchBar extends React.Component {
 
+    static propTypes = {
+        handleFullTextSearch: PropTypes.func.isRequired,
+        scope: PropTypes.oneOf(['revision', 'edition']),
+        literals: PropTypes.shape({
+            placeholder: PropTypes.string.isRequired,
+        })
+    };
+
     fullTextSearch = (text) => {
         // Do not wait on clear text
         const waitingTime = text == '' ? 0 : 300;
@@ -58,7 +67,7 @@ class TranslationSearchBar extends React.Component {
             />
         );
     }
-};
+}
 
 export default connect(
     mapStateToProps,

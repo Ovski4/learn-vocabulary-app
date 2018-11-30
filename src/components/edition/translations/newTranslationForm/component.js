@@ -51,13 +51,14 @@ class NewTranslationForm extends BaseTranslationForm {
     }
 
     handleSubmit = () => {
-        this.refs.input1.clear();
-        this.refs.input2.clear();
+        this.input1.clear();
+        this.input2.clear();
         this.props.handleTranslationAdded({
             id: uuidv4(),
             createdAt: Date.now(),
             word1: this.state.word1,
             word2: this.state.word2,
+            hidden: false,
             tags: this.state.tags.map(tag => tag.id)
         });
         this.setState({

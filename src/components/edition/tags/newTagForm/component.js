@@ -52,7 +52,7 @@ class NewTagForm extends BaseTagForm {
             id: uuidv4()
         };
 
-        this.refs.input.clear();
+        this.input.clear();
         this.props.handleTagAdded(tag);
         this.setState({
             label: ''

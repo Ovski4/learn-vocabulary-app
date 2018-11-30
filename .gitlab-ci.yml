@@ -9,6 +9,7 @@ tests:
   script:
     - yarn
     - ./node_modules/jest/bin/jest.js
+    - ./node_modules/.bin/eslint src/
 
 build:
   stage: build

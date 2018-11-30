@@ -4,9 +4,13 @@
   "private": true,
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "eslint": "^5.9.0",
+    "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
     "jest-expo": "~27.0.0",
+    "jest-prop-type-error": "^1.1.0",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1",
     "regenerator-runtime": "^0.12.1"
@@ -30,7 +34,10 @@
         "statements": 0
       }
     },
-    "verbose": true
+    "verbose": true,
+    "setupFiles": [
+      "./tests/setup.js"
+    ]
   },
   "dependencies": {
     "expo": "^27.0.1",
