@@ -11,9 +11,6 @@ exports[`NewTranslationForm component Should render the component with the engli
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -55,11 +52,7 @@ exports[`NewTranslationForm component Should render the component with the engli
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          >
+          <Text>
             Word 1
             :
           </Text>
@@ -79,6 +72,7 @@ exports[`NewTranslationForm component Should render the component with the engli
             allowFontScaling={true}
             defaultValue=""
             onChangeText={[Function]}
+            rejectResponderTermination={true}
             style={
               Object {
                 "fontSize": 16,
@@ -105,11 +99,7 @@ exports[`NewTranslationForm component Should render the component with the engli
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          >
+          <Text>
             Word 2
             :
           </Text>
@@ -129,6 +119,7 @@ exports[`NewTranslationForm component Should render the component with the engli
             allowFontScaling={true}
             defaultValue=""
             onChangeText={[Function]}
+            rejectResponderTermination={true}
             style={
               Object {
                 "fontSize": 16,
@@ -154,11 +145,7 @@ exports[`NewTranslationForm component Should render the component with the engli
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          >
+          <Text>
             Tags
             :
           </Text>
@@ -236,10 +223,9 @@ exports[`NewTranslationForm component Should render the component with the engli
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
+        accessibilityRole="button"
+        accessibilityStates={
           Array [
-            "button",
             "disabled",
           ]
         }
@@ -266,10 +252,7 @@ exports[`NewTranslationForm component Should render the component with the engli
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -304,9 +287,6 @@ exports[`NewTranslationForm component Should render the component with the frenc
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -348,11 +328,7 @@ exports[`NewTranslationForm component Should render the component with the frenc
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          >
+          <Text>
             Mot 1
             :
           </Text>
@@ -372,6 +348,7 @@ exports[`NewTranslationForm component Should render the component with the frenc
             allowFontScaling={true}
             defaultValue=""
             onChangeText={[Function]}
+            rejectResponderTermination={true}
             style={
               Object {
                 "fontSize": 16,
@@ -398,11 +375,7 @@ exports[`NewTranslationForm component Should render the component with the frenc
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          >
+          <Text>
             Mot 2
             :
           </Text>
@@ -422,6 +395,7 @@ exports[`NewTranslationForm component Should render the component with the frenc
             allowFontScaling={true}
             defaultValue=""
             onChangeText={[Function]}
+            rejectResponderTermination={true}
             style={
               Object {
                 "fontSize": 16,
@@ -447,11 +421,7 @@ exports[`NewTranslationForm component Should render the component with the frenc
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          >
+          <Text>
             Étiquettes
             :
           </Text>
@@ -529,10 +499,9 @@ exports[`NewTranslationForm component Should render the component with the frenc
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
+        accessibilityRole="button"
+        accessibilityStates={
           Array [
-            "button",
             "disabled",
           ]
         }
@@ -559,10 +528,7 @@ exports[`NewTranslationForm component Should render the component with the frenc
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {

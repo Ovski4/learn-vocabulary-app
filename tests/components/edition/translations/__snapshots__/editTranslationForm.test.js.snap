@@ -25,11 +25,7 @@ exports[`EditTranslationForm component Should render the component with the engl
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      >
+      <Text>
         Word 1
         :
       </Text>
@@ -49,6 +45,7 @@ exports[`EditTranslationForm component Should render the component with the engl
         allowFontScaling={true}
         defaultValue="word1"
         onChangeText={[Function]}
+        rejectResponderTermination={true}
         style={
           Object {
             "fontSize": 16,
@@ -75,11 +72,7 @@ exports[`EditTranslationForm component Should render the component with the engl
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      >
+      <Text>
         Word 2
         :
       </Text>
@@ -99,6 +92,7 @@ exports[`EditTranslationForm component Should render the component with the engl
         allowFontScaling={true}
         defaultValue="word2"
         onChangeText={[Function]}
+        rejectResponderTermination={true}
         style={
           Object {
             "fontSize": 16,
@@ -125,11 +119,7 @@ exports[`EditTranslationForm component Should render the component with the engl
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      >
+      <Text>
         Tags
         :
       </Text>
@@ -215,12 +205,8 @@ exports[`EditTranslationForm component Should render the component with the engl
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
+        accessibilityRole="button"
+        accessibilityStates={Array []}
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -243,10 +229,7 @@ exports[`EditTranslationForm component Should render the component with the engl
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={false}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -292,11 +275,7 @@ exports[`EditTranslationForm component Should render the component with the fren
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      >
+      <Text>
         Mot 1
         :
       </Text>
@@ -316,6 +295,7 @@ exports[`EditTranslationForm component Should render the component with the fren
         allowFontScaling={true}
         defaultValue="word1"
         onChangeText={[Function]}
+        rejectResponderTermination={true}
         style={
           Object {
             "fontSize": 16,
@@ -342,11 +322,7 @@ exports[`EditTranslationForm component Should render the component with the fren
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      >
+      <Text>
         Mot 2
         :
       </Text>
@@ -366,6 +342,7 @@ exports[`EditTranslationForm component Should render the component with the fren
         allowFontScaling={true}
         defaultValue="word2"
         onChangeText={[Function]}
+        rejectResponderTermination={true}
         style={
           Object {
             "fontSize": 16,
@@ -392,11 +369,7 @@ exports[`EditTranslationForm component Should render the component with the fren
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      >
+      <Text>
         Étiquettes
         :
       </Text>
@@ -482,12 +455,8 @@ exports[`EditTranslationForm component Should render the component with the fren
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
+        accessibilityRole="button"
+        accessibilityStates={Array []}
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -510,10 +479,7 @@ exports[`EditTranslationForm component Should render the component with the fren
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={false}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {

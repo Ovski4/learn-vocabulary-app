@@ -11,9 +11,6 @@ exports[`Actions component Should render the component with the english locale 1
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -39,12 +36,8 @@ exports[`Actions component Should render the component with the english locale 1
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
+        accessibilityRole="button"
+        accessibilityStates={Array []}
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -67,9 +60,6 @@ exports[`Actions component Should render the component with the english locale 1
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -95,10 +85,9 @@ exports[`Actions component Should render the component with the english locale 1
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
+        accessibilityRole="button"
+        accessibilityStates={
           Array [
-            "button",
             "disabled",
           ]
         }
@@ -125,10 +114,7 @@ exports[`Actions component Should render the component with the english locale 1
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -165,10 +151,9 @@ exports[`Actions component Should render the component with the english locale 1
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
+        accessibilityRole="button"
+        accessibilityStates={
           Array [
-            "button",
             "disabled",
           ]
         }
@@ -195,10 +180,7 @@ exports[`Actions component Should render the component with the english locale 1
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -227,10 +209,9 @@ exports[`Actions component Should render the component with the english locale 1
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
+        accessibilityRole="button"
+        accessibilityStates={
           Array [
-            "button",
             "disabled",
           ]
         }
@@ -257,10 +238,7 @@ exports[`Actions component Should render the component with the english locale 1
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -289,10 +267,9 @@ exports[`Actions component Should render the component with the english locale 1
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
+        accessibilityRole="button"
+        accessibilityStates={
           Array [
-            "button",
             "disabled",
           ]
         }
@@ -319,10 +296,7 @@ exports[`Actions component Should render the component with the english locale 1
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -354,9 +328,6 @@ exports[`Actions component Should render the component with the english locale 1
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#929292",
@@ -403,130 +374,156 @@ exports[`Actions component Should render the component with the english locale 1
   </View>
   <View
     style={
-      Array [
-        Object {
-          "backgroundColor": "#393e42",
-          "borderBottomColor": "#000",
-          "borderBottomWidth": 1,
-          "borderTopColor": "#000",
-          "borderTopWidth": 1,
-        },
-        Object {
-          "backgroundColor": "#e1e8ee",
-          "borderBottomColor": "#e1e1e1",
-          "borderTopColor": "#e1e1e1",
-        },
-        Object {
-          "backgroundColor": "transparent",
-          "borderBottomColor": "transparent",
-          "borderTopColor": "transparent",
-        },
-      ]
+      Object {
+        "backgroundColor": "transparent",
+        "borderBottomColor": "transparent",
+        "borderBottomWidth": 1,
+        "borderTopColor": "transparent",
+        "borderTopWidth": 1,
+        "padding": 8,
+      }
     }
   >
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      onClearText={[Function]}
-      placeholder="Look for translations"
-      placeholderTextColor="#86939e"
+    <View
       style={
-        Array [
+        Object {
+          "paddingHorizontal": 0,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
           Object {
-            "backgroundColor": "#303337",
-            "borderRadius": 3,
-            "color": "#86939e",
-            "fontSize": 17.5,
-            "height": 30,
-            "margin": 8,
-            "overflow": "hidden",
-            "paddingLeft": 26,
-            "paddingRight": 19,
-          },
-          Object {
+            "alignItems": "center",
             "backgroundColor": "#bdc6cf",
-          },
-          false,
-          false,
-          Object {
-            "backgroundColor": "white",
-            "borderColor": "#ddd",
-            "borderWidth": 1,
-            "marginLeft": 5,
-            "marginRight": 5,
-            "paddingLeft": 30,
-          },
-          false,
-          Object {
-            "paddingRight": 30,
-          },
-        ]
-      }
-      underlineColorAndroid="transparent"
-    />
-    <Text
-      accessible={true}
-      allowFontScaling={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "#86939e",
-            "fontSize": 16,
-          },
-          Array [
+            "borderBottomWidth": 0,
+            "borderColor": "#86939e",
+            "borderRadius": 3,
+            "flexDirection": "row",
+            "minHeight": 30,
+            "overflow": "hidden",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          style={
             Object {
-              "backgroundColor": "transparent",
-              "position": "absolute",
-              "top": 15.5,
-            },
+              "alignItems": "center",
+              "height": 40,
+              "justifyContent": "center",
+              "marginLeft": 8,
+            }
+          }
+        >
+          <View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "justifyContent": "center",
+                }
+              }
+              theme={
+                Object {
+                  "colors": Object {
+                    "disabled": "hsl(208, 8%, 90%)",
+                    "divider": "#bcbbc1",
+                    "error": "#ff190c",
+                    "grey0": "#393e42",
+                    "grey1": "#43484d",
+                    "grey2": "#5e6977",
+                    "grey3": "#86939e",
+                    "grey4": "#bdc6cf",
+                    "grey5": "#e1e8ee",
+                    "greyOutline": "#bbb",
+                    "platform": Object {
+                      "android": Object {
+                        "error": "#f44336",
+                        "primary": "#2196f3",
+                        "secondary": "#9C27B0",
+                        "success": "#4caf50",
+                        "warning": "#ffeb3b",
+                      },
+                      "ios": Object {
+                        "error": "#ff3b30",
+                        "primary": "#007aff",
+                        "secondary": "#5856d6",
+                        "success": "#4cd964",
+                        "warning": "#ffcc00",
+                      },
+                    },
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#8F0CE8",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                }
+              }
+              underlayColor="white"
+            >
+              <Text />
+            </View>
+          </View>
+        </View>
+        <TextInput
+          allowFontScaling={true}
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          onClear={[Function]}
+          onClearText={[Function]}
+          onFocus={[Function]}
+          placeholder="Look for translations"
+          placeholderTextColor="#86939e"
+          platform="default"
+          rejectResponderTermination={true}
+          style={
             Object {
-              "left": 16,
-            },
-            undefined,
-          ],
-          Object {
-            "fontFamily": "Material Icons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-        ]
-      }
-    >
-      
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={false}
-      ellipsizeMode="tail"
-      onPress={[Function]}
-      style={
-        Array [
-          Object {
-            "color": "#86939e",
-            "fontSize": 16,
-          },
-          Array [
+              "alignSelf": "center",
+              "backgroundColor": "white",
+              "borderColor": "#ddd",
+              "borderWidth": 1,
+              "color": "#86939e",
+              "flex": 1,
+              "fontSize": 18,
+              "marginLeft": 5,
+              "marginRight": 5,
+              "minHeight": 40,
+              "paddingLeft": 30,
+            }
+          }
+          testID="searchInput"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+        <View
+          style={
             Object {
-              "backgroundColor": "transparent",
-              "position": "absolute",
-              "top": 15.5,
-            },
-            Object {
-              "right": 16,
-            },
-            undefined,
-          ],
-          Object {
-            "fontFamily": "Material Icons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-        ]
-      }
-    >
-      
-    </Text>
+              "alignItems": "center",
+              "height": 40,
+              "justifyContent": "center",
+              "marginLeft": 15,
+              "marginRight": 8,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
   </View>
 </View>
 `;
@@ -542,9 +539,6 @@ exports[`Actions component Should render the component with the french locale 1`
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -570,12 +564,8 @@ exports[`Actions component Should render the component with the french locale 1`
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
+        accessibilityRole="button"
+        accessibilityStates={Array []}
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -598,9 +588,6 @@ exports[`Actions component Should render the component with the french locale 1`
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -626,10 +613,9 @@ exports[`Actions component Should render the component with the french locale 1`
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
+        accessibilityRole="button"
+        accessibilityStates={
           Array [
-            "button",
             "disabled",
           ]
         }
@@ -656,10 +642,7 @@ exports[`Actions component Should render the component with the french locale 1`
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -696,10 +679,9 @@ exports[`Actions component Should render the component with the french locale 1`
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
+        accessibilityRole="button"
+        accessibilityStates={
           Array [
-            "button",
             "disabled",
           ]
         }
@@ -726,10 +708,7 @@ exports[`Actions component Should render the component with the french locale 1`
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -758,10 +737,9 @@ exports[`Actions component Should render the component with the french locale 1`
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
+        accessibilityRole="button"
+        accessibilityStates={
           Array [
-            "button",
             "disabled",
           ]
         }
@@ -788,10 +766,7 @@ exports[`Actions component Should render the component with the french locale 1`
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -820,10 +795,9 @@ exports[`Actions component Should render the component with the french locale 1`
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
+        accessibilityRole="button"
+        accessibilityStates={
           Array [
-            "button",
             "disabled",
           ]
         }
@@ -850,10 +824,7 @@ exports[`Actions component Should render the component with the french locale 1`
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -885,9 +856,6 @@ exports[`Actions component Should render the component with the french locale 1`
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#929292",
@@ -934,130 +902,156 @@ exports[`Actions component Should render the component with the french locale 1`
   </View>
   <View
     style={
-      Array [
-        Object {
-          "backgroundColor": "#393e42",
-          "borderBottomColor": "#000",
-          "borderBottomWidth": 1,
-          "borderTopColor": "#000",
-          "borderTopWidth": 1,
-        },
-        Object {
-          "backgroundColor": "#e1e8ee",
-          "borderBottomColor": "#e1e1e1",
-          "borderTopColor": "#e1e1e1",
-        },
-        Object {
-          "backgroundColor": "transparent",
-          "borderBottomColor": "transparent",
-          "borderTopColor": "transparent",
-        },
-      ]
+      Object {
+        "backgroundColor": "transparent",
+        "borderBottomColor": "transparent",
+        "borderBottomWidth": 1,
+        "borderTopColor": "transparent",
+        "borderTopWidth": 1,
+        "padding": 8,
+      }
     }
   >
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      onClearText={[Function]}
-      placeholder="Rechercher parmi les traductions"
-      placeholderTextColor="#86939e"
+    <View
       style={
-        Array [
+        Object {
+          "paddingHorizontal": 0,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
           Object {
-            "backgroundColor": "#303337",
-            "borderRadius": 3,
-            "color": "#86939e",
-            "fontSize": 17.5,
-            "height": 30,
-            "margin": 8,
-            "overflow": "hidden",
-            "paddingLeft": 26,
-            "paddingRight": 19,
-          },
-          Object {
+            "alignItems": "center",
             "backgroundColor": "#bdc6cf",
-          },
-          false,
-          false,
-          Object {
-            "backgroundColor": "white",
-            "borderColor": "#ddd",
-            "borderWidth": 1,
-            "marginLeft": 5,
-            "marginRight": 5,
-            "paddingLeft": 30,
-          },
-          false,
-          Object {
-            "paddingRight": 30,
-          },
-        ]
-      }
-      underlineColorAndroid="transparent"
-    />
-    <Text
-      accessible={true}
-      allowFontScaling={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "#86939e",
-            "fontSize": 16,
-          },
-          Array [
+            "borderBottomWidth": 0,
+            "borderColor": "#86939e",
+            "borderRadius": 3,
+            "flexDirection": "row",
+            "minHeight": 30,
+            "overflow": "hidden",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          style={
             Object {
-              "backgroundColor": "transparent",
-              "position": "absolute",
-              "top": 15.5,
-            },
+              "alignItems": "center",
+              "height": 40,
+              "justifyContent": "center",
+              "marginLeft": 8,
+            }
+          }
+        >
+          <View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "justifyContent": "center",
+                }
+              }
+              theme={
+                Object {
+                  "colors": Object {
+                    "disabled": "hsl(208, 8%, 90%)",
+                    "divider": "#bcbbc1",
+                    "error": "#ff190c",
+                    "grey0": "#393e42",
+                    "grey1": "#43484d",
+                    "grey2": "#5e6977",
+                    "grey3": "#86939e",
+                    "grey4": "#bdc6cf",
+                    "grey5": "#e1e8ee",
+                    "greyOutline": "#bbb",
+                    "platform": Object {
+                      "android": Object {
+                        "error": "#f44336",
+                        "primary": "#2196f3",
+                        "secondary": "#9C27B0",
+                        "success": "#4caf50",
+                        "warning": "#ffeb3b",
+                      },
+                      "ios": Object {
+                        "error": "#ff3b30",
+                        "primary": "#007aff",
+                        "secondary": "#5856d6",
+                        "success": "#4cd964",
+                        "warning": "#ffcc00",
+                      },
+                    },
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#8F0CE8",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                }
+              }
+              underlayColor="white"
+            >
+              <Text />
+            </View>
+          </View>
+        </View>
+        <TextInput
+          allowFontScaling={true}
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          onClear={[Function]}
+          onClearText={[Function]}
+          onFocus={[Function]}
+          placeholder="Rechercher parmi les traductions"
+          placeholderTextColor="#86939e"
+          platform="default"
+          rejectResponderTermination={true}
+          style={
             Object {
-              "left": 16,
-            },
-            undefined,
-          ],
-          Object {
-            "fontFamily": "Material Icons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-        ]
-      }
-    >
-      
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={false}
-      ellipsizeMode="tail"
-      onPress={[Function]}
-      style={
-        Array [
-          Object {
-            "color": "#86939e",
-            "fontSize": 16,
-          },
-          Array [
+              "alignSelf": "center",
+              "backgroundColor": "white",
+              "borderColor": "#ddd",
+              "borderWidth": 1,
+              "color": "#86939e",
+              "flex": 1,
+              "fontSize": 18,
+              "marginLeft": 5,
+              "marginRight": 5,
+              "minHeight": 40,
+              "paddingLeft": 30,
+            }
+          }
+          testID="searchInput"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+        <View
+          style={
             Object {
-              "backgroundColor": "transparent",
-              "position": "absolute",
-              "top": 15.5,
-            },
-            Object {
-              "right": 16,
-            },
-            undefined,
-          ],
-          Object {
-            "fontFamily": "Material Icons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-        ]
-      }
-    >
-      
-    </Text>
+              "alignItems": "center",
+              "height": 40,
+              "justifyContent": "center",
+              "marginLeft": 15,
+              "marginRight": 8,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
   </View>
 </View>
 `;

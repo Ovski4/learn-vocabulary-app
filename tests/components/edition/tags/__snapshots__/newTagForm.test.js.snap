@@ -11,9 +11,6 @@ exports[`NewTagForm component Should render the component with the english local
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -55,11 +52,7 @@ exports[`NewTagForm component Should render the component with the english local
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          >
+          <Text>
             Label
             :
           </Text>
@@ -79,6 +72,7 @@ exports[`NewTagForm component Should render the component with the english local
             allowFontScaling={true}
             defaultValue=""
             onChangeText={[Function]}
+            rejectResponderTermination={true}
             style={
               Object {
                 "fontSize": 16,
@@ -100,10 +94,9 @@ exports[`NewTagForm component Should render the component with the english local
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
+        accessibilityRole="button"
+        accessibilityStates={
           Array [
-            "button",
             "disabled",
           ]
         }
@@ -130,10 +123,7 @@ exports[`NewTagForm component Should render the component with the english local
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -168,9 +158,6 @@ exports[`NewTagForm component Should render the component with the french locale
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -212,11 +199,7 @@ exports[`NewTagForm component Should render the component with the french locale
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          >
+          <Text>
             Label
             :
           </Text>
@@ -236,6 +219,7 @@ exports[`NewTagForm component Should render the component with the french locale
             allowFontScaling={true}
             defaultValue=""
             onChangeText={[Function]}
+            rejectResponderTermination={true}
             style={
               Object {
                 "fontSize": 16,
@@ -257,10 +241,9 @@ exports[`NewTagForm component Should render the component with the french locale
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
+        accessibilityRole="button"
+        accessibilityStates={
           Array [
-            "button",
             "disabled",
           ]
         }
@@ -287,10 +270,7 @@ exports[`NewTagForm component Should render the component with the french locale
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {

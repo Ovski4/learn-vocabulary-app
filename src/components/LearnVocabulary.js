@@ -2,7 +2,7 @@ import RevisionScreen from './revision/revisionScreen/connect';
 import SettingsScreen from './settings/settingsScreen/connect';
 import EditionNavigator from './edition/navigator/connect';
 import React from 'react';
-import { createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import translator from '../services/translator';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -20,7 +20,7 @@ class LearnVocabulary extends React.Component {
 
         super(props);
 
-        this.rootStack = createBottomTabNavigator(
+        this.rootStack = createAppContainer(createBottomTabNavigator(
             {
                 Revision: RevisionScreen,
                 Edition: EditionNavigator,
@@ -32,7 +32,7 @@ class LearnVocabulary extends React.Component {
                     activeTintColor: '#03A9F4'
                 }
             }
-        );
+        ));
 
     }
 

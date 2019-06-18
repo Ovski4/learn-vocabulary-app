@@ -1,4 +1,5 @@
 import React from 'react';
+import { registerRootComponent } from 'expo';
 import { Provider } from 'react-redux';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import LearnVocabulary from './src/components/LearnVocabulary';
@@ -39,7 +40,7 @@ const loadingView =
     </View>
 ;
 
-export default class App extends React.Component {
+class App extends React.Component {
     render() {
         return (
             <View style={styles.root}>
@@ -52,3 +53,7 @@ export default class App extends React.Component {
         );
     }
 }
+
+registerRootComponent(App);
+
+export default App;

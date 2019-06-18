@@ -17,9 +17,6 @@ exports[`TranslationList component Should render the component with an empty lis
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -39,7 +36,7 @@ exports[`TranslationList component Should render the component with an empty lis
   >
     <RCTScrollView
       ListEmptyComponent={
-        <Component
+        <View
           style={
             Object {
               "borderColor": "#bbb",
@@ -50,9 +47,6 @@ exports[`TranslationList component Should render the component with an empty lis
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "fontStyle": "italic",
@@ -62,7 +56,7 @@ exports[`TranslationList component Should render the component with an empty lis
           >
             Add a translation to start learning!
           </Text>
-        </Component>
+        </View>
       }
       data={Array []}
       disableVirtualization={false}
@@ -81,6 +75,7 @@ exports[`TranslationList component Should render the component with an empty lis
       onScroll={[Function]}
       onScrollBeginDrag={[Function]}
       onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
       renderItem={[Function]}
       scrollEventThrottle={50}
       stickyHeaderIndices={Array []}
@@ -91,32 +86,25 @@ exports[`TranslationList component Should render the component with an empty lis
       <View>
         <View
           onLayout={[Function]}
-          style={null}
+          style={
+            Object {
+              "borderColor": "#bbb",
+              "borderTopWidth": 0.4,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "borderColor": "#bbb",
-                "borderTopWidth": 0.4,
-                "flexDirection": "row",
-                "justifyContent": "center",
+                "fontStyle": "italic",
+                "lineHeight": 50,
               }
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "fontStyle": "italic",
-                  "lineHeight": 50,
-                }
-              }
-            >
-              Add a translation to start learning!
-            </Text>
-          </View>
+            Add a translation to start learning!
+          </Text>
         </View>
       </View>
     </RCTScrollView>
@@ -141,9 +129,6 @@ exports[`TranslationList component Should render the component with translations
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -163,7 +148,7 @@ exports[`TranslationList component Should render the component with translations
   >
     <RCTScrollView
       ListEmptyComponent={
-        <Component
+        <View
           style={
             Object {
               "borderColor": "#bbb",
@@ -174,9 +159,6 @@ exports[`TranslationList component Should render the component with translations
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "fontStyle": "italic",
@@ -186,7 +168,7 @@ exports[`TranslationList component Should render the component with translations
           >
             Add a translation to start learning!
           </Text>
-        </Component>
+        </View>
       }
       data={
         Array [
@@ -222,6 +204,7 @@ exports[`TranslationList component Should render the component with translations
       onScroll={[Function]}
       onScrollBeginDrag={[Function]}
       onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
       renderItem={[Function]}
       scrollEventThrottle={50}
       stickyHeaderIndices={Array []}
@@ -261,9 +244,6 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "textAlign": "center",
@@ -282,9 +262,6 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "textAlign": "center",
@@ -311,12 +288,8 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <View
-                  accessibilityComponentType="button"
-                  accessibilityTraits={
-                    Array [
-                      "button",
-                    ]
-                  }
+                  accessibilityRole="button"
+                  accessibilityStates={Array []}
                   accessible={true}
                   isTVSelectable={true}
                   onResponderGrant={[Function]}
@@ -339,9 +312,6 @@ exports[`TranslationList component Should render the component with translations
                     }
                   >
                     <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
                       style={
                         Array [
                           Object {
@@ -366,12 +336,8 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <View
-                  accessibilityComponentType="button"
-                  accessibilityTraits={
-                    Array [
-                      "button",
-                    ]
-                  }
+                  accessibilityRole="button"
+                  accessibilityStates={Array []}
                   accessible={true}
                   isTVSelectable={true}
                   onResponderGrant={[Function]}
@@ -394,9 +360,6 @@ exports[`TranslationList component Should render the component with translations
                     }
                   >
                     <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
                       style={
                         Array [
                           Object {
@@ -447,9 +410,6 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "textAlign": "center",
@@ -468,9 +428,6 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "textAlign": "center",
@@ -497,12 +454,8 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <View
-                  accessibilityComponentType="button"
-                  accessibilityTraits={
-                    Array [
-                      "button",
-                    ]
-                  }
+                  accessibilityRole="button"
+                  accessibilityStates={Array []}
                   accessible={true}
                   isTVSelectable={true}
                   onResponderGrant={[Function]}
@@ -525,9 +478,6 @@ exports[`TranslationList component Should render the component with translations
                     }
                   >
                     <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
                       style={
                         Array [
                           Object {
@@ -552,12 +502,8 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <View
-                  accessibilityComponentType="button"
-                  accessibilityTraits={
-                    Array [
-                      "button",
-                    ]
-                  }
+                  accessibilityRole="button"
+                  accessibilityStates={Array []}
                   accessible={true}
                   isTVSelectable={true}
                   onResponderGrant={[Function]}
@@ -580,9 +526,6 @@ exports[`TranslationList component Should render the component with translations
                     }
                   >
                     <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
                       style={
                         Array [
                           Object {
@@ -625,9 +568,6 @@ exports[`TranslationList component Should render the component with translations
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -647,7 +587,7 @@ exports[`TranslationList component Should render the component with translations
   >
     <RCTScrollView
       ListEmptyComponent={
-        <Component
+        <View
           style={
             Object {
               "borderColor": "#bbb",
@@ -658,9 +598,6 @@ exports[`TranslationList component Should render the component with translations
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "fontStyle": "italic",
@@ -670,7 +607,7 @@ exports[`TranslationList component Should render the component with translations
           >
             Ajouter une traduction pour commencer à apprendre!
           </Text>
-        </Component>
+        </View>
       }
       data={
         Array [
@@ -706,6 +643,7 @@ exports[`TranslationList component Should render the component with translations
       onScroll={[Function]}
       onScrollBeginDrag={[Function]}
       onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
       renderItem={[Function]}
       scrollEventThrottle={50}
       stickyHeaderIndices={Array []}
@@ -745,9 +683,6 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "textAlign": "center",
@@ -766,9 +701,6 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "textAlign": "center",
@@ -795,12 +727,8 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <View
-                  accessibilityComponentType="button"
-                  accessibilityTraits={
-                    Array [
-                      "button",
-                    ]
-                  }
+                  accessibilityRole="button"
+                  accessibilityStates={Array []}
                   accessible={true}
                   isTVSelectable={true}
                   onResponderGrant={[Function]}
@@ -823,9 +751,6 @@ exports[`TranslationList component Should render the component with translations
                     }
                   >
                     <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
                       style={
                         Array [
                           Object {
@@ -850,12 +775,8 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <View
-                  accessibilityComponentType="button"
-                  accessibilityTraits={
-                    Array [
-                      "button",
-                    ]
-                  }
+                  accessibilityRole="button"
+                  accessibilityStates={Array []}
                   accessible={true}
                   isTVSelectable={true}
                   onResponderGrant={[Function]}
@@ -878,9 +799,6 @@ exports[`TranslationList component Should render the component with translations
                     }
                   >
                     <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
                       style={
                         Array [
                           Object {
@@ -931,9 +849,6 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "textAlign": "center",
@@ -952,9 +867,6 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "textAlign": "center",
@@ -981,12 +893,8 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <View
-                  accessibilityComponentType="button"
-                  accessibilityTraits={
-                    Array [
-                      "button",
-                    ]
-                  }
+                  accessibilityRole="button"
+                  accessibilityStates={Array []}
                   accessible={true}
                   isTVSelectable={true}
                   onResponderGrant={[Function]}
@@ -1009,9 +917,6 @@ exports[`TranslationList component Should render the component with translations
                     }
                   >
                     <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
                       style={
                         Array [
                           Object {
@@ -1036,12 +941,8 @@ exports[`TranslationList component Should render the component with translations
                 }
               >
                 <View
-                  accessibilityComponentType="button"
-                  accessibilityTraits={
-                    Array [
-                      "button",
-                    ]
-                  }
+                  accessibilityRole="button"
+                  accessibilityStates={Array []}
                   accessible={true}
                   isTVSelectable={true}
                   onResponderGrant={[Function]}
@@ -1064,9 +965,6 @@ exports[`TranslationList component Should render the component with translations
                     }
                   >
                     <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
                       style={
                         Array [
                           Object {

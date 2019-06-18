@@ -17,9 +17,6 @@ exports[`TranslationList component Should render the component with the english 
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -39,7 +36,7 @@ exports[`TranslationList component Should render the component with the english 
   >
     <RCTScrollView
       ListEmptyComponent={
-        <Component
+        <View
           style={
             Object {
               "borderColor": "#bbb",
@@ -50,9 +47,6 @@ exports[`TranslationList component Should render the component with the english 
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "fontStyle": "italic",
@@ -62,7 +56,7 @@ exports[`TranslationList component Should render the component with the english 
           >
             Add a translation to start learning!
           </Text>
-        </Component>
+        </View>
       }
       data={Array []}
       disableVirtualization={false}
@@ -81,6 +75,7 @@ exports[`TranslationList component Should render the component with the english 
       onScroll={[Function]}
       onScrollBeginDrag={[Function]}
       onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
       renderItem={[Function]}
       scrollEventThrottle={50}
       stickyHeaderIndices={Array []}
@@ -91,32 +86,25 @@ exports[`TranslationList component Should render the component with the english 
       <View>
         <View
           onLayout={[Function]}
-          style={null}
+          style={
+            Object {
+              "borderColor": "#bbb",
+              "borderTopWidth": 0.4,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "borderColor": "#bbb",
-                "borderTopWidth": 0.4,
-                "flexDirection": "row",
-                "justifyContent": "center",
+                "fontStyle": "italic",
+                "lineHeight": 50,
               }
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "fontStyle": "italic",
-                  "lineHeight": 50,
-                }
-              }
-            >
-              Add a translation to start learning!
-            </Text>
-          </View>
+            Add a translation to start learning!
+          </Text>
         </View>
       </View>
     </RCTScrollView>
@@ -141,9 +129,6 @@ exports[`TranslationList component Should render the component with the french l
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -163,7 +148,7 @@ exports[`TranslationList component Should render the component with the french l
   >
     <RCTScrollView
       ListEmptyComponent={
-        <Component
+        <View
           style={
             Object {
               "borderColor": "#bbb",
@@ -174,9 +159,6 @@ exports[`TranslationList component Should render the component with the french l
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "fontStyle": "italic",
@@ -186,7 +168,7 @@ exports[`TranslationList component Should render the component with the french l
           >
             Ajouter une traduction pour commencer à apprendre!
           </Text>
-        </Component>
+        </View>
       }
       data={Array []}
       disableVirtualization={false}
@@ -205,6 +187,7 @@ exports[`TranslationList component Should render the component with the french l
       onScroll={[Function]}
       onScrollBeginDrag={[Function]}
       onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
       renderItem={[Function]}
       scrollEventThrottle={50}
       stickyHeaderIndices={Array []}
@@ -215,32 +198,25 @@ exports[`TranslationList component Should render the component with the french l
       <View>
         <View
           onLayout={[Function]}
-          style={null}
+          style={
+            Object {
+              "borderColor": "#bbb",
+              "borderTopWidth": 0.4,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "borderColor": "#bbb",
-                "borderTopWidth": 0.4,
-                "flexDirection": "row",
-                "justifyContent": "center",
+                "fontStyle": "italic",
+                "lineHeight": 50,
               }
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "fontStyle": "italic",
-                  "lineHeight": 50,
-                }
-              }
-            >
-              Ajouter une traduction pour commencer à apprendre!
-            </Text>
-          </View>
+            Ajouter une traduction pour commencer à apprendre!
+          </Text>
         </View>
       </View>
     </RCTScrollView>

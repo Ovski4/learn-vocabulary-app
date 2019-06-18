@@ -28,9 +28,6 @@ exports[`TranslationRow component Should render the component with the english l
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "textAlign": "center",
@@ -49,9 +46,6 @@ exports[`TranslationRow component Should render the component with the english l
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "textAlign": "center",
@@ -78,12 +72,8 @@ exports[`TranslationRow component Should render the component with the english l
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
+        accessibilityRole="button"
+        accessibilityStates={Array []}
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -106,9 +96,6 @@ exports[`TranslationRow component Should render the component with the english l
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -133,12 +120,8 @@ exports[`TranslationRow component Should render the component with the english l
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
+        accessibilityRole="button"
+        accessibilityStates={Array []}
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -161,9 +144,6 @@ exports[`TranslationRow component Should render the component with the english l
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -212,9 +192,6 @@ exports[`TranslationRow component Should render the component with the french lo
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "textAlign": "center",
@@ -233,9 +210,6 @@ exports[`TranslationRow component Should render the component with the french lo
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "textAlign": "center",
@@ -262,12 +236,8 @@ exports[`TranslationRow component Should render the component with the french lo
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
+        accessibilityRole="button"
+        accessibilityStates={Array []}
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -290,9 +260,6 @@ exports[`TranslationRow component Should render the component with the french lo
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -317,12 +284,8 @@ exports[`TranslationRow component Should render the component with the french lo
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
+        accessibilityRole="button"
+        accessibilityStates={Array []}
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -345,9 +308,6 @@ exports[`TranslationRow component Should render the component with the french lo
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {

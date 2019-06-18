@@ -25,11 +25,7 @@ exports[`EditTagForm component Should render the component with the english loca
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      >
+      <Text>
         Label:
       </Text>
     </View>
@@ -48,6 +44,7 @@ exports[`EditTagForm component Should render the component with the english loca
         allowFontScaling={true}
         defaultValue="test"
         onChangeText={[Function]}
+        rejectResponderTermination={true}
         style={
           Object {
             "fontSize": 16,
@@ -76,12 +73,8 @@ exports[`EditTagForm component Should render the component with the english loca
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
+        accessibilityRole="button"
+        accessibilityStates={Array []}
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -104,10 +97,7 @@ exports[`EditTagForm component Should render the component with the english loca
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={false}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -153,11 +143,7 @@ exports[`EditTagForm component Should render the component with the french local
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      >
+      <Text>
         Label:
       </Text>
     </View>
@@ -176,6 +162,7 @@ exports[`EditTagForm component Should render the component with the french local
         allowFontScaling={true}
         defaultValue="test"
         onChangeText={[Function]}
+        rejectResponderTermination={true}
         style={
           Object {
             "fontSize": 16,
@@ -204,12 +191,8 @@ exports[`EditTagForm component Should render the component with the french local
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
+        accessibilityRole="button"
+        accessibilityStates={Array []}
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -232,10 +215,7 @@ exports[`EditTagForm component Should render the component with the french local
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             disabled={false}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {

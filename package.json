@@ -4,23 +4,22 @@
   "private": true,
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
-    "eslint": "^5.9.0",
-    "eslint-plugin-react": "^7.11.1",
-    "jest": "^23.6.0",
-    "jest-expo": "~27.0.0",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0",
+    "jest": "^24.8.0",
+    "jest-expo": "~33.0.2",
     "jest-prop-type-error": "^1.1.0",
-    "react-native-scripts": "1.14.0",
-    "react-test-renderer": "16.3.1",
-    "regenerator-runtime": "^0.12.1"
+    "react-test-renderer": "16.8.6",
+    "regenerator-runtime": "^0.13.2"
   },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "main": "./App.js",
   "scripts": {
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
+    "start": "expo start",
+    "eject": "expo eject",
+    "android": "expo android",
+    "ios": "expo ios",
     "test": "docker run -it -v $(pwd):/var/app node:10-stretch bash -c \"cd /var/app && ./node_modules/jest/bin/jest.js\""
   },
   "jest": {
@@ -40,13 +39,14 @@
     ]
   },
   "dependencies": {
-    "expo": "^27.0.1",
-    "react": "16.3.1",
-    "react-native": "v0.55",
-    "react-native-elements": "^0.19.1",
-    "react-navigation": "^2.16.0",
+    "expo": "^33.0.0",
+    "react": "16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+    "react-native-elements": "^1.1.0",
+    "react-navigation": "^3.11.0",
     "react-redux": "^5.0.7",
-    "reduce-reducers": "^0.4.3",
+    "reduce-reducers": "^1.0.4",
+    "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
     "uuid": "^3.3.2"

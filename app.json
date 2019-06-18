@@ -3,7 +3,7 @@
         "version": "1.4.0",
         "name": "Learn Vocabulary",
         "slug": "learn-vocabulary",
-        "sdkVersion": "27.0.0",
+        "sdkVersion": "33.0.0",
         "orientation": "portrait",
         "android": {
             "package": "net.ovski.learnvocabulary",

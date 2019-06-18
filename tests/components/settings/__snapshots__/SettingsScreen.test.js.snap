@@ -18,9 +18,6 @@ exports[`SettingsScreen component Should render the settings screen with the eng
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -41,9 +38,6 @@ exports[`SettingsScreen component Should render the settings screen with the eng
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#929292",
@@ -104,9 +98,6 @@ exports[`SettingsScreen component Should render the settings screen with the eng
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#929292",
@@ -148,9 +139,6 @@ exports[`SettingsScreen component Should render the settings screen with the eng
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#dcdcdc",
@@ -182,9 +170,6 @@ exports[`SettingsScreen component Should render the settings screen with the fre
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontWeight": "bold",
@@ -205,9 +190,6 @@ exports[`SettingsScreen component Should render the settings screen with the fre
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#929292",
@@ -268,9 +250,6 @@ exports[`SettingsScreen component Should render the settings screen with the fre
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#929292",
@@ -312,9 +291,6 @@ exports[`SettingsScreen component Should render the settings screen with the fre
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#dcdcdc",
