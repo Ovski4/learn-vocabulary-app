@@ -377,10 +377,9 @@ exports[`Actions component Should render the component with the english locale 1
       Object {
         "backgroundColor": "transparent",
         "borderBottomColor": "transparent",
-        "borderBottomWidth": 1,
         "borderTopColor": "transparent",
-        "borderTopWidth": 1,
-        "padding": 8,
+        "paddingBottom": 8,
+        "paddingTop": 8,
       }
     }
   >
@@ -396,18 +395,15 @@ exports[`Actions component Should render the component with the english locale 1
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#bdc6cf",
             "borderBottomWidth": 0,
             "borderColor": "#86939e",
-            "borderRadius": 3,
             "flexDirection": "row",
-            "minHeight": 30,
-            "overflow": "hidden",
             "transform": Array [
               Object {
                 "translateX": 0,
               },
             ],
+            "width": "100%",
           }
         }
       >
@@ -475,14 +471,15 @@ exports[`Actions component Should render the component with the english locale 1
         </View>
         <TextInput
           allowFontScaling={true}
+          lightTheme={true}
           onBlur={[Function]}
+          onCancel={[Function]}
           onChangeText={[Function]}
           onClear={[Function]}
           onClearText={[Function]}
           onFocus={[Function]}
           placeholder="Look for translations"
-          placeholderTextColor="#86939e"
-          platform="default"
+          platform="android"
           rejectResponderTermination={true}
           style={
             Object {
@@ -490,9 +487,9 @@ exports[`Actions component Should render the component with the english locale 1
               "backgroundColor": "white",
               "borderColor": "#ddd",
               "borderWidth": 1,
-              "color": "#86939e",
+              "color": "black",
               "flex": 1,
-              "fontSize": 18,
+              "fontSize": 14,
               "marginLeft": 5,
               "marginRight": 5,
               "minHeight": 40,
@@ -905,10 +902,9 @@ exports[`Actions component Should render the component with the french locale 1`
       Object {
         "backgroundColor": "transparent",
         "borderBottomColor": "transparent",
-        "borderBottomWidth": 1,
         "borderTopColor": "transparent",
-        "borderTopWidth": 1,
-        "padding": 8,
+        "paddingBottom": 8,
+        "paddingTop": 8,
       }
     }
   >
@@ -924,18 +920,15 @@ exports[`Actions component Should render the component with the french locale 1`
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#bdc6cf",
             "borderBottomWidth": 0,
             "borderColor": "#86939e",
-            "borderRadius": 3,
             "flexDirection": "row",
-            "minHeight": 30,
-            "overflow": "hidden",
             "transform": Array [
               Object {
                 "translateX": 0,
               },
             ],
+            "width": "100%",
           }
         }
       >
@@ -1003,14 +996,15 @@ exports[`Actions component Should render the component with the french locale 1`
         </View>
         <TextInput
           allowFontScaling={true}
+          lightTheme={true}
           onBlur={[Function]}
+          onCancel={[Function]}
           onChangeText={[Function]}
           onClear={[Function]}
           onClearText={[Function]}
           onFocus={[Function]}
           placeholder="Rechercher parmi les traductions"
-          placeholderTextColor="#86939e"
-          platform="default"
+          platform="android"
           rejectResponderTermination={true}
           style={
             Object {
@@ -1018,9 +1012,9 @@ exports[`Actions component Should render the component with the french locale 1`
               "backgroundColor": "white",
               "borderColor": "#ddd",
               "borderWidth": 1,
-              "color": "#86939e",
+              "color": "black",
               "flex": 1,
-              "fontSize": 18,
+              "fontSize": 14,
               "marginLeft": 5,
               "marginRight": 5,
               "minHeight": 40,
