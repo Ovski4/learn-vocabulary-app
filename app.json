@@ -22,7 +22,7 @@
                 "xxxhdpi": "./assets/splashscreen.png"
             },
             "permissions": [],
-            "versionCode": 6
+            "versionCode": 7
         },
         "assetBundlePatterns": [
             "./assets/*"
