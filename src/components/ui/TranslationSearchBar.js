@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
         paddingLeft: 30,
         backgroundColor: 'white',
         borderWidth: 1,
-        borderColor: '#ddd'
+        borderColor: '#ddd',
+        fontSize: 14
     },
     containerStyle: {
         backgroundColor: 'transparent',
@@ -46,12 +47,19 @@ class TranslationSearchBar extends React.Component {
     fullTextSearch = (text) => {
         // Do not wait on clear text
         const waitingTime = text == '' ? 0 : 300;
+        this.setState({ search: text });
         waitForIt(() => {
             this.props.handleFullTextSearch(text, this.props.scope);
         }, waitingTime);
     }
 
+    state = {
+        search: '',
+    };
+
     render() {
+        const { search } = this.state;
+
         return (
             <SearchBar
                 clearIcon
@@ -64,6 +72,8 @@ class TranslationSearchBar extends React.Component {
                     Keyboard.dismiss();
                 }}
                 placeholder={this.props.literals.placeholder}
+                platform="android"
+                value={search}
             />
         );
     }
