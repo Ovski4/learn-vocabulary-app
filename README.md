@@ -3,6 +3,8 @@ Learn vocabulary App
 
 An android application that will help you learn vocabulary in any language. Created with react native.
 
+This app is not available on the play store anymore due to limitations with the expo framework (See this issue https://github.com/expo/expo/issues/2217#issuecomment-422497781) which contains code trigerring a Violation of Usage. As this application do not and will not send data to any third party system, I prefer to wait for the issue to be solved properly before resubmitting it on the play store.
+
 Run the tests
 -------------
 
