@@ -39,7 +39,7 @@
     ]
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "expo": "^33.0.0",
     "handlebars": "^4.0.14",
     "js-yaml": "^3.13.1",
