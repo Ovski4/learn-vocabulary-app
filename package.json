@@ -46,7 +46,7 @@
     "lodash": "^4.17.14",
     "lodash-es": "^4.17.14",
     "mem": "^4.0.0",
-    "merge": "^1.2.1",
+    "merge": "^2.1.1",
     "react": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "react-native-elements": "^1.1.0",
